@@ -1,6 +1,5 @@
  // app/page.tsx (reconstructed)
 import PromoCountdown from "./packages-details/components/PromoCountdown";
-import MobileMenu from "./components/MobileMenu";
 import { PROMO, isPromoActive } from "./packages-details/lib/promo";
 import BudgetCalculator from "./packages-details/components/BudgetCalculator";
 import LeadForm from "./components/LeadForm";
@@ -15,35 +14,7 @@ export default function LandingPage() {
   const promoActive = isPromoActive(PROMO);
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">LB</div>
-            <div className="leading-tight">
-              <p className="font-semibold tracking-wide">LENABARA. | Boutique Performance Marketing Agency</p>
-              <p className="text-xs text-neutral-400">Performance. Transparency. Expertise. UAE Insight</p>
-            </div>
-          </div>
-          {/* Desktop menu */}
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="https://lenabara.com/blog" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Blog</a>
-            <a href="https://lenabara.com/work" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Case Studies</a>
-            <a href="https://lenabara.com/about" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">About</a>
-            <a href="https://lenabara.com/contact" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Contact</a>
-          </nav>
-          {/* Mobile burger menu */}
-          <MobileMenu />
-          <a
-            href="#contact"
-            className="hidden md:inline-block bg-orange-500 text-black px-4 py-2 rounded-none text-sm font-extrabold uppercase tracking-[0.1em] hover:bg-orange-600 transition"
-          >
-            BOOK FREE AUDIT
-          </a>
-        </div>
-      </header>
-
-      {/* Hero */}
+      {/* Header is provided globally via layout Header component */}
       <Hero />
 
       {/* Primary CTA below hero */}
@@ -55,30 +26,6 @@ export default function LandingPage() {
           >
             SEE PACKAGES
           </a>
-        </div>
-      </section>
-
-      {/* Free Resource for UAE Businesses (inserted above Stand Out) */}
-      <section id="free-resource" className="mx-auto max-w-7xl px-6 mt-12">
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-8 md:p-10 text-center">
-          <div className="mx-auto max-w-2xl space-y-3 md:space-y-4">
-            <p className="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-white">Free Resource for UAE Businesses</p>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl leading-[1.1] font-extrabold uppercase text-orange-500">Is Your Business Ready for Paid Ads?</h3>
-            <div className="mx-auto h-px w-16 bg-orange-500/60" />
-            <p className="text-white text-sm md:text-base leading-relaxed mx-auto">
-              Download our 10-Step UAE Ad Readiness Checklist and find out if your brand is set up for success before spending on Meta or Google Ads.
-            </p>
-            <div className="pt-1">
-              <a
-                href="#free-checklist"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em] transition"
-              >
-                Download Free Checklist
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -555,61 +502,7 @@ export default function LandingPage() {
         <LeadForm />
       </section>
 
-      {/* Footer / Legal - five column layout */}
-      <footer id="footer" className="mx-auto max-w-7xl px-6 mt-6 mb-10">
-        <div className="h-px w-full bg-neutral-800 mb-8" />
-        <div className="flex flex-col md:flex-row gap-8 text-sm text-neutral-300">
-          {/* Five columns */}
-          <div className="flex-1 min-w-[180px]">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="h-8 w-8 rounded-xl bg-orange-500 flex items-center justify-center font-bold text-black">LB</div>
-              <span className="font-extrabold text-white text-lg">LENABARA</span>
-            </div>
-            <div className="mb-2">A boutique performance marketing agency based in the UAE, specializing in paid media, analytics, and creative execution.</div>
-            <div className="mb-2">Dubai • Abu Dhabi • Sharjah • Ras Al Khaimah • Ajman</div>
-            <div className="mb-2">Serving clients across the GCC and globally.</div>
-            <div className="mb-2">Registered with RAKEZ (Ras Al Khaimah Economic Zone), UAE. Licensed under: Media / Digital Marketing Consultancy.</div>
-            <div className="flex gap-2 mt-3">
-              <img src="/badges/google-partner-badge.png" alt="Google Partner" className="h-7 w-auto" />
-              <img src="/badges/meta-buyer-badge.png" alt="Meta Certified Media Buying Professional" className="h-7 w-auto" />
-            </div>
-          </div>
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold text-white mb-2">CONTACT</div>
-            <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">+971 56 325 6848</span></div>
-            <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">+971 52 159 5752</span></div>
-            <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">info@lenabara.com</span></div>
-            <div className="mb-1 flex items-center gap-2"><a href="https://www.lenabara.com" className="hover:text-orange-400" target="_blank" rel="noopener noreferrer">www.lenabara.com</a></div>
-            <div className="mt-2">Global (Remote)<br />Book a discovery call: info@lenabara.com<br />Business Hours: 08:00 — 18:00 (Gulf Time)</div>
-          </div>
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold text-white mb-2">NAVIGATION</div>
-            <div className="mb-1">PACKAGES</div>
-            <div className="mb-1">WHAT MAKES US DIFFERENT</div>
-            <div className="mb-1">CONTACT</div>
-          </div>
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold text-white mb-2">NEED SUPPORT?</div>
-            <div className="mb-1">Submit a ticket or call during business hours.</div>
-            <div className="mb-1">support@lenabara.com</div>
-            <div className="font-bold text-white mt-3 mb-2">LEGAL</div>
-            <div className="mb-1">Terms & Conditions</div>
-            <div className="mb-1">Privacy Policy</div>
-          </div>
-          <div className="flex-1 min-w-[180px]">
-            <div className="font-bold text-white mb-2">COLLABORATIONS</div>
-            <div className="mb-1">We love working with creative freelancers and marketing specialists. If you'd like to collaborate, send your portfolio or proposal to:</div>
-            <div className="mb-1">info@lenabara.com</div>
-            <div className="font-extrabold text-white text-lg mt-6 mb-2">START A PROJECT</div>
-            <a href="https://lenabara.com/contact" target="_blank" rel="noopener noreferrer" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2 rounded-none font-extrabold uppercase tracking-[0.1em] transition mb-2">Contact</a>
-          </div>
-        </div>
-        <div className="mt-8 text-xs text-neutral-400 text-center">
-          Licensed by RAKEZ | © 2025 LenaBara — All Rights Reserved.<br />
-          Advertising services comply with UAE media and digital marketing regulations.<br />
-          Registered office: United Arab Emirates.
-        </div>
-      </footer>
+      {/* Footer is now provided by layout Footer component */}
     </div>
   );
 }
