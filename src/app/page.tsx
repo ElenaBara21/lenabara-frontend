@@ -577,6 +577,7 @@ export default function LandingPage() {
           <div className="flex-1 min-w-[180px]">
             <div className="font-bold text-white mb-2">CONTACT</div>
             <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">+971 56 325 6848</span></div>
+            <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">+971 52 159 5752</span></div>
             <div className="mb-1 flex items-center gap-2"><span className="text-orange-400">info@lenabara.com</span></div>
             <div className="mb-1 flex items-center gap-2"><a href="https://www.lenabara.com" className="hover:text-orange-400" target="_blank" rel="noopener noreferrer">www.lenabara.com</a></div>
             <div className="mt-2">Global (Remote)<br />Book a discovery call: info@lenabara.com<br />Business Hours: 08:00 — 18:00 (Gulf Time)</div>
