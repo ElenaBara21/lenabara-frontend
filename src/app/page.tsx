@@ -1,9 +1,9 @@
-// app/page.tsx (reconstructed)
+ // app/page.tsx (reconstructed)
 import PromoCountdown from "./packages-details/components/PromoCountdown";
+import MobileMenu from "./components/MobileMenu";
 import { PROMO, isPromoActive } from "./packages-details/lib/promo";
 import BudgetCalculator from "./packages-details/components/BudgetCalculator";
 import LeadForm from "./components/LeadForm";
-import DownloadKitModal from "./components/DownloadKitModal";
 import Hero from "./components/Hero";
 import HowWeDoIt from "./components/HowWeDoIt";
 import Testimonials from "./components/Testimonials";
@@ -13,55 +13,11 @@ import { FAQ_GROUPS } from "./content/faq";
 
 export default function LandingPage() {
   const promoActive = isPromoActive(PROMO);
-  // Standout pillars for the "What Makes LenaBara Stand Out" section
-  const STANDOUT = [
-    {
-      t: "PERFORMANCE-FIRST",
-      q: "Everything we do is built to measure — from campaign to conversion.",
-      s: "No vanity metrics. Every dirham is tracked, analyzed, and optimized for growth.",
-    },
-    {
-      t: "TRANSPARENT",
-      q: "No hidden fees. You own your data, your accounts, and your results.",
-      s: "Your business, your numbers — we just help you make them work smarter.",
-    },
-    {
-      t: "BOUTIQUE & PERSONAL",
-      q: "You’ll never be one of 50 accounts. I personally monitor every campaign.",
-      s: "Expect real communication, strategic feedback, and proactive optimization.",
-    },
-    {
-      t: "STRATEGIC & ANALYTICAL",
-      q: "Your campaigns are guided by insights, not assumptions — every move backed by research and metrics",
-      s: "Research-led planning, testing frameworks, and attribution guide decisions.",
-    },
-    {
-      t: "CERTIFIED & CREDIBLE",
-      q: "Meta Certified Media Buyer | Google Ads Specialist | Master’s in Marketing",
-      s: "You’re partnering with a professional who knows both strategy and execution.",
-    },
-    {
-      t: "UAE LOCAL. GLOBAL STANDARD",
-      q: "Bilingual campaigns crafted for the GCC — with global best practices.",
-      s: "Arabic + English creatives, cultural nuance, and performance discipline.",
-    },
-  ];
-  const STANDOUT_UPDATED = STANDOUT.map((x) =>
-    x.t === "CERTIFIED & CREDIBLE"
-      ? {
-          ...x,
-          q:
-            "Meta Certified Media Buyer | Google Search Ads Certified | Certified in Data Science & Business Analytics | Master's in Marketing (in progress)",
-          s:
-            "Partner with a professional who combines strategy, creativity, and data analytics for measurable growth.",
-        }
-      : x
-  );
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">LB</div>
             <div className="leading-tight">
@@ -69,35 +25,32 @@ export default function LandingPage() {
               <p className="text-xs text-neutral-400">Performance. Transparency. Expertise. UAE Insight</p>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-5 text-sm text-neutral-300">
-            <a href="#home" className="hover:text-white">Home</a>
-            <a href="#packages" className="hover:text-white">Packages</a>
-            <a href="#process" className="hover:text-white">Process</a>
-            <a href="#industries" className="hover:text-white">Industries</a>
-            <a href="#testimonials" className="hover:text-white">Testimonials</a>
-            <a href="#faq" className="hover:text-white">FAQ</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
+          {/* Desktop menu */}
+          <nav className="hidden md:flex items-center gap-6">
+            <a href="https://lenabara.com/blog" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Blog</a>
+            <a href="https://lenabara.com/work" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Case Studies</a>
+            <a href="https://lenabara.com/about" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">About</a>
+            <a href="https://lenabara.com/contact" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Contact</a>
           </nav>
+          {/* Mobile burger menu */}
+          <MobileMenu />
           <a
-            href="https://wa.me/971563256848?text=Hi%20Lena!%20I%E2%80%99d%20like%20to%20book%20a%20free%20ads%20audit%20for%20my%20business."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-block bg-orange-500 text-black px-4 py-2 rounded-none text-sm font-extrabold tracking-[0.1em] hover:bg-orange-600 transition"
+            href="#contact"
+            className="hidden md:inline-block bg-orange-500 text-black px-4 py-2 rounded-none text-sm font-extrabold uppercase tracking-[0.1em] hover:bg-orange-600 transition"
           >
-            Book Free Audit
+            BOOK FREE AUDIT
           </a>
         </div>
       </header>
 
       {/* Hero */}
-      <div id="home" />
       <Hero />
 
       {/* Primary CTA below hero */}
       <section className="mx-auto max-w-7xl px-6 mt-[4%] mb-[5%]">
         <div className="flex flex-wrap justify-center">
           <a
-            href="#packages"
+            href="/packages"
             className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
           >
             SEE PACKAGES
@@ -113,29 +66,18 @@ export default function LandingPage() {
             <h3 className="text-2xl sm:text-3xl md:text-4xl leading-[1.1] font-extrabold uppercase text-orange-500">Is Your Business Ready for Paid Ads?</h3>
             <div className="mx-auto h-px w-16 bg-orange-500/60" />
             <p className="text-white text-sm md:text-base leading-relaxed mx-auto">
-              Find out in 10 minutes if your business is ready for high-performance ads — and what to fix first
+              Download our 10-Step UAE Ad Readiness Checklist and find out if your brand is set up for success before spending on Meta or Google Ads.
             </p>
             <div className="pt-1">
-              <DownloadKitModal />
+              <a
+                href="#free-checklist"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em] transition"
+              >
+                Download Free Checklist
+              </a>
             </div>
-            {/* Learn more collapsible */}
-            <Collapsible summary="Learn more">
-              <div className="text-left mx-auto max-w-xl">
-                <p className="font-semibold text-white">By downloading, you’ll get:</p>
-                <ul className="mt-2 space-y-1 list-none">
-                  <li>✅ A 12-point readiness checklist</li>
-                  <li>✅ A smart budget & ROAS calculator</li>
-                  <li>✅ UAE-specific creative and compliance tips</li>
-                </ul>
-                <p className="mt-3 text-neutral-200">
-                  Exclusive invite for a free 15-min professional review with Lena Bara, Meta-Certified Media Buyer & Google Search Ads Certified.
-                </p>
-              </div>
-            </Collapsible>
-            {/* Small print */}
-            <p className="text-xs text-neutral-400">
-              No spam. No generic tips — just insights tailored for UAE businesses ready to scale.
-            </p>
           </div>
         </div>
       </section>
@@ -146,7 +88,7 @@ export default function LandingPage() {
           What Makes LenaBara Stand Out
         </h4>
         <div className="rounded-2xl border border-neutral-800 bg-[#100C0B] p-6 md:p-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 t: "PERFORMANCE-FIRST",
@@ -186,22 +128,6 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-
-          {/* New grid with Strategic & Analytical added (replacing hidden one) */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {STANDOUT_UPDATED.map((n, i) => (
-              <div
-                key={i}
-                className={`relative ${["-rotate-2","rotate-2","-rotate-1","rotate-1","rotate-0"][i % 5]} transform-gpu will-change-transform transition-transform duration-200 ease-out hover:rotate-0 hover:scale-[1.02]`}
-              >
-                <div className="rounded-none border border-neutral-700 bg-[#100C0B] text-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] p-5">
-                  <p className="font-medium tracking-wide text-orange-400 text-2xl md:text-3xl">{n.t}</p>
-                  <p className="mt-2 italic font-normal">{n.q}</p>
-                  <p className="mt-2 text-sm md:text-base font-normal">{n.s}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -220,7 +146,7 @@ export default function LandingPage() {
             {/* Content on top */}
             <div className="relative pl-10 md:pl-14 pr-4 mt-28 md:mt-40">
               <p className="text-white text-sm md:text-base leading-relaxed max-w-[620px]">
-                <span className="font-semibold">Lena Bara Boutique Performance Marketing Agency</span> combines global standards with local UAE expertise. Every campaign is personally managed by Lena Bara — bringing together strategic media buying, data analytics, and marketing insight to deliver measurable growth and complete transparency.
+                <span className="font-semibold">LenaBara Media</span> combines global certification standards with local UAE market expertise. Every campaign is personally managed by Lena Bara, a Meta Certified Media Buying Professional and Google Ads Specialist, ensuring data-driven results and complete transparency.
               </p>
               <div className="mt-5 h-0.5 w-24 bg-white/80" />
             </div>
@@ -228,7 +154,7 @@ export default function LandingPage() {
           <div className="relative rounded-2xl overflow-hidden h-[320px] md:h-[420px] border border-neutral-800">
             <div
               className="absolute inset-0 bg-cover bg-right"
-              style={{ backgroundImage: "url(/hero/my-photo.png)", backgroundPosition: "right center" }}
+              style={{ backgroundImage: "url(/hero/lenabara-hero.png)", backgroundPosition: "right center" }}
             />
           </div>
         </div>
@@ -236,7 +162,7 @@ export default function LandingPage() {
           <a href="#contact" className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
             Book Free 15-min Call
           </a>
-          <a href="#packages" className="bg-neutral-800 hover:bg-neutral-700 transition text-white px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
+          <a href="/packages" className="bg-neutral-800 hover:bg-neutral-700 transition text-white px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
             See Packages
           </a>
         </div>
@@ -252,7 +178,7 @@ export default function LandingPage() {
             <p className="text-sm text-neutral-300 mt-1">First {PROMO.discountedMonths} months · Min term {PROMO.minTermMonths} months</p>
             <p className="mt-3 text-xs uppercase tracking-wide text-neutral-300">Ends in</p>
             <div className="mt-1 flex justify-center">
-              <PromoCountdown endsAtISO={PROMO.endsAtISO} />
+              <PromoCountdown endsAtISO={PROMO.endsAtISO} paused fixedDays={45} />
             </div>
             <p className="text-[11px] text-neutral-400 mt-2">Ad spend billed separately. Promo valid till 15.01.2026. New clients only.</p>
           </div>
@@ -300,12 +226,7 @@ export default function LandingPage() {
               </Collapsible>
             </div>
             <div className="mt-6 flex justify-center">
-              <a
-                href="https://wa.me/971563256848?text=Hi%20Lena!%20I%E2%80%99m%20ready%20to%20launch%20my%20campaign%20and%20would%20like%20to%20discuss%20the%20next%20steps."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]"
-              >
+              <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]">
                 Launch My Campaign →
               </a>
             </div>
@@ -352,13 +273,7 @@ export default function LandingPage() {
                 </Collapsible>
               </div>
               <div className="mt-6 flex justify-center">
-                <a
-                  href="https://wa.me/971563256848?text=Hi%20Lena!%20I%E2%80%99d%20like%20to%20book%20a%20strategy%20call%20to%20discuss%20my%20marketing%20goals."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]"
-                  data-track="services_growth_call"
-                >
+                <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_growth_call">
                   Book Strategy Call →
                 </a>
               </div>
@@ -402,13 +317,7 @@ export default function LandingPage() {
                 </Collapsible>
               </div>
               <div className="mt-6 flex justify-center">
-                <a
-                  href="https://wa.me/971563256848?text=Hi%20Lena!%20I%E2%80%99m%20interested%20in%20your%20Performance%20Partner%20program%20and%20would%20like%20to%20apply."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]"
-                  data-track="services_partner_apply"
-                >
+                <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_partner_apply">
                   Apply for Partnership →
                 </a>
               </div>
@@ -496,38 +405,21 @@ export default function LandingPage() {
         <BudgetCalculator />
       </section>
 
-      {/* Post-calculator banner (styled like the Free Resource card) */}
-      <section className="mx-auto max-w-7xl px-6 mt-6">
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-8 md:p-10 text-center">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl leading-[1.1] font-extrabold uppercase text-orange-500">
-            Got your estimated budget? See if your landing page and setup are ads-ready
-          </h3>
-          <div className="mx-auto h-px w-16 bg-orange-500/60 mt-3" />
-          <div className="pt-2">
-            <DownloadKitModal
-              triggerLabel="Download the Readiness Kit"
-              buttonClassName="inline-block bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em] transition"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Trust Badges */}
       <section id="trust-badges" className="mx-auto max-w-7xl px-6 mt-6 mb-10">
         <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 text-center">
-          <h5 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-0 text-center tracking-tight leading-snug uppercase">
-            Lena Bara is a certified Meta Media Buying Professional, Professional Marketing Specialist and Google Search Ads
+          <h5 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-0 text-center tracking-tight leading-snug">
+            Lena Bara is a certified Meta Media Buying Professional and Google Ads Partner.
           </h5>
           <div className="flex flex-wrap justify-center gap-6">
-            <img src="/badges/meta-buyer-badge.png" alt="Meta Certified Media Buying Professional" className="h-20 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
-            <img src="/badges/meta-performance-badge.png" alt="Meta Performance Marketing Specialist" className="h-20 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
-            <img src="/badges/google-partner-badge.png" alt="Google Partner" className="h-20 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
+            <img src="/badges/meta-buyer-badge.png" alt="Meta Certified Media Buying Professional" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
+            <img src="/badges/meta-performance-badge.png" alt="Meta Performance Marketing Specialist" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
+            <img src="/badges/google-partner-badge.png" alt="Google Partner" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
           </div>
         </div>
       </section>
 
       {/* This Is How We Do It */}
-      <div id="process" />
       <section id="how-we-do-it" className="mx-auto max-w-7xl px-6 mt-12">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">This is how we do it</h4>
         <HowWeDoIt />
@@ -660,13 +552,11 @@ export default function LandingPage() {
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-6 mt-12 mb-16">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Let’s make a change</h4>
-        <div id="contact-form">
-          <LeadForm />
-        </div>
+        <LeadForm />
       </section>
 
       {/* Footer / Legal */}
-      <section id="footer" className="mx-auto max-w-7xl px-6 mt-6 mb-10 hidden">
+      <section id="footer" className="mx-auto max-w-7xl px-6 mt-6 mb-10">
         <div className="text-center text-neutral-300 text-sm">
           <div className="h-px w-full bg-neutral-800 mb-6" />
           <p className="text-white font-semibold">Licensed by RAKEZ</p>
@@ -680,247 +570,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer (Enhanced) */}
-      <section className="bg-neutral-950 border-t border-neutral-800 mt-16">
-        <div className="mx-auto max-w-7xl px-6 py-14">
-          {/* Top CTA */}
-          <div className="flex flex-wrap items-center justify-between gap-6 mb-10">
-            <div className="text-neutral-400 text-sm">
-              Interested in working with us?
-            </div>
-            <a
-              href="#contact-form"
-              className="text-2xl md:text-3xl font-extrabold uppercase underline decoration-2 underline-offset-4 text-white hover:text-orange-400"
-            >
-              Start a project
-            </a>
-          </div>
-
-          {/* Primary grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-            {/* Brand + blurb */}
-            <div className="space-y-3 sm:space-y-4 max-w-prose">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-orange-500 text-black font-bold flex items-center justify-center">LB</div>
-                <span className="text-lg font-semibold tracking-wide">LENABARA</span>
-              </div>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-snug sm:leading-relaxed">
-                A boutique performance marketing agency based in the UAE,
-                specializing in paid media, analytics, and creative execution.
-              </p>
-              <p className="text-neutral-300 text-xs sm:text-sm leading-snug sm:leading-relaxed">
-                {/* Mobile: split into two lines; Desktop: single line with subtle bullets */}
-                <span className="sm:hidden">
-                  Dubai • Abu Dhabi • Sharjah
-                  <br />Ras Al Khaimah • Ajman
-                </span>
-                <span className="hidden sm:inline">Dubai • Abu Dhabi • Sharjah • Ras Al Khaimah • Ajman</span>
-                <br className="hidden sm:block" />
-                Serving clients across the GCC and globally.
-              </p>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-snug sm:leading-relaxed">
-                Registered with RAKEZ (Ras Al Khaimah Economic Zone), UAE.
-                <br />Licensed under: Media / Digital Marketing Consultancy.
-              </p>
-            </div>
-
-            {/* Offices / Contact */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">CONTACT</h4>
-              <div className="mt-3 space-y-2 text-sm">
-                <p>📞 <a href="tel:+971563256848" className="hover:underline">+971 56 325 6848</a></p>
-                <p>✉️ <a href="mailto:info@lenabara.com" className="hover:underline">info@lenabara.com</a></p>
-                <p>🌐 <a href="https://www.lenabara.com" target="_blank" rel="noreferrer" className="hover:underline">www.lenabara.com</a></p>
-              </div>
-              <div className="mt-5 text-sm text-neutral-300 space-y-1">
-                <p className="text-white/90 font-semibold">Global (Remote)</p>
-                <p>Book a discovery call: <a href="mailto:info@lenabara.com" className="hover:underline">info@lenabara.com</a></p>
-                <p>Business Hours: 08:00 — 18:00 (Gulf Time)</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">NAVIGATION</h4>
-              <ul className="mt-3 space-y-2 text-sm text-neutral-300 uppercase tracking-wide">
-                <li><a href="#packages" className="hover:underline">Packages</a></li>
-                <li><a href="#standout" className="hover:underline">What Makes Us Different</a></li>
-                <li><a href="#contact" className="hover:underline">Contact</a></li>
-              </ul>
-            </div>
-
-            {/* Support + Legal + Compliance */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">NEED SUPPORT?</h4>
-              <p className="mt-3 text-sm text-neutral-300">Submit a ticket or call during business hours.</p>
-              <p className="mt-1 text-sm"><a href="mailto:admin@lenabara.com" className="hover:underline">admin@lenabara.com</a></p>
-
-              <div className="mt-6">
-                <h4 className="text-sm font-semibold tracking-wide text-white">LEGAL</h4>
-                <ul className="mt-3 space-y-2 text-sm text-neutral-300">
-                  <li><a className="hover:underline" href="#">Terms & Conditions</a></li>
-                  <li><a className="hover:underline" href="#">Privacy Policy</a></li>
-                </ul>
-              </div>
-
-              <div className="mt-6 text-xs text-neutral-400">
-                Licensed by RAKEZ | © 2025 LenaBara — All Rights Reserved.
-                <br />Advertising services comply with UAE media and digital marketing regulations.
-              </div>
-            </div>
-
-            {/* Careers */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">COLLABORATIONS</h4>
-              <p className="mt-3 text-sm text-neutral-300 leading-relaxed hidden">
-                We’re always interested in talented people. Send your portfolio
-                or CV and we’ll be in touch when there’s a fit.
-              </p>
-              <p className="mt-3 text-sm text-neutral-300 leading-relaxed">
-                We love working with creative freelancers and marketing specialists.
-                If you'd like to collaborate, send your portfolio or proposal to:
-              </p>
-              <p className="mt-2 text-sm"><a href="mailto:info@lenabara.com" className="hover:underline">info@lenabara.com</a></p>
-            </div>
-          </div>
-
-          {/* Secondary grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12 hidden">
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">NEED SUPPORT?</h4>
-              <p className="mt-3 text-sm text-neutral-300">On our support plan? Submit a ticket or call during business hours.</p>
-              <p className="mt-2 text-sm text-neutral-300">09:00 – 17:00 Gulf Time</p>
-              <p className="mt-1 text-sm"><a href="mailto:admin@lenabara.com" className="hover:underline">admin@lenabara.com</a></p>
-            </div>
-            <div id="legal-section">
-              <h4 className="text-sm font-semibold tracking-wide text-white">LEGAL</h4>
-              <ul className="mt-3 space-y-2 text-sm text-neutral-300">
-                <li><a className="hover:underline" href="#">Terms & Conditions</a></li>
-                <li><a className="hover:underline" href="#">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div className="mt-12 border-t border-neutral-800 pt-6 text-sm text-neutral-400">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div>
-                © {new Date().getFullYear()} LenaBara — All rights reserved. Licensed by RAKEZ.
-              </div>
-              <div className="flex items-center gap-4">
-                <a href="#" className="hover:text-orange-400" aria-label="Twitter / X">X</a>
-                <a href="#" className="hover:text-orange-400" aria-label="Facebook">Facebook</a>
-                <a href="#" className="hover:text-orange-400" aria-label="LinkedIn">LinkedIn</a>
-              </div>
-            </div>
-            <div className="mt-2">
-              Registered office: United Arab Emirates. Advertising services comply with UAE media and digital marketing regulations.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
-        <a
-          href="https://wa.me/971563256848?text=Hi%20Lena!%20I%E2%80%99d%20like%20to%20chat%20about%20my%20marketing%20needs."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-black shadow-lg shadow-green-500/40 hover:bg-green-400 transition"
-          aria-label="WhatsApp +971 56 325 6848"
-          data-booking="1"
-        >
-          <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M16 3C9.383 3 4 8.383 4 15c0 2.359.695 4.551 1.895 6.387L5 29l7.887-1.855C14.551 28.305 16.742 29 19.1 29 25.717 29 31.1 23.617 31.1 17S25.717 5 19.1 5c-1.684 0-3.278.332-4.74.961C12.688 4.641 14.305 3 16 3zm-3.023 4.023a9.985 9.985 0 0 1 6.123-2.072C24.771 5 29 9.229 29 14.9c0 5.672-4.229 9.9-9.9 9.9-1.898 0-3.676-.514-5.207-1.49l-.621-.4-4.145.976.957-4.075-.405-.628C8.723 17.548 8.2 15.77 8.2 13.9c0-2.574 1.004-4.996 2.777-6.777zM12 10c-.402 0-.98.195-1.564.898-.586.703-2.14 2.082-2.14 4.977 0 2.894 2.194 5.688 2.5 6.085.305.398 4.066 6.14 10.009 6.14 5.944 0 10.195-4.252 10.195-9.186 0-4.935-4.251-9.287-10.195-9.287-2.197 0-4.221.637-5.94 1.785-.212-.116-.447-.195-.865-.195z"
-            />
-          </svg>
-        </a>
-        <a
-          href="tel:+971563256848"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-black shadow-lg shadow-orange-500/40 hover:bg-orange-400 transition"
-          aria-label="Call +971 56 325 6848"
-          data-booking="1"
-        >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-            <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V21c0 .55-.45 1-1 1C10.07 22 2 13.93 2 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-          </svg>
-        </a>
-      </div>
-
-      {/* Exit-intent modal (shows near footer if no booking) */}
-      <div id="lb-exit-modal" className="fixed inset-0 z-[60] items-center justify-center bg-black/60 p-6 hidden">
-        <div className="mx-auto max-w-xl w-full rounded-2xl border border-neutral-800 bg-neutral-900/90 p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl leading-[1.1] font-extrabold uppercase text-orange-500">
-            Not ready to book yet?
-          </h3>
-          <div className="mx-auto h-px w-16 bg-orange-500/60 mt-3" />
-          <p className="mt-3 text-sm md:text-base text-neutral-200">
-            Download the free Ads Readiness Kit and see if you’re ready to grow with paid ads.
-          </p>
-          <div className="pt-4">
-            <a
-              id="lb-exit-cta"
-              href="#free-resource"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em] transition"
-            >
-              Download the Readiness Kit
-            </a>
-          </div>
-          <button id="lb-exit-close" className="mt-4 text-xs md:text-sm text-neutral-400 hover:text-white underline underline-offset-4">
-            No thanks
-          </button>
-        </div>
-      </div>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(() => {
-  try {
-    // Do not show if already shown or booked
-    if (localStorage.getItem('lb_exit_shown') === '1' || localStorage.getItem('lb_booked') === '1') return;
-
-    const modal = document.getElementById('lb-exit-modal');
-    if (!modal) return;
-
-    const open = () => {
-      if (!modal) return;
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      localStorage.setItem('lb_exit_shown', '1');
-    };
-    const close = () => {
-      if (!modal) return;
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    };
-
-    document.getElementById('lb-exit-close')?.addEventListener('click', close);
-    document.getElementById('lb-exit-cta')?.addEventListener('click', () => { close(); });
-
-    // Mark as booked when clicking any contact/book CTA
-    document.querySelectorAll('a[href="#contact"], a[href="#contact-form"], a[data-booking="1"]').forEach((a) => {
-      a.addEventListener('click', () => localStorage.setItem('lb_booked','1'));
-    });
-
-    const footer = document.getElementById('footer');
-    if (!footer) return;
-    const io = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting && !localStorage.getItem('lb_exit_shown') && !localStorage.getItem('lb_booked')) {
-          open();
-        }
-      }
-    }, { threshold: 0.2 });
-    io.observe(footer);
-  } catch {}
-})();`,
-        }}
-      />
     </div>
   );
 }
-
-
-
 
