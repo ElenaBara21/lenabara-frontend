@@ -20,9 +20,9 @@ export default function MobileMenu() {
         <div className="absolute right-0 mt-2 w-48 bg-neutral-950 border border-neutral-800 rounded shadow-lg z-50">
           <nav className="flex flex-col py-2">
             <a href="https://lenabara.com/blog" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>Blog</a>
-            <a href="https://lenabara.com/work" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>Case Studies</a>
-            <a href="https://lenabara.com/about" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>About</a>
-            <a href="https://lenabara.com/contact" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>Contact</a>
+            <a href="/work" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>Case Studies</a>
+            <a href="/about" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>About</a>
+            <a href="/contact" className="px-4 py-2 text-sm text-neutral-200 hover:text-white transition" onClick={() => setOpen(false)}>Contact</a>
           </nav>
         </div>
       )}

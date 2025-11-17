@@ -49,13 +49,18 @@ export default function LandingPage() {
               },
               {
                 t: "BOUTIQUE & PERSONAL",
-                q: "You’ll never be one of 50 accounts. I personally monitor every campaign.",
+                q: "You'll never be one of 50 accounts. I personally monitor every campaign.",
                 s: "Expect real communication, strategic feedback, and proactive optimization.",
               },
               {
+                t: "STRATEGIC & ANALYTICAL",
+                q: "Your campaigns are guided by insights, not hunches.",
+                s: "Research-led planning, testing frameworks, and attribution-guide decisions.",
+              },
+              {
                 t: "CERTIFIED & CREDIBLE",
-                q: "Meta Certified Media Buyer | Google Ads Specialist | Master’s in Marketing",
-                s: "You’re partnering with a professional who knows both strategy and execution.",
+                q: "Meta Certified Media Buyer | Google Ads Specialist | Master's in Marketing",
+                s: "You're partnering with a professional who knows both strategy and execution.",
               },
               {
                 t: "UAE LOCAL. GLOBAL STANDARD",
@@ -65,7 +70,7 @@ export default function LandingPage() {
             ].map((n, i) => (
               <div
                 key={i}
-                className={`relative ${["-rotate-2","rotate-2","-rotate-1","rotate-1","rotate-0"][i % 5]} transform-gpu will-change-transform transition-transform duration-200 ease-out hover:rotate-0 hover:scale-[1.02] ${i===3 ? 'lg:col-start-2' : ''} ${i===4 ? 'lg:col-start-3' : ''}`}
+                className={`relative ${["-rotate-2","rotate-2","-rotate-1","rotate-1","-rotate-2","rotate-2"][i % 6]} transform-gpu will-change-transform transition-transform duration-200 ease-out hover:rotate-0 hover:scale-[1.02]`}
               >
                 <div className="rounded-none border border-neutral-700 bg-[#100C0B] text-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] p-5">
                   <p className="font-medium tracking-wide text-orange-400 text-2xl md:text-3xl">{n.t}</p>
@@ -155,7 +160,7 @@ export default function LandingPage() {
                   <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> 2–3 weeks</p>
                   <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                   <div className="pt-1">
-                    <p className="text-orange-400 font-semibold">What’s Included</p>
+                    <p className="text-orange-400 font-semibold">What's Included</p>
                     <ul className="mt-2 space-y-1 text-sm md:text-base">
                       <li>✅ One platform (Meta or Google)</li>
                       <li>✅ Campaign setup (1–2 campaigns)</li>
@@ -201,7 +206,7 @@ export default function LandingPage() {
                     <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> 4–6 weeks</p>
                     <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                     <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">What’s Included</p>
+                      <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
                         <li>✅ Multi-platform setup (Meta and/or Google Ads)</li>
                         <li>✅ Up to 4 campaigns with strategic funnel mapping</li>
@@ -245,7 +250,7 @@ export default function LandingPage() {
                     <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> Monthly retainer (minimum 3 months)</p>
                     <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                     <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">What’s Included</p>
+                      <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
                         <li>✅ Complete Meta + Google Ads ecosystem management</li>
                         <li>✅ Advanced conversion tracking & cross-platform attribution</li>
@@ -498,7 +503,7 @@ export default function LandingPage() {
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-6 mt-12 mb-16">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Let’s make a change</h4>
+        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Let's make a change</h4>
         <LeadForm />
       </section>
 
