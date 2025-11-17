@@ -14,7 +14,7 @@ export default function Header() {
         </div>
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="https://lenabara.com/blog" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Blog</a>
+          <a href="https://blog.lenabara.com/blog/" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Blog</a>
           <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">Case Studies</a>
           <a href="/about" className="text-sm text-neutral-200 hover:text-white transition">About</a>
           <a href="/contact" className="text-sm text-neutral-200 hover:text-white transition">Contact</a>
