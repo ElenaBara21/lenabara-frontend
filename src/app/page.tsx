@@ -3,6 +3,7 @@ import PromoCountdown from "./packages-details/components/PromoCountdown";
 import { PROMO, isPromoActive } from "./packages-details/lib/promo";
 import BudgetCalculator from "./packages-details/components/BudgetCalculator";
 import LeadForm from "./components/LeadForm";
+import DownloadKitModal from "./components/DownloadKitModal";
 import Hero from "./components/Hero";
 import HowWeDoIt from "./components/HowWeDoIt";
 import Testimonials from "./components/Testimonials";
@@ -26,6 +27,26 @@ export default function LandingPage() {
           >
             SEE PACKAGES
           </a>
+        </div>
+      </section>
+
+      {/* Lead magnet / Readiness kit (restored) */}
+      <section id="lead-magnet" className="mx-auto max-w-7xl px-6 mt-8">
+        <div className="rounded-2xl border border-neutral-800 bg-[#0e0c0c] p-8 md:p-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-sm uppercase tracking-widest text-neutral-300">Free resource for UAE businesses</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 mt-3 mb-3 uppercase">Is your business ready for paid ads?</h2>
+            <div className="h-0.5 w-20 bg-orange-500 mx-auto mb-4" />
+            <p className="text-neutral-300 max-w-2xl mx-auto mb-6">Find out in 10 minutes if your business is ready for high-performance ads — and what to fix first.</p>
+
+            <div className="flex justify-center mb-4">
+              <DownloadKitModal triggerLabel={"Download the UAE Ads Readiness Kit (Free)"} buttonClassName="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]" />
+            </div>
+
+            <div className="text-sm text-neutral-400">
+              <p>No spam. No generic tips — just insights tailored for UAE businesses ready to scale.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -104,10 +125,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden h-[320px] md:h-[420px] border border-neutral-800">
-            <div
-              className="absolute inset-0 bg-cover bg-right"
-              style={{ backgroundImage: "url(/hero/lenabara-hero.png)", backgroundPosition: "right center" }}
-            />
+            <img src="/hero/lenabara-hero.png" alt="LenaBara hero" className="w-full h-full object-cover object-right" />
           </div>
         </div>
         <div className="mt-6 flex justify-center gap-4">
@@ -357,10 +375,22 @@ export default function LandingPage() {
         <BudgetCalculator />
       </section>
 
+      {/* Got your estimated budget? — restored expanded block */}
+      <section id="got-budget" className="mx-auto max-w-7xl px-6">
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8 text-center">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Got your estimated budget?</h3>
+          <p className="text-neutral-300 max-w-3xl mx-auto mb-6">See if your landing page and setup are ads-ready — if not, download our readiness kit or book a free 15-minute call and we'll help you prioritise fixes.</p>
+          <div className="flex justify-center gap-4">
+            <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free 15-min Call</a>
+            <a href="#lead-magnet" className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Download Readiness Kit</a>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Badges */}
       <section id="trust-badges" className="mx-auto max-w-7xl px-6 mt-6 mb-10">
         <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 text-center">
-          <h5 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-0 text-center tracking-tight leading-snug">
+          <h5 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-0 text-center tracking-tight leading-snug">
             Lena Bara is a certified Meta Media Buying Professional and Google Ads Partner.
           </h5>
           <div className="flex flex-wrap justify-center gap-6">
