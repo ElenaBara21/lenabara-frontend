@@ -5,13 +5,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">LB</div>
           <div className="leading-tight">
             <p className="font-semibold tracking-wide">LENABARA. | Boutique Performance Marketing Agency</p>
             <p className="text-xs text-neutral-400">Performance. Transparency. Expertise. UAE Insight</p>
           </div>
-        </div>
+        </a>
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center gap-6">
           <a href="https://blog.lenabara.com/blog/" className="text-sm text-neutral-200 hover:text-white transition" target="_blank" rel="noopener noreferrer">Blog</a>
