@@ -46,6 +46,20 @@ export default function LandingPage() {
             <div className="text-sm text-neutral-400">
               <p>No spam. No generic tips — just insights tailored for UAE businesses ready to scale.</p>
             </div>
+
+            <div className="mt-4 max-w-3xl mx-auto text-left">
+              <Collapsible summary="Learn more">
+                <div className="space-y-3 text-neutral-300">
+                  <p>The Readiness Kit helps you quickly audit whether your website, tracking and creative are set up to support high-performance paid ads.</p>
+                  <ul className="list-inside list-none space-y-2">
+                    <li>✅ Landing page checklist (conversion drivers, load speed, CTA clarity)</li>
+                    <li>✅ Tracking & analytics guide (pixel, GA4, conversion events)</li>
+                    <li>✅ Creative brief template for quick A/B tests</li>
+                    <li>✅ Prioritised fix list so you can act in the right order</li>
+                  </ul>
+                </div>
+              </Collapsible>
+            </div>
           </div>
         </div>
       </section>
@@ -382,7 +396,7 @@ export default function LandingPage() {
           <p className="text-neutral-300 max-w-3xl mx-auto mb-6">See if your landing page and setup are ads-ready — if not, download our readiness kit or book a free 15-minute call and we'll help you prioritise fixes.</p>
           <div className="flex justify-center gap-4">
             <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free 15-min Call</a>
-            <a href="#lead-magnet" className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Download Readiness Kit</a>
+            <DownloadKitModal triggerLabel={"Download Readiness Kit"} buttonClassName={"bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]"} />
           </div>
         </div>
       </section>
