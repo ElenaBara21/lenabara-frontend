@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     }
 
     const apiKey = process.env.BREVO_API_KEY;
+    console.log("[Brevo] API Key present:", !!apiKey, "Length:", apiKey?.length);
     if (!apiKey) {
       return NextResponse.json({ ok: false, error: "BREVO_API_KEY not configured" }, { status: 500 });
     }
