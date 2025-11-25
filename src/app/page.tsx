@@ -321,20 +321,45 @@ export default function LandingPage() {
             </div>
             {/* Right grid of cards */}
             <div className="grid sm:grid-cols-2 gap-4">
-              {/* Card 1 */}
-              <a href="#contact" aria-label="Ask about landing page add-on" className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
+              {/* Card 1 - Landing page design & build */}
+              <div className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">
                 <div className="flex items-start gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-orange-300">
                     <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 5h12M4 9h8M4 13h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                   </span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-white font-semibold">Landing page design & build</p>
                     <p className="text-neutral-400 text-xs mt-1">High‑converting page tailored to your offer and audience.</p>
+                    
+                    <Collapsible summary="See details">
+                      <div className="mt-3 space-y-2 text-sm text-neutral-300">
+                        <p className="text-orange-400 font-semibold">What you get</p>
+                        <ul className="space-y-1 text-xs">
+                          <li>• 1 premium landing page (desktop + mobile)</li>
+                          <li>• Modern, fast build (Next.js)</li>
+                          <li>• Conversion-focused layout & UX</li>
+                          <li>• Persuasive copy sections (headline, benefits, social proof, FAQ)</li>
+                          <li>• Basic SEO (titles, meta, OG tags)</li>
+                          <li>• Tracking setup (GA4 + Meta Pixel + Google Ads tag)</li>
+                          <li>• Integration with your form / WhatsApp / booking / email tool</li>
+                          <li>• 1 feedback round + final QA on all devices</li>
+                        </ul>
+                        <p className="text-orange-400 font-semibold mt-3">Perfect for</p>
+                        <p className="text-xs">Brands running Meta/Google ads that need a page built for leads & sales, not just "looking pretty."</p>
+                        <p className="text-orange-400 font-semibold mt-3">Tech stack</p>
+                        <p className="text-xs">Built on Next.js – fast loading, SEO-friendly, easy to scale.</p>
+                        <div className="mt-4">
+                          <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
+                            From AED 2,900 — contact us →
+                          </a>
+                        </div>
+                      </div>
+                    </Collapsible>
                   </div>
                 </div>
-              </a>
+              </div>
               {/* Card 2 */}
               <a href="#contact" aria-label="Ask about social media add-on" className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
                 <div className="flex items-start gap-3">
