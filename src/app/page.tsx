@@ -138,9 +138,9 @@ export default function LandingPage() {
               <div className="mt-5 h-0.5 w-24 bg-white/80" />
             </div>
           </div>
-          <div className="relative rounded-2xl h-[320px] md:h-[420px] border-4 border-neutral-950 bg-neutral-950 flex items-center justify-center p-4">
-            <img src="/hero/my-photo.png" alt="Lena Bara" className="w-full h-full object-cover object-center rounded-xl" />
-          </div>
+          <div className="rounded-none border border-neutral-800 bg-cover bg-center min-h-[320px] md:min-h-[420px]"
+               style={{ backgroundImage: 'url(/hero/my-photo.png)' }}
+          />
         </div>
         <div className="mt-6 flex justify-center gap-4">
           <a href="#contact" className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
