@@ -22,7 +22,7 @@ export default function LandingPage() {
       <section className="mx-auto max-w-7xl px-6 mt-[4%] mb-[5%]">
         <div className="flex flex-wrap justify-center">
           <a
-            href="/packages"
+            href="#packages"
             className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
           >
             SEE PACKAGES
@@ -146,7 +146,7 @@ export default function LandingPage() {
           <a href="#contact" className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
             Book Free 15-min Call
           </a>
-          <a href="/packages" className="bg-neutral-800 hover:bg-neutral-700 transition text-white px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
+          <a href="#packages" className="bg-neutral-800 hover:bg-neutral-700 transition text-white px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
             See Packages
           </a>
         </div>
