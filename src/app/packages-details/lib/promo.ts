@@ -14,7 +14,7 @@ export const PROMO: PromoConfig = {
   percentOff: 20,
   discountedMonths: 2,
   minTermMonths: 3,
-  endsAtISO: "2026-01-15T23:59:59+04:00",
+  endsAtISO: "2026-01-25T23:59:59+04:00",
   note: "Ad spend billed separately. New clients only.",
 };
 

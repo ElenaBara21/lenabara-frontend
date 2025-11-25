@@ -162,9 +162,9 @@ export default function LandingPage() {
             <p className="text-sm text-neutral-300 mt-1">First {PROMO.discountedMonths} months · Min term {PROMO.minTermMonths} months</p>
             <p className="mt-3 text-xs uppercase tracking-wide text-neutral-300">Ends in</p>
             <div className="mt-1 flex justify-center">
-              <PromoCountdown endsAtISO={PROMO.endsAtISO} paused fixedDays={45} />
+              <PromoCountdown endsAtISO={PROMO.endsAtISO} paused fixedDays={61} />
             </div>
-            <p className="text-[11px] text-neutral-400 mt-2">Ad spend billed separately. Promo valid till 15.01.2026. New clients only.</p>
+            <p className="text-[11px] text-neutral-400 mt-2">Ad spend billed separately. Promo valid till 25.01.2026. New clients only.</p>
           </div>
         )}
 
