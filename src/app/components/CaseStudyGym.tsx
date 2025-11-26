@@ -39,15 +39,15 @@ export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymP
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
-        goToPrevious();
+        setCurrent((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
       } else if (e.key === "ArrowRight") {
-        goToNext();
+        setCurrent((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, []);
+  }, [totalSlides]);
 
   return (
     <div className="w-full">
