@@ -374,20 +374,96 @@ export default function LandingPage() {
                   </div>
                 </div>
               </a>
-              {/* Card 3 */}
-              <a href="#contact" aria-label="Ask about analytics dashboard add-on" className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
+              {/* Card 3 - Analytics dashboard (Looker Studio) */}
+              <div className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">
                 <div className="flex items-start gap-3">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-orange-300">
                     <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 14h12M4 10h8M4 6h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                   </span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-white font-semibold">Analytics dashboard (Looker Studio)</p>
-                    <p className="text-neutral-400 text-xs mt-1">Real‑time KPIs in one place for fast decisions.</p>
+                    <p className="text-neutral-400 text-xs mt-1">All your marketing KPIs in one real-time dashboard. See your results clearly. Make decisions instantly. No spreadsheets. No guessing.</p>
+                    
+                    <div className="mt-3">
+                      <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
+                        Get your dashboard in 3–5 days →
+                      </a>
+                    </div>
+
+                    <Collapsible summary="See details">
+                      <div className="mt-3 space-y-3 text-sm text-neutral-300">
+                        <div>
+                          <p className="text-orange-400 font-semibold">What You Get</p>
+                          <ul className="space-y-1 text-xs mt-2">
+                            <li>✔ One clean Looker Studio dashboard</li>
+                            <li>✔ Connected to GA4, Meta Ads & Google Ads</li>
+                            <li>✔ Your brand colors & layout</li>
+                            <li>✔ Mobile-friendly, real-time view</li>
+                            <li>✔ Clear KPIs: ROAS, CPA, Revenue, Leads, Traffic, Funnels</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <p className="text-orange-400 font-semibold">Choose Your Dashboard</p>
+                          <p className="text-xs mb-2">Pick 1 or mix 2–3 from my ready-made collection:</p>
+                          <ul className="space-y-1 text-xs">
+                            <li>• CEO Performance Overview</li>
+                            <li>• Ads Dashboard (Meta + Google)</li>
+                            <li>• GA4 Website Analytics</li>
+                            <li>• Ecommerce Funnel & Revenue</li>
+                            <li>• Paid vs Organic Traffic</li>
+                            <li>• Lead Generation Funnel</li>
+                            <li>• Customer Cohort & Retention</li>
+                            <li>• Creative Testing Dashboard</li>
+                            <li>• Social Media Insights</li>
+                            <li>• Monthly Marketing Scorecard</li>
+                          </ul>
+                          <a href="#contact" className="inline-block mt-2 text-orange-400 hover:text-orange-300 text-xs underline">
+                            Preview catalog →
+                          </a>
+                        </div>
+
+                        <div>
+                          <p className="text-orange-400 font-semibold">Pricing</p>
+                          <div className="space-y-2 text-xs mt-2">
+                            <div>
+                              <p className="font-semibold text-white">Starter — AED 900</p>
+                              <p>1 dashboard + 1 data source + branding + 1 revision.</p>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-white">Pro — AED 2,500</p>
+                              <p>3 dashboards + GA4/Pixel/Ads setup + branding + 2 revisions.</p>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-white">Custom — from AED 4,500</p>
+                              <p>Fully custom build + advanced events + ecommerce funnels.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <p className="text-orange-400 font-semibold">Why Work With Me</p>
+                          <p className="text-xs">Meta Certified • Google Analytics & Ads Certified • Master's in Marketing • Specialist in performance & reporting.</p>
+                        </div>
+
+                        <div className="border-t border-neutral-700 pt-3">
+                          <p className="text-white font-semibold mb-2">Want to see your business clearly?<br/>Get your dashboard today.</p>
+                          <div className="flex flex-wrap gap-2">
+                            <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
+                              Order Your Dashboard →
+                            </a>
+                            <a href="#contact" className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
+                              Preview catalog →
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </Collapsible>
                   </div>
                 </div>
-              </a>
+              </div>
               {/* Card 4 */}
               <a href="#contact" aria-label="Ask about integrated marketing plan add-on" className="group rounded-2xl border border-orange-500/40 bg-orange-500/5 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
                 <div className="flex items-start gap-3">
