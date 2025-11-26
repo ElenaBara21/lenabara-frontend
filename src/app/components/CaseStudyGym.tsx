@@ -24,11 +24,19 @@ export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymP
 
   // Navigation handlers
   const goToPrevious = () => {
-    setCurrent((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+    setCurrent((prev) => {
+      const newIndex = prev === 0 ? totalSlides - 1 : prev - 1;
+      console.log('Going to previous:', newIndex);
+      return newIndex;
+    });
   };
 
   const goToNext = () => {
-    setCurrent((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    setCurrent((prev) => {
+      const newIndex = prev === totalSlides - 1 ? 0 : prev + 1;
+      console.log('Going to next:', newIndex);
+      return newIndex;
+    });
   };
 
   const goToSlide = (index: number) => {
