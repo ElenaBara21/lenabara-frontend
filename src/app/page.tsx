@@ -385,12 +385,6 @@ export default function LandingPage() {
                   <div className="flex-1">
                     <p className="text-white font-semibold">Analytics dashboard (Looker Studio)</p>
                     <p className="text-neutral-400 text-xs mt-1">All your marketing KPIs in one real-time dashboard. See your results clearly. Make decisions instantly. No spreadsheets. No guessing.</p>
-                    
-                    <div className="mt-3">
-                      <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                        Get your dashboard in 3–5 days →
-                      </a>
-                    </div>
 
                     <Collapsible summary="See details">
                       <div className="mt-3 space-y-3 text-sm text-neutral-300">
