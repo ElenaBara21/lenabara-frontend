@@ -70,20 +70,22 @@ export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymP
       <div className="relative bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
         {/* Slider Track */}
         <div
-          className="flex transition-transform duration-500 ease-in-out overflow-y-hidden"
+          className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {images.map((imagePath, index) => (
             <div
               key={index}
               className="w-full flex-shrink-0 h-[500px] md:h-[650px] relative"
+              style={{ minWidth: '100%' }}
             >
               <Image
                 src={imagePath}
                 alt={`Gym Case Study Slide ${index + 1}`}
                 fill
                 priority={index === 0}
-                className="object-cover w-full h-full"
+                className="object-contain"
+                sizes="100vw"
               />
             </div>
           ))}
