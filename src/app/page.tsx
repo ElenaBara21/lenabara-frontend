@@ -1,3 +1,5 @@
+'use client';
+
  // app/page.tsx (reconstructed)
 import PromoCountdown from "./packages-details/components/PromoCountdown";
 import { PROMO, isPromoActive } from "./packages-details/lib/promo";
@@ -13,6 +15,17 @@ import { FAQ_GROUPS } from "./content/faq";
 
 export default function LandingPage() {
   const promoActive = isPromoActive(PROMO);
+  
+  const handleCatalogDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = '/catalog.pdf';
+    link.download = 'Lenabara-Dashboard-Catalog.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       {/* Header is provided globally via layout Header component */}
@@ -412,11 +425,11 @@ export default function LandingPage() {
                             <li>• Customer Cohort & Retention</li>
                             <li>• Creative Testing Dashboard</li>
                             <li>• Social Media Insights</li>
-                            <li>• Monthly Marketing Scorecard</li>
-                          </ul>
-                          <a href="#contact" className="inline-block mt-2 text-orange-400 hover:text-orange-300 text-xs underline">
-                            Preview catalog →
-                          </a>
+                          <li>• Monthly Marketing Scorecard</li>
+                        </ul>
+                        <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block mt-2 text-orange-400 hover:text-orange-300 text-xs underline">
+                          Preview catalog →
+                        </a>
                         </div>
 
                         <div>
@@ -446,11 +459,11 @@ export default function LandingPage() {
                           <p className="text-white font-semibold mb-2">Want to see your business clearly?<br/>Get your dashboard today.</p>
                           <div className="flex flex-wrap gap-2">
                             <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                              Order Your Dashboard →
-                            </a>
-                            <a href="#contact" className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                              Preview catalog →
-                            </a>
+                            Order Your Dashboard →
+                          </a>
+                          <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
+                            Preview catalog →
+                          </a>
                           </div>
                         </div>
                       </div>
