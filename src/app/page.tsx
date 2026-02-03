@@ -177,7 +177,9 @@ export default function LandingPage() {
             <div className="mt-1 flex justify-center">
               <PromoCountdown endsAtISO={PROMO.endsAtISO} />
             </div>
-            <p className="text-[11px] text-neutral-400 mt-2">Ad spend billed separately. Promo valid till 25.01.2026. New clients only.</p>
+            {PROMO.note && (
+              <p className="text-[11px] text-neutral-400 mt-2">{PROMO.note}</p>
+            )}
           </div>
         )}
 

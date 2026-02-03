@@ -7,15 +7,20 @@ export type PromoConfig = {
     endsAtISO: string; // GST (+04:00)
     note?: string;
   };
-  
+
+const PROMO_DURATION_DAYS = 60;
+const promoEndsAtISO = new Date(
+  Date.now() + PROMO_DURATION_DAYS * 24 * 60 * 60 * 1000
+).toISOString();
+
 export const PROMO: PromoConfig = {
   active: true,
-  label: "Launch Offer",
+  label: "Pilot Launch",
   percentOff: 20,
   discountedMonths: 2,
   minTermMonths: 3,
-  endsAtISO: "2026-01-25T23:59:59+04:00",
-  note: "Ad spend billed separately. New clients only.",
+  endsAtISO: promoEndsAtISO,
+  note: "Promo valid for 60 days. Ad spend billed separately. New clients only.",
 };
 
 export function isPromoActive(p: PromoConfig) {
