@@ -35,6 +35,14 @@ export default function DownloadKitModal({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json?.ok) throw new Error(json?.error || "Failed to subscribe");
+
+      const sendRes = await fetch("/api/brevo/send-download", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+      const sendJson = await sendRes.json().catch(() => ({}));
+      if (!sendRes.ok || !sendJson?.ok) throw new Error(sendJson?.error || "Failed to send email");
       try {
         localStorage.setItem("lb_download_name", name);
         localStorage.setItem("lb_download_email", email);

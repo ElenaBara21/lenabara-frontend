@@ -170,15 +170,14 @@ export default function LandingPage() {
         <h2 className="text-[40px] md:text-[56px] tracking-tight font-extrabold text-white mb-4 text-center">PACKAGES</h2>
 
         {promoActive && (
-          <div className="mb-6 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-6 py-6 text-center">
-            <h4 className="text-2xl md:text-3xl font-extrabold text-white uppercase">Limited Time: 20% OFF for a Pilot Launch Package</h4>
-            <p className="text-sm text-neutral-300 mt-1">First {PROMO.discountedMonths} months · Min term {PROMO.minTermMonths} months</p>
-            <p className="mt-3 text-xs uppercase tracking-wide text-neutral-300">Ends in</p>
-            <div className="mt-1 flex justify-center">
+          <div className="mb-8 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-8 py-8 text-center">
+            <h4 className="text-3xl md:text-4xl font-extrabold text-white uppercase">Limited Time: 20% OFF for a Pilot Launch Package</h4>
+            <p className="mt-4 text-sm uppercase tracking-wide text-neutral-300">Ends in</p>
+            <div className="mt-2 flex justify-center">
               <PromoCountdown endsAtISO={PROMO.endsAtISO} />
             </div>
             {PROMO.note && (
-              <p className="text-[11px] text-neutral-400 mt-2">{PROMO.note}</p>
+              <p className="text-xs text-neutral-400 mt-3">{PROMO.note}</p>
             )}
           </div>
         )}

@@ -66,18 +66,15 @@ export default function Page() {
         </h1>
 
         {promoActiveTop && (
-          <div className="mb-10 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-6 py-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-orange-300">
+          <div className="mb-10 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-8 py-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-orange-300">
               Limited Time: {PROMO.percentOff}% OFF
             </h2>
-            <p className="text-sm text-neutral-300 mt-1">
-              First {PROMO.discountedMonths} months · Min term {PROMO.minTermMonths} months
-            </p>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-5 flex justify-center">
               <PromoCountdown endsAtISO={PROMO.endsAtISO} />
             </div>
             {PROMO.note && (
-              <p className="text-[11px] text-neutral-400 mt-2">{PROMO.note}</p>
+              <p className="text-xs text-neutral-400 mt-3">{PROMO.note}</p>
             )}
           </div>
         )}
