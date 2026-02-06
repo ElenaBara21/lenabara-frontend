@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -177,6 +178,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+          <FloatingContactButtons />
         <Footer />
         {/* Lightweight analytics for elements with data-track */}
         <script
