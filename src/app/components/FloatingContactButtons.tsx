@@ -7,6 +7,7 @@ export default function FloatingContactButtons() {
         href="https://wa.me/971563256848"
         target="_blank"
         rel="noopener noreferrer"
+        data-gtm="cta_whatsapp_floating"
         aria-label="WhatsApp"
         className="flex items-center gap-2 rounded-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 shadow-lg transition"
       >
@@ -18,6 +19,7 @@ export default function FloatingContactButtons() {
 
       <a
         href="tel:+971563256848"
+        data-gtm="cta_call_floating"
         aria-label="Call"
         className="flex items-center gap-2 rounded-full bg-orange-500 hover:bg-orange-600 text-black px-4 py-3 shadow-lg transition"
       >
