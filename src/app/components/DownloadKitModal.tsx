@@ -92,7 +92,10 @@ export default function DownloadKitModal({
       )}
 
       {showThankYou && (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/60 p-6">
+        <div
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/60 p-6"
+          data-gtm="kit_thank_you_modal"
+        >
           <div className="mx-auto w-full max-w-sm rounded-2xl border border-neutral-800 bg-neutral-900/95 p-6 text-center space-y-4">
             <h3 className="text-2xl font-extrabold uppercase text-orange-500">Thank You!</h3>
             <p className="text-sm text-neutral-200 leading-relaxed">
