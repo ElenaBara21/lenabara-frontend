@@ -100,7 +100,7 @@ export default function LeadForm() {
           </label>
         </div>
       </fieldset>
-      <input name="website" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500" type="url" placeholder="Website (optional)" />
+      <input name="website" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500" type="text" placeholder="Website (optional)" />
       <textarea name="message" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm h-28 resize-none focus:outline-none focus:border-orange-500" placeholder="What are your goals or current challenges?"></textarea>
 
       {ok === true && (
