@@ -145,7 +145,12 @@ async function sendBrevo(payload: LeadPayload) {
     }),
   });
 
-  return { ok: res.ok } as const;
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    return { ok: false, error: text || "Brevo error" } as const;
+  }
+
+  return { ok: true } as const;
 }
 
 export async function POST(req: NextRequest) {
@@ -181,7 +186,12 @@ export async function POST(req: NextRequest) {
       ip: req.headers.get("x-forwarded-for") || undefined,
     });
 
-    return NextResponse.json({ ok: anyOk, results });
+    if (!anyOk) {
+      const firstError = results.find((r: any) => !r.ok && r.error)?.error;
+      return NextResponse.json({ ok: false, error: firstError || "Lead capture failed", results }, { status: 502 });
+    }
+
+    return NextResponse.json({ ok: true, results });
   } catch (err) {
     console.error("/api/lead error", err);
     return NextResponse.json({ ok: false }, { status: 500 });

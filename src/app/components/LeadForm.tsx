@@ -58,6 +58,9 @@ export default function LeadForm() {
       const success = Boolean(json?.ok);
       setOk(success);
       track("lead_submit", { ok: success, source: lead.source });
+      if (!success) {
+        setErr(json?.error || "Submission failed. Please try again.");
+      }
       if (success) {
         try {
           const w = window as any;
