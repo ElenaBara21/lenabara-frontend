@@ -187,7 +187,7 @@ export async function POST(req: NextRequest) {
     });
 
     if (!anyOk) {
-      const firstError = results.find((r: any) => !r.ok && r.error)?.error;
+      const firstError = results.find((r: any) => !r.ok && typeof r.error === "string")?.error as string | undefined;
       return NextResponse.json({ ok: false, error: firstError || "Lead capture failed", results }, { status: 502 });
     }
 
