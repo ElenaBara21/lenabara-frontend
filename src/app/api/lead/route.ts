@@ -115,6 +115,38 @@ async function sendGenericWebhook(payload: LeadPayload) {
   return { ok: res.ok } as const;
 }
 
+async function sendBrevo(payload: LeadPayload) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) return { ok: false, skipped: true } as const;
+
+  const listIdRaw = process.env.BREVO_LEAD_LIST_ID;
+  const listId = listIdRaw ? Number(listIdRaw) : undefined;
+
+  const res = await fetch("https://api.brevo.com/v3/contacts", {
+    method: "POST",
+    headers: {
+      "api-key": apiKey,
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    body: JSON.stringify({
+      email: payload.email,
+      attributes: {
+        FIRSTNAME: payload.name,
+        PHONE: payload.phone,
+        WEBSITE: payload.website,
+        MESSAGE: payload.message,
+        SOURCE: payload.source,
+        PLAN: payload.plan,
+      },
+      ...(listId ? { listIds: [listId] } : {}),
+      updateEnabled: true,
+    }),
+  });
+
+  return { ok: res.ok } as const;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const data = (await req.json()) as LeadPayload;
@@ -135,6 +167,7 @@ export async function POST(req: NextRequest) {
       sendNotion(data),
       sendSheets(data),
       sendGenericWebhook(data),
+      sendBrevo(data),
     ]);
 
     const results = tasks.map((t) => (t.status === "fulfilled" ? t.value : { ok: false, error: String(t.reason) }));
