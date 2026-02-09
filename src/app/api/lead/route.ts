@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 type LeadPayload = {
   name?: string;
   email?: string;
+  phone?: string;
   company?: string;
   website?: string;
   message?: string;
