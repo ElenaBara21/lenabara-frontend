@@ -150,6 +150,23 @@ async function sendBrevo(payload: LeadPayload) {
     return { ok: false, error: text || "Brevo error" } as const;
   }
 
+  if (listId) {
+    const addRes = await fetch(`https://api.brevo.com/v3/contacts/lists/${listId}/contacts/add`, {
+      method: "POST",
+      headers: {
+        "api-key": apiKey,
+        "content-type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({ emails: [payload.email] }),
+    });
+
+    if (!addRes.ok) {
+      const text = await addRes.text().catch(() => "");
+      return { ok: false, error: text || "Brevo list add error" } as const;
+    }
+  }
+
   return { ok: true } as const;
 }
 
