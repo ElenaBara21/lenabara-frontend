@@ -19,6 +19,8 @@ export default function LeadForm() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setOk(null);
+    setErr(null);
     const fd = new FormData(e.currentTarget);
     const lead: Lead = {
       name: String(fd.get("name") || "").trim(),
@@ -48,18 +50,25 @@ export default function LeadForm() {
 
     try {
       setPending(true);
-      setErr(null);
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(lead),
       });
       const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setOk(false);
+        setErr(json?.error || `Request failed (${res.status})`);
+        track("lead_submit", { ok: false, source: lead.source });
+        return;
+      }
+
       const success = Boolean(json?.ok);
       setOk(success);
       track("lead_submit", { ok: success, source: lead.source });
       if (!success) {
         setErr(json?.error || "Submission failed. Please try again.");
+        return;
       }
       if (success) {
         try {
@@ -72,9 +81,9 @@ export default function LeadForm() {
         } catch {}
         (e.currentTarget as HTMLFormElement).reset();
       }
-    } catch (e) {
+    } catch (e: any) {
       setOk(false);
-      setErr("Something went wrong. Please try again.");
+      setErr(e?.message || "Something went wrong. Please try again.");
     } finally {
       setPending(false);
     }
