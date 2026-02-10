@@ -134,11 +134,11 @@ async function sendBrevo(payload: LeadPayload) {
       email: payload.email,
       attributes: {
         FIRSTNAME: payload.name,
-        PHONE: payload.phone,
+        NUMBER: payload.phone,
         WEBSITE: payload.website,
         MESSAGE: payload.message,
         SOURCE: payload.source,
-        PLAN: payload.plan,
+        OPTIONS: payload.plan,
       },
       ...(listId ? { listIds: [listId] } : {}),
       updateEnabled: true,
