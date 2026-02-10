@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { track } from "../lib/analytics";
 
 type Lead = {
@@ -15,6 +15,7 @@ type Lead = {
 export default function LeadForm() {
   const [pending, setPending] = useState(false);
   const [ok, setOk] = useState<null | boolean>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -79,7 +80,7 @@ export default function LeadForm() {
             w.posthog.capture("lead_submit_success", { source: lead.source });
           }
         } catch {}
-        (e.currentTarget as HTMLFormElement).reset();
+        formRef.current?.reset();
       }
     } catch (e: any) {
       setOk(false);
@@ -90,7 +91,7 @@ export default function LeadForm() {
   }
 
   return (
-    <form className="mt-6 grid gap-4" onSubmit={onSubmit}>
+    <form ref={formRef} className="mt-6 grid gap-4" onSubmit={onSubmit}>
       <input name="name" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500" type="text" placeholder="Full Name" />
       <input name="email" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500" type="email" placeholder="Work Email" />
       <input name="phone" className="bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500" type="tel" placeholder="Phone number (WhatsApp preferred)" />
