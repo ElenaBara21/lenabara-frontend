@@ -163,6 +163,9 @@ async function sendBrevo(payload: LeadPayload) {
 
     if (!addRes.ok) {
       const text = await addRes.text().catch(() => "");
+      if (text.includes("Contact already in list")) {
+        return { ok: true } as const;
+      }
       return { ok: false, error: text || "Brevo list add error" } as const;
     }
   }
