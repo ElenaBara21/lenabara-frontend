@@ -6,6 +6,7 @@ type LeadPayload = {
   name?: string;
   email?: string;
   phone?: string;
+  package?: string;
   company?: string;
   website?: string;
   message?: string;
@@ -138,7 +139,7 @@ async function sendBrevo(payload: LeadPayload) {
         WEBSITE: payload.website,
         MESSAGE: payload.message,
         SOURCE: payload.source,
-        SELECT_YOUR_PACKAGE: payload.plan,
+        SELECT_YOUR_PACKAGE: payload.package || payload.plan,
       },
       ...(listId ? { listIds: [listId] } : {}),
       updateEnabled: true,
