@@ -133,12 +133,12 @@ async function sendBrevo(payload: LeadPayload) {
     body: JSON.stringify({
       email: payload.email,
       attributes: {
-        FIRSTNAME: payload.name,
-        NUMBER: payload.phone,
+        FULL_NAME: payload.name,
+        PHONE: payload.phone,
         WEBSITE: payload.website,
         MESSAGE: payload.message,
         SOURCE: payload.source,
-        OPTIONS: payload.plan,
+        SELECT_YOUR_PACKAGE: payload.plan,
       },
       ...(listId ? { listIds: [listId] } : {}),
       updateEnabled: true,
