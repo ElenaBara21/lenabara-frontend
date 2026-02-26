@@ -76,9 +76,9 @@ export default function Hero({ src = "/hero/lenabara-hero.jpg.png" }: { src?: st
         <div className="absolute inset-x-0 top-[78%] md:top-[80%] -translate-y-1/2 z-30">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-[920px] mx-auto text-center">
-              <p className="text-white text-xs md:text-sm mb-2 tracking-[0.2em] leading-snug uppercase">Your Partner for Profitable Ads</p>
+              <p className="text-white text-xs md:text-sm mb-2 tracking-[0.2em] leading-snug uppercase">Meta & Google Ads + Landing Pages + Advanced Tracking (GA4 & GTM)</p>
               <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-orange-500 leading-[1.05] uppercase">
-                <span className="block whitespace-nowrap">WE TURN CLICKS INTO CLIENTS</span>
+                <span className="block whitespace-nowrap">Structured Lead Generation Systems for UAE Service Businesses</span>
               </h4>
               {/* Barcode removed as requested */}
             </div>

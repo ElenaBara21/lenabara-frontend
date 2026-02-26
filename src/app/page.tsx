@@ -35,10 +35,10 @@ export default function LandingPage() {
       <section className="mx-auto max-w-7xl px-6 mt-[4%] mb-[5%]">
         <div className="flex flex-wrap justify-center">
           <a
-            href="#packages"
+            href="#contact"
             className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
           >
-            SEE PACKAGES
+            BOOK STRATEGY CALL
           </a>
         </div>
       </section>
