@@ -72,8 +72,8 @@ export default function Hero({ src = "/hero/lenabara-hero.jpg.png" }: { src?: st
           <p className="text-xl md:text-3xl font-extrabold text-orange-500 tracking-wide">LENABARA.</p>
         </div>
 
-        {/* Headline block centered with equal side margins, nudged down */}
-        <div className="absolute inset-x-0 top-[78%] md:top-[80%] -translate-y-1/2 z-30">
+        {/* Headline block centered with equal side margins */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-[920px] mx-auto text-center">
               <p className="text-white text-xs md:text-sm mb-2 tracking-[0.2em] leading-snug uppercase">Meta & Google Ads + Landing Pages + Advanced Tracking (GA4 & GTM)</p>
