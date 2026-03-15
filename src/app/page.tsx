@@ -101,34 +101,24 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                t: "PERFORMANCE-FIRST",
-                q: "Everything we do is built to measure — from campaign to conversion.",
-                s: "No vanity metrics. Every dirham is tracked, analyzed, and optimized for growth.",
+                t: "Conversion Tracking First",
+                q: "Before launching campaigns we implement GA4, Meta Pixel, and Google tracking so every lead can be measured.",
+                s: "Tracking is not an afterthought — it's the foundation of every high-performing funnel.",
               },
               {
-                t: "TRANSPARENT",
-                q: "No hidden fees. You own your data, your accounts, and your results.",
-                s: "Your business, your numbers — we just help you make them work smarter.",
+                t: "Performance-Driven Strategy",
+                q: "Campaigns are built around measurable business outcomes: leads, bookings, and sales.",
+                s: "We design tests, budgets, and creative to move real ROI metrics, not vanity KPIs.",
               },
               {
-                t: "BOUTIQUE & PERSONAL",
-                q: "You'll never be one of 50 accounts. I personally monitor every campaign.",
-                s: "Expect real communication, strategic feedback, and proactive optimization.",
+                t: "Transparent Reporting",
+                q: "Clear dashboards and reporting show exactly where your marketing budget goes.",
+                s: "No surprises. You see the numbers, the spend, and the impact — in real time.",
               },
               {
-                t: "STRATEGIC & ANALYTICAL",
-                q: "Your campaigns are guided by insights, not hunches.",
-                s: "Research-led planning, testing frameworks, and attribution-guide decisions.",
-              },
-              {
-                t: "CERTIFIED & CREDIBLE",
-                q: "Meta Certified Media Buyer | Google Ads Specialist | Master's in Marketing",
-                s: "You're partnering with a professional who knows both strategy and execution.",
-              },
-              {
-                t: "UAE LOCAL. GLOBAL STANDARD",
-                q: "Bilingual campaigns crafted for the GCC — with global best practices.",
-                s: "Arabic + English creatives, cultural nuance, and performance discipline.",
+                t: "Data + Marketing Expertise",
+                q: "Background in Data Science and Marketing allows decisions based on real performance data, not guesswork.",
+                s: "We combine analytics rigor with creative strategy to scale what works and stop what doesn't.",
               },
             ].map((n, i) => (
               <div
