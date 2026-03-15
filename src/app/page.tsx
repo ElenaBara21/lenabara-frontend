@@ -50,7 +50,7 @@ export default function LandingPage() {
           <div className="mt-8 flex justify-center">
             <a
               href="/contact"
-              className="bg-orange-500 hover:bg-orange-600 transition text-black px-8 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
+              className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:bg-white/20"
             >
               Book Free Audit
             </a>
