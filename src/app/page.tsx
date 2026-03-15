@@ -34,8 +34,11 @@ export default function LandingPage() {
       {/* Problems we solve */}
       <section className="mx-auto max-w-7xl px-6 mt-12">
         <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">PROBLEMS WE SOLVE</p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase">Why Most UAE Businesses Lose Money on Paid Ads</h2>
-        <div className="mt-6 mx-auto max-w-3xl text-neutral-200">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase mt-3">
+          Why Most UAE Businesses Lose Money on Paid Ads
+        </h2>
+        <div className="h-0.5 w-20 bg-orange-500 mx-auto my-4" />
+        <div className="mx-auto max-w-3xl text-neutral-200">
           <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
             <li>Ads generate clicks but not real leads</li>
             <li>Agencies don’t install proper conversion tracking</li>
