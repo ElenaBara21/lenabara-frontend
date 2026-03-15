@@ -1,52 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
 
-export default function Hero({ src = "/hero/lenabara-hero.jpg.png" }: { src?: string }) {
-  const [bgPath, setBgPath] = useState<string>(src);
-  const [hasImage, setHasImage] = useState<boolean>(false);
-
-  useEffect(() => {
-    let mounted = true;
-    function tryLoad(cands: string[], onSuccess: (p: string) => void, onFail?: () => void) {
-      const [head, ...rest] = cands;
-      if (!head) return onFail && onFail();
-      const test = new Image();
-      test.onload = () => {
-        if (!mounted) return;
-        onSuccess(head);
-      };
-      test.onerror = () => tryLoad(rest, onSuccess, onFail);
-      test.src = head;
-    }
-
-    tryLoad(
-      [src, "/hero/lenabara-hero.jpg", "/hero/lenabara-hero.png", "/hero/lenabara-hero.JPG"],
-      (p) => {
-        setBgPath(p);
-        setHasImage(true);
-      },
-      () => setHasImage(false)
-    );
-
-    return () => { mounted = false; };
-  }, [src]);
-
+export default function Hero() {
   return (
     <section id="offer" className="relative">
       <div className="relative mx-auto w-full max-w-[1200px] h-[500px]">
-        {hasImage ? (
-          <>
-            <img
-              src={bgPath}
-              alt="Lenabara hero"
-              className="absolute inset-0 h-full w-full object-cover z-0"
-              style={{ objectPosition: "center 25%" }}
-            />
-            <div className="absolute inset-0 bg-black/40 z-10" />
-          </>
-        ) : (
-          <div className="absolute inset-0 bg-neutral-950 z-0" />
-        )}
+        <div className="absolute inset-0 bg-neutral-950 z-0" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
 
         {/* Corner accents (always visible) */}
         <div className="pointer-events-none absolute inset-0 z-20">
