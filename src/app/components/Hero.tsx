@@ -40,6 +40,26 @@ export default function Hero() {
                 <span className="block">Performance Marketing & Lead Generation Systems</span>
                 <span className="block">for UAE Service Businesses</span>
               </h4>
+              <p className="mt-4 text-white text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                Meta Ads, Google Ads, and Conversion Tracking systems designed to generate qualified leads — not just clicks.
+              </p>
+              <p className="mt-4 text-white text-sm md:text-base tracking-wide max-w-2xl mx-auto">
+                Meta Certified Media Buyer | Google Ads Certified | Data Analytics Specialist
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-3 text-sm font-semibold text-neutral-950 shadow-lg shadow-orange-500/30 transition hover:bg-orange-400"
+                >
+                  Book Free Strategy Call
+                </a>
+                <a
+                  href="/work"
+                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                >
+                  See Case Studies
+                </a>
+              </div>
               {/* Barcode removed as requested */}
             </div>
           </div>
