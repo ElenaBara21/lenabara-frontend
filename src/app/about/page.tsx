@@ -14,7 +14,7 @@ export default function AboutPage() {
           {/* Left: Headline & Bio */}
           <div>
             <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
-              <span className="block text-orange-500">Behind The Strategy</span>
+              <span className="block text-orange-500">Behind the Strategy</span>
             </h2>
             <div className="text-lg md:text-xl leading-relaxed text-neutral-200 space-y-4">
               <p>
