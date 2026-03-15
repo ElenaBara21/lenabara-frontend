@@ -33,6 +33,7 @@ export default function LandingPage() {
 
       {/* Problems we solve */}
       <section className="mx-auto max-w-7xl px-6 mt-12">
+        <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">PROBLEMS WE SOLVE</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase">Why Most UAE Businesses Lose Money on Paid Ads</h2>
         <div className="mt-6 mx-auto max-w-3xl text-neutral-200">
           <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
