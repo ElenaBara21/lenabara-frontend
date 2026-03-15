@@ -31,6 +31,29 @@ export default function LandingPage() {
       {/* Header is provided globally via layout Header component */}
       <Hero />
 
+      {/* Problems we solve */}
+      <section className="mx-auto max-w-7xl px-6 mt-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase">Why Most UAE Businesses Lose Money on Paid Ads</h2>
+        <div className="mt-6 mx-auto max-w-3xl text-neutral-200">
+          <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
+            <li>Ads generate clicks but not real leads</li>
+            <li>Agencies don’t install proper conversion tracking</li>
+            <li>WhatsApp leads are impossible to measure</li>
+            <li>Ad budgets are wasted on the wrong audiences</li>
+            <li>Business owners cannot see real ROI</li>
+          </ul>
+          <p className="mt-6 text-white text-lg md:text-xl font-semibold text-center">We fix this with structured lead generation systems.</p>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/contact"
+              className="bg-orange-500 hover:bg-orange-600 transition text-black px-8 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
+            >
+              Book Free Audit
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Primary CTA below hero */}
       <section className="mx-auto max-w-7xl px-6 mt-[4%] mb-[5%]">
         <div className="flex flex-wrap justify-center">
