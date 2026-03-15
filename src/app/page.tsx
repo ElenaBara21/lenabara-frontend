@@ -54,18 +54,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Primary CTA below hero */}
-      <section className="mx-auto max-w-7xl px-6 mt-[4%] mb-[5%]">
-        <div className="flex flex-wrap justify-center">
-          <a
-            href="#contact"
-            className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.2em]"
-          >
-            BOOK STRATEGY CALL
-          </a>
-        </div>
-      </section>
-
       {/* Lead magnet / Readiness kit (restored) */}
       <section id="lead-magnet" className="mx-auto max-w-7xl px-6 mt-8">
         <div className="rounded-2xl border border-neutral-800 bg-[#0e0c0c] p-8 md:p-12">

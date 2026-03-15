@@ -45,13 +45,13 @@ export default function Hero() {
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-3 text-sm font-semibold text-neutral-950 shadow-lg shadow-orange-500/30 transition hover:bg-orange-400"
+                  className="inline-flex items-center justify-center rounded-none bg-orange-500 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-neutral-950 transition hover:bg-orange-400"
                 >
                   Book Free Strategy Call
                 </a>
                 <a
                   href="/work"
-                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                  className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:bg-white/20"
                 >
                   See Case Studies
                 </a>
