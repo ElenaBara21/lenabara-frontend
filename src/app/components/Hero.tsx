@@ -32,7 +32,7 @@ export default function Hero() {
         </div>
 
         {/* Headline block centered with equal side margins */}
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30">
+        <div className="absolute inset-x-0 top-[55%] -translate-y-1/2 z-30">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-[920px] mx-auto text-center">
               <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-orange-500 leading-[1.05] uppercase">
