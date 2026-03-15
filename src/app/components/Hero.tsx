@@ -35,16 +35,12 @@ export default function Hero() {
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30">
           <div className="mx-auto max-w-7xl px-6">
             <div className="max-w-[920px] mx-auto text-center">
-              <p className="text-white text-xs md:text-sm mb-2 tracking-[0.2em] leading-snug uppercase">Meta & Google Ads + Landing Pages + Advanced Tracking (GA4 & GTM)</p>
               <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-orange-500 leading-[1.05] uppercase">
                 <span className="block">Performance Marketing & Lead Generation Systems</span>
                 <span className="block">for UAE Service Businesses</span>
               </h4>
-              <p className="mt-4 text-white text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              <p className="mt-4 text-white text-base md:text-lg max-w-xl mx-auto">
                 Meta Ads, Google Ads, and Conversion Tracking systems designed to generate qualified leads — not just clicks.
-              </p>
-              <p className="mt-4 text-white text-sm md:text-base tracking-wide max-w-2xl mx-auto">
-                Meta Certified Media Buyer | Google Ads Certified | Data Analytics Specialist
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
                 <a
