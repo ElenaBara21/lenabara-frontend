@@ -43,7 +43,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-6">
+          <div className="mt-10 flex flex-row flex-nowrap items-center justify-center gap-10 overflow-x-auto py-2">
             {[
               "Meta Certified Media Buying Professional",
               "Google Ads Certified",
@@ -53,8 +53,8 @@ export default function LandingPage() {
             ].map((text, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center gap-2 py-4 ${
-                  index > 0 ? "border-l border-white/10 pl-6" : ""
+                className={`flex flex-col items-center gap-2 min-w-[220px] ${
+                  index > 0 ? "border-l border-white/10 pl-8" : ""
                 }`}
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
