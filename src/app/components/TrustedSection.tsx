@@ -24,8 +24,8 @@ export default function TrustedSection() {
 
   const maxIndex = useMemo(() => Math.max(0, ITEMS.length - 3), []);
 
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(maxIndex, i + 1));
+  const prev = () => setIndex((i) => (i === 0 ? maxIndex : i - 1));
+  const next = () => setIndex((i) => (i === maxIndex ? 0 : i + 1));
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -68,8 +68,7 @@ export default function TrustedSection() {
             <div className="relative">
               <button
                 onClick={prev}
-                disabled={index === 0}
-                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40 disabled:opacity-40"
+                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40"
                 aria-label="Previous"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,8 +77,7 @@ export default function TrustedSection() {
               </button>
               <button
                 onClick={next}
-                disabled={index === maxIndex}
-                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40 disabled:opacity-40"
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40"
                 aria-label="Next"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
