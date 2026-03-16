@@ -33,27 +33,35 @@ export default function LandingPage() {
 
       {/* Trusted performance marketing expertise */}
       <section className="mx-auto max-w-7xl px-6 mt-12">
-        <div className="rounded-2xl bg-gradient-to-r from-purple-950 via-neutral-950 to-purple-950 p-10 md:p-14 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-purple-300 leading-tight">
-            Trusted Performance<br />Marketing Expertise
-          </h2>
-          <p className="mt-4 text-neutral-200 max-w-2xl mx-auto">
-            Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
-          </p>
+        <div className="rounded-2xl bg-gradient-to-r from-purple-950 via-neutral-950 to-purple-950 p-10 md:p-14">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-purple-300 leading-tight">
+              Trusted Performance<br />Marketing Expertise
+            </h2>
+            <p className="mt-4 text-neutral-200 max-w-2xl mx-auto">
+              Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
+            </p>
+          </div>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+          <div className="mt-10 space-y-4">
+            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
               <p className="text-lg font-semibold text-white">Meta Certified Media Buying Professional</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
               <p className="text-lg font-semibold text-white">Google Ads Certified</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
               <p className="text-lg font-semibold text-white">Data Science & Business Analytics (UT Austin)</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <p className="text-lg font-semibold text-white">UAE Licensed Marketing Consultancy (RAKEZ)</p>
-              <p className="text-sm text-neutral-300 mt-1">Social Media Advertiser Permit (National Media Authority)</p>
+            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
+              <div>
+                <p className="text-lg font-semibold text-white">UAE Licensed Marketing Consultancy (RAKEZ)</p>
+                <p className="text-sm text-neutral-300 mt-1">Social Media Advertiser Permit (National Media Authority)</p>
+              </div>
             </div>
           </div>
         </div>
