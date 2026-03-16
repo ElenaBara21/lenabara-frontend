@@ -43,7 +43,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 divide-y divide-white/10">
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
             {[
               "Meta Certified Media Buying Professional",
               "Google Ads Certified",
@@ -51,9 +51,14 @@ export default function LandingPage() {
               "UAE Licensed Marketing Consultancy (RAKEZ)",
               "Social Media Advertiser Permit (National Media Authority)",
             ].map((text, index) => (
-              <div key={index} className="flex flex-col items-start gap-3 py-4">
+              <div
+                key={index}
+                className={`flex flex-col items-center gap-2 py-4 ${
+                  index > 0 ? "border-l border-white/10 pl-6" : ""
+                }`}
+              >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
-                <p className="text-lg font-semibold text-white">{text}</p>
+                <p className="text-lg font-semibold text-white text-center">{text}</p>
               </div>
             ))}
           </div>
