@@ -108,13 +108,15 @@ export default function TrustedSection() {
                     <div key={text} className="min-w-[300px] rounded-xl border border-white/10 bg-white/5 px-6 py-6">
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-300">
                         ✓
-                      </div>                    {BADGE_MAP[text] && (
+                    </div>
+                    <p className="mt-4 text-sm font-semibold text-white leading-snug">{text}</p>
+                    {BADGE_MAP[text] && (
                       <img
                         src={BADGE_MAP[text].src}
                         alt={BADGE_MAP[text].alt}
                         className="mt-4 h-12 w-auto"
                       />
-                    )}                      <p className="mt-4 text-sm font-semibold text-white leading-snug">{text}</p>
+                    )}
                     </div>
                   ))}
                 </div>
