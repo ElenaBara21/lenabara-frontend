@@ -65,36 +65,34 @@ export default function TrustedSection() {
 
           <div className="md:col-span-2">
             <div className="relative">
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={prev}
-                  disabled={index === 0}
-                  className="h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
-                  aria-label="Previous"
-                >
-                  <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 15l-5-5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <button
-                  onClick={next}
-                  disabled={index === maxIndex}
-                  className="h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
-                  aria-label="Next"
-                >
-                  <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
+              <button
+                onClick={prev}
+                disabled={index === 0}
+                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
+                aria-label="Previous"
+              >
+                <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15l-5-5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                onClick={next}
+                disabled={index === maxIndex}
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
+                aria-label="Next"
+              >
+                <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
 
               <div className="mt-6 overflow-hidden">
                 <div
                   className="flex gap-6 transition-transform duration-300"
-                  style={{ transform: `translateX(-${index * 260}px)` }}
+                  style={{ transform: `translateX(-${index * 320}px)` }}
                 >
                   {ITEMS.map((text) => (
-                    <div key={text} className="min-w-[240px] rounded-xl border border-white/10 bg-white/5 px-5 py-6">
+                    <div key={text} className="min-w-[300px] rounded-xl border border-white/10 bg-white/5 px-6 py-6">
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-300">
                         ✓
                       </div>
