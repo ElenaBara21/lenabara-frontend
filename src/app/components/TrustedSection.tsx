@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const ITEMS = [
   "Meta Certified Media Buying Professional",
@@ -10,13 +10,30 @@ const ITEMS = [
   "Social Media Advertiser Permit (National Media Authority)",
 ];
 
+const BADGES = [
+  { src: "/badges/meta-buyer-badge.png", alt: "Meta Certified Media Buying Professional" },
+  { src: "/badges/meta-performance-badge.png", alt: "Meta Performance Marketing Specialist" },
+  { src: "/badges/google-partner-badge.png", alt: "Google Partner" },
+];
+
 export default function TrustedSection() {
   const [index, setIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const maxIndex = useMemo(() => Math.max(0, ITEMS.length - 3), []);
 
   const prev = () => setIndex((i) => Math.max(0, i - 1));
   const next = () => setIndex((i) => Math.min(maxIndex, i + 1));
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setIndex((i) => (i === maxIndex ? 0 : i + 1));
+    }, 4500);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [maxIndex]);
 
   return (
     <section className="mx-auto max-w-7xl px-6 mt-12">
@@ -32,6 +49,17 @@ export default function TrustedSection() {
             <p className="mt-3 text-sm text-neutral-400 max-w-xs">
               Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
             </p>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              {BADGES.map((badge) => (
+                <img
+                  key={badge.src}
+                  src={badge.src}
+                  alt={badge.alt}
+                  className="h-14 w-auto shrink-0 opacity-90 transition hover:opacity-100"
+                />
+              ))}
+            </div>
           </div>
 
           <div className="md:col-span-2">
