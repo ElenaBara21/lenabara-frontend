@@ -58,6 +58,24 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Trusted performance marketing expertise */}
+      <section className="mx-auto max-w-7xl px-6 mt-12">
+        <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">TRUSTED PERFORMANCE MARKETING EXPERTISE</p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase mt-3">
+          Trusted Performance Marketing Expertise
+        </h2>
+        <div className="h-0.5 w-20 bg-orange-500 mx-auto my-4" />
+        <div className="mx-auto max-w-3xl text-neutral-200">
+          <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
+            <li>Meta Certified Media Buying Professional</li>
+            <li>Google Ads Certified</li>
+            <li>Data Science & Business Analytics (UT Austin)</li>
+            <li>Master's Degree in Marketing Management</li>
+            <li>UAE-Licensed Marketing Consultancy (RAKEZ) - Social Media Advertiser Permit (National Media Authority)</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Lead magnet / Readiness kit (restored) */}
       <section id="lead-magnet" className="mx-auto max-w-7xl px-6 mt-8">
         <div className="rounded-2xl border border-neutral-800 bg-[#0e0c0c] p-8 md:p-12">
