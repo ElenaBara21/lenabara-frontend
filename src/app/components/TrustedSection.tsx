@@ -12,6 +12,7 @@ const ITEMS = [
 
 const BADGES = [
   { src: "/badges/meta-buyer-badge.png", alt: "Meta Certified Media Buying Professional" },
+  { src: "/badges/meta-performance-badge.png", alt: "Meta Certified Performance Marketing Specialist" },
   { src: "/badges/meta-performance-badge.png", alt: "Meta Performance Marketing Specialist" },
   { src: "/badges/google-partner-badge.png", alt: "Google Partner" },
 ];
