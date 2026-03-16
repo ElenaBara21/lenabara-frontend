@@ -66,16 +66,6 @@ export default function TrustedSection() {
               Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              {BADGES.map((badge) => (
-                <img
-                  key={badge.src}
-                  src={badge.src}
-                  alt={badge.alt}
-                  className="h-14 w-auto shrink-0 opacity-90 transition hover:opacity-100"
-                />
-              ))}
-            </div>
           </div>
 
           <div className="md:col-span-2">
