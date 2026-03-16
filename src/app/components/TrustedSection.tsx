@@ -11,11 +11,25 @@ const ITEMS = [
   "Social Media Advertiser Permit (National Media Authority)",
 ];
 
+const BADGE_MAP: Record<string, { src: string; alt: string }> = {
+  "Meta Certified Media Buying Professional": {
+    src: "/badges/meta-buyer-badge.png",
+    alt: "Meta Certified Media Buying Professional",
+  },
+  "Meta Certified Performance Marketing Specialist": {
+    src: "/badges/meta-performance-badge.png",
+    alt: "Meta Certified Performance Marketing Specialist",
+  },
+  "Google Ads Certified": {
+    src: "/badges/google-partner-badge.png",
+    alt: "Google Partner",
+  },
+};
+
 const BADGES = [
-  { src: "/badges/meta-buyer-badge.png", alt: "Meta Certified Media Buying Professional" },
-  { src: "/badges/meta-performance-badge.png", alt: "Meta Certified Performance Marketing Specialist" },
-  { src: "/badges/meta-performance-badge.png", alt: "Meta Performance Marketing Specialist" },
-  { src: "/badges/google-partner-badge.png", alt: "Google Partner" },
+  BADGE_MAP["Meta Certified Media Buying Professional"],
+  BADGE_MAP["Meta Certified Performance Marketing Specialist"],
+  BADGE_MAP["Google Ads Certified"],
 ];
 
 export default function TrustedSection() {
@@ -94,8 +108,13 @@ export default function TrustedSection() {
                     <div key={text} className="min-w-[300px] rounded-xl border border-white/10 bg-white/5 px-6 py-6">
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-300">
                         ✓
-                      </div>
-                      <p className="mt-4 text-sm font-semibold text-white leading-snug">{text}</p>
+                      </div>                    {BADGE_MAP[text] && (
+                      <img
+                        src={BADGE_MAP[text].src}
+                        alt={BADGE_MAP[text].alt}
+                        className="mt-4 h-12 w-auto"
+                      />
+                    )}                      <p className="mt-4 text-sm font-semibold text-white leading-snug">{text}</p>
                     </div>
                   ))}
                 </div>
