@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const ITEMS = [
   "Meta Certified Media Buying Professional",
+  "Meta Certified Performance Marketing Specialist",
   "Google Ads Certified",
   "Data Science & Business Analytics (UT Austin)",
   "UAE Licensed Marketing Consultancy (RAKEZ)",
