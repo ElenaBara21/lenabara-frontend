@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
 const ITEMS = [
   "Meta Certified Media Buying Professional",
@@ -26,30 +26,13 @@ const BADGE_MAP: Record<string, { src: string; alt: string }> = {
   },
 };
 
-const BADGES = [
-  BADGE_MAP["Meta Certified Media Buying Professional"],
-  BADGE_MAP["Meta Certified Performance Marketing Specialist"],
-  BADGE_MAP["Google Ads Certified"],
-];
-
 export default function TrustedSection() {
   const [index, setIndex] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const maxIndex = useMemo(() => Math.max(0, ITEMS.length - 3), []);
 
   const prev = () => setIndex((i) => (i === 0 ? maxIndex : i - 1));
   const next = () => setIndex((i) => (i === maxIndex ? 0 : i + 1));
-
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setIndex((i) => (i === maxIndex ? 0 : i + 1));
-    }, 4500);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [maxIndex]);
 
   return (
     <section className="mx-auto max-w-7xl px-6 mt-12">

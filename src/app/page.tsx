@@ -519,20 +519,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section id="trust-badges" className="mx-auto max-w-7xl px-6 mt-6 mb-10">
-        <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 text-center">
-          <h5 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-0 text-center tracking-tight leading-snug">
-            Lena Bara is a certified Meta Media Buying Professional and Google Ads Partner.
-          </h5>
-          <div className="flex flex-wrap justify-center gap-6">
-            <img src="/badges/meta-buyer-badge.png" alt="Meta Certified Media Buying Professional" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
-            <img src="/badges/meta-performance-badge.png" alt="Meta Performance Marketing Specialist" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
-            <img src="/badges/google-partner-badge.png" alt="Google Partner" className="h-16 w-auto shrink-0 transition-transform duration-200 ease-out hover:scale-110 active:scale-105" />
-          </div>
-        </div>
-      </section>
-
       {/* This Is How We Do It */}
       <section id="how-we-do-it" className="mx-auto max-w-7xl px-6 mt-12">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">This is how we do it</h4>
