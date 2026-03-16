@@ -38,7 +38,7 @@ export default function TrustedSection() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 mt-12">
-      <div className="relative overflow-hidden rounded-none border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
+      <div className="relative overflow-visible rounded-none border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
         <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-orange-500/20 via-orange-400/10 to-transparent blur-2xl" />
         <div className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-gradient-to-tr from-neutral-700/30 via-neutral-600/10 to-transparent blur-2xl" />
 
