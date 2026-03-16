@@ -31,6 +31,34 @@ export default function LandingPage() {
       {/* Header is provided globally via layout Header component */}
       <Hero />
 
+      {/* Trusted performance marketing expertise */}
+      <section className="mx-auto max-w-7xl px-6 mt-12">
+        <div className="rounded-2xl bg-gradient-to-r from-purple-950 via-neutral-950 to-purple-950 p-10 md:p-14 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-purple-300 leading-tight">
+            Trusted Performance<br />Marketing Expertise
+          </h2>
+          <p className="mt-4 text-neutral-200 max-w-2xl mx-auto">
+            Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <p className="text-lg font-semibold text-white">Meta Certified Media Buying Professional</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <p className="text-lg font-semibold text-white">Google Ads Certified</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <p className="text-lg font-semibold text-white">Data Science & Business Analytics (UT Austin)</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <p className="text-lg font-semibold text-white">UAE Licensed Marketing Consultancy (RAKEZ)</p>
+              <p className="text-sm text-neutral-300 mt-1">Social Media Advertiser Permit (National Media Authority)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problems we solve */}
       <section className="mx-auto max-w-7xl px-6 mt-12">
         <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">PROBLEMS WE SOLVE</p>
@@ -55,24 +83,6 @@ export default function LandingPage() {
               Book Free Audit
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Trusted performance marketing expertise */}
-      <section className="mx-auto max-w-7xl px-6 mt-12">
-        <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">TRUSTED PERFORMANCE MARKETING EXPERTISE</p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase mt-3">
-          Trusted Performance Marketing Expertise
-        </h2>
-        <div className="h-0.5 w-20 bg-orange-500 mx-auto my-4" />
-        <div className="mx-auto max-w-3xl text-neutral-200">
-          <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
-            <li>Meta Certified Media Buying Professional</li>
-            <li>Google Ads Certified</li>
-            <li>Data Science & Business Analytics (UT Austin)</li>
-            <li>Master's Degree in Marketing Management</li>
-            <li>UAE-Licensed Marketing Consultancy (RAKEZ) - Social Media Advertiser Permit (National Media Authority)</li>
-          </ul>
         </div>
       </section>
 
