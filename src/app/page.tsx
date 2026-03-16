@@ -7,6 +7,7 @@ import BudgetCalculator from "./packages-details/components/BudgetCalculator";
 import LeadForm from "./components/LeadForm";
 import DownloadKitModal from "./components/DownloadKitModal";
 import Hero from "./components/Hero";
+import TrustedSection from "./components/TrustedSection";
 import HowWeDoIt from "./components/HowWeDoIt";
 import Testimonials from "./components/Testimonials";
 import Collapsible from "./components/Collapsible";
@@ -32,50 +33,7 @@ export default function LandingPage() {
       <Hero />
 
       {/* Trusted performance marketing expertise */}
-      <section className="mx-auto max-w-7xl px-6 mt-12">
-        <div className="relative overflow-hidden rounded-none border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
-          <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-orange-500/20 via-orange-400/10 to-transparent blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-gradient-to-tr from-neutral-700/30 via-neutral-600/10 to-transparent blur-2xl" />
-
-          <div className="grid md:grid-cols-3 gap-6 items-start">
-            <div className="md:col-span-1">
-              <p className="text-white text-2xl md:text-4xl font-extrabold uppercase leading-tight">
-                Trusted<br />Performance<br />Marketing Expertise
-              </p>
-              <p className="mt-3 text-sm text-neutral-400 max-w-xs">
-                Certified credentials + real-world campaign wins — so you can trust the strategy, tracking, and execution.
-              </p>
-            </div>
-
-            <div className="md:col-span-2">
-              <div className="flex flex-nowrap items-start gap-6 overflow-x-auto pb-2">
-                {[
-                  "Meta Certified Media Buying Professional",
-                  "Google Ads Certified",
-                  "Data Science & Business Analytics (UT Austin)",
-                  "UAE Licensed Marketing Consultancy (RAKEZ)",
-                  "Social Media Advertiser Permit (National Media Authority)",
-                ].map((text, index) => (
-                  <div
-                    key={index}
-                    className={`flex min-w-[220px] flex-col items-start gap-3 ${
-                      index > 0 ? "border-l border-white/10 pl-6" : ""
-                    }`}
-                  >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-300">
-                      ✓
-                    </span>
-                    <p className="text-base font-semibold text-white">{text}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-xs text-neutral-400">
-                Scroll horizontally if these items don’t fit on your screen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TrustedSection />
 
       {/* Problems we solve */}
       <section className="mx-auto max-w-7xl px-6 mt-12">
