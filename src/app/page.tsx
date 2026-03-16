@@ -43,26 +43,19 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="mt-10 space-y-4">
-            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
-              <p className="text-lg font-semibold text-white">Meta Certified Media Buying Professional</p>
-            </div>
-            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
-              <p className="text-lg font-semibold text-white">Google Ads Certified</p>
-            </div>
-            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
-              <p className="text-lg font-semibold text-white">Data Science & Business Analytics (UT Austin)</p>
-            </div>
-            <div className="flex items-start gap-4 border-t border-white/10 pt-4">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
-              <div>
-                <p className="text-lg font-semibold text-white">UAE Licensed Marketing Consultancy (RAKEZ)</p>
-                <p className="text-sm text-neutral-300 mt-1">Social Media Advertiser Permit (National Media Authority)</p>
+          <div className="mt-10 grid grid-cols-1 gap-6 divide-y divide-white/10">
+            {[
+              "Meta Certified Media Buying Professional",
+              "Google Ads Certified",
+              "Data Science & Business Analytics (UT Austin)",
+              "UAE Licensed Marketing Consultancy (RAKEZ)",
+              "Social Media Advertiser Permit (National Media Authority)",
+            ].map((text, index) => (
+              <div key={index} className="flex flex-col items-start gap-3 py-4">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-purple-200">✓</span>
+                <p className="text-lg font-semibold text-white">{text}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
