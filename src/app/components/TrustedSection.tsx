@@ -68,7 +68,7 @@ export default function TrustedSection() {
               <button
                 onClick={prev}
                 disabled={index === 0}
-                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
+                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40 disabled:opacity-40"
                 aria-label="Previous"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@ export default function TrustedSection() {
               <button
                 onClick={next}
                 disabled={index === maxIndex}
-                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 h-10 w-10 rounded-none bg-orange-500/10 text-orange-300 hover:bg-orange-500/20 disabled:opacity-40"
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 h-12 w-12 rounded-none bg-black/30 text-orange-300 hover:bg-black/40 disabled:opacity-40"
                 aria-label="Next"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
