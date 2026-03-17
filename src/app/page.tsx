@@ -285,46 +285,38 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Performance Partner (updated) */}
+            {/* Performance Partner */}
             <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
               <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">PERFORMANCE<br className='md:hidden'/> PARTNER</p>
+              <p className="mt-1 text-neutral-300 text-center text-base font-medium">Full Performance Marketing Partnership</p>
 
               {/* Investment panel */}
               <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-                <p className="text-orange-400 font-extrabold">Investment</p>
-                <p className="text-white font-semibold">AED 9,000 / month</p>
-                <p className="text-xs text-neutral-400">(Custom plans available for higher ad volumes)</p>
+                <p className="text-white font-bold text-lg">AED 9,000 <span className="text-sm font-normal text-neutral-400">/ month</span></p>
               </div>
 
               <div className="mt-3 space-y-3 text-neutral-300">
-                <p><span className="text-orange-400 font-semibold">Ideal for:</span> Established UAE businesses ready for a long-term performance marketing partnership — with full-funnel strategy, reporting, and dedicated campaign management.</p>
+                <p><span className="text-orange-400 font-semibold">Best for:</span> Established UAE businesses ready to scale their lead generation with ongoing campaign management and strategy.</p>
 
                 <Collapsible summary="Learn more">
                   <div className="space-y-2">
-                    <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> Monthly retainer (minimum 3 months)</p>
-                    <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                     <div className="pt-1">
                       <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>✅ Complete Meta + Google Ads ecosystem management</li>
-                        <li>✅ Advanced conversion tracking & cross-platform attribution</li>
-                        <li>✅ Full-funnel campaign strategy (TOFU, MOFU, BOFU)</li>
-                        <li>✅ Landing page & creative consultation</li>
-                        <li>✅ Weekly reporting + monthly strategy meeting</li>
-                        <li>✅ Continuous scaling, A/B testing & budget optimization</li>
-                        <li>✅ Priority WhatsApp & call support</li>
+                        <li>✅ Meta + Google Ads management</li>
+                        <li>✅ Full-funnel campaign strategy</li>
+                        <li>✅ Advanced analytics &amp; reporting</li>
+                        <li>✅ Weekly optimization cycles</li>
+                        <li>✅ Monthly strategy calls</li>
+                        <li>✅ Dedicated campaign management</li>
                       </ul>
-                    </div>
-                    <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">Goal</p>
-                      <p className="text-neutral-300 text-sm md:text-base mt-1">Act as your dedicated media partner — focused on performance, transparency, and measurable business growth.</p>
                     </div>
                   </div>
                 </Collapsible>
               </div>
               <div className="mt-6 flex justify-center">
                 <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_partner_apply">
-                  Apply for Partnership →
+                  Apply for Partnership
                 </a>
               </div>
             </div>
