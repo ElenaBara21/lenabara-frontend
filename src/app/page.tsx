@@ -501,11 +501,10 @@ export default function LandingPage() {
       {/* Got your estimated budget? — restored expanded block */}
       <section id="got-budget" className="mx-auto max-w-7xl px-6">
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Got your estimated budget?</h3>
-          <p className="text-neutral-300 max-w-3xl mx-auto mb-6">See if your landing page and setup are ads-ready — if not, download our readiness kit or book a free 15-minute call and we'll help you prioritise fixes.</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Want a custom growth plan for your business?</h3>
           <div className="flex justify-center gap-4">
-            <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free 15-min Call</a>
-            <DownloadKitModal triggerLabel={"Download Readiness Kit"} buttonClassName={"bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]"} />
+              <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free Strategy Call</a>
+              <DownloadKitModal triggerLabel={"Download Ads Readiness Kit"} buttonClassName={"bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]"} />
           </div>
         </div>
       </section>
