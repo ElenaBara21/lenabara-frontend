@@ -40,7 +40,7 @@ export default function Hero() {
                 <span className="block">for UAE Service Businesses</span>
               </h4>
               <p className="mt-4 text-white text-base md:text-lg max-w-xl mx-auto">
-                Meta Ads, Google Ads, and Conversion Tracking systems designed to generate qualified leads — not just clicks.
+                Meta Ads &bull; Google Ads &bull; Conversion Tracking built to generate measurable leads.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
                 <a
