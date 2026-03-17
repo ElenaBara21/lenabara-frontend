@@ -241,47 +241,46 @@ export default function LandingPage() {
 
           {/* Right column: Growth + Performance cards */}
           <div className="grid gap-6">
-            {/* Growth System (updated to match Pilot style) */}
-            <div className="relative rounded-3xl border border-orange-500/40 bg-neutral-900/50 p-6 md:p-8">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-neutral-900 px-3 py-1 border border-orange-500/60 rounded-full text-[10px] tracking-wide uppercase text-orange-400">Most Popular Choice</div>
+            {/* Growth System */}
+            <div className="relative rounded-3xl border border-orange-500/40 bg-neutral-900/50 p-6 md:p-8 shadow-[0_0_32px_0_rgba(249,115,22,0.15)]">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 px-3 py-1 rounded-full text-[10px] tracking-wide uppercase text-black font-bold">⭐ Most Popular</div>
               <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">GROWTH<br className='md:hidden'/> SYSTEM</p>
+              <p className="mt-1 text-neutral-300 text-center text-base font-medium">Scale Your Lead Generation</p>
 
               {/* Investment panel */}
               <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-                <p className="text-orange-400 font-extrabold">Investment</p>
-                <p className="text-white font-semibold">AED 5,000</p>
-                <p className="text-xs text-neutral-400">(Optional: Add-on tracking dashboard or landing page available)</p>
+                <p className="text-white font-bold text-lg">AED 5,000</p>
               </div>
 
               <div className="mt-3 space-y-3 text-neutral-300">
-                <p><span className="text-orange-400 font-semibold">Ideal for:</span> UAE businesses that have already tested ads and now want to scale results and increase ROI with advanced optimization and analytics.</p>
+                <p><span className="text-orange-400 font-semibold">Best for:</span> UAE businesses that already tested ads and want stronger results through optimization and analytics.</p>
 
                 <Collapsible summary="Learn more">
                   <div className="space-y-2">
-                    <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> 4–6 weeks</p>
-                    <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                     <div className="pt-1">
                       <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>✅ Multi-platform setup (Meta and/or Google Ads)</li>
-                        <li>✅ Up to 4 campaigns with strategic funnel mapping</li>
-                        <li>✅ Advanced audience segmentation and A/B testing</li>
-                        <li>✅ Conversion tracking + GA4 event setup</li>
-                        <li>✅ Weekly optimization & performance review</li>
-                        <li>✅ Looker Studio (Data Studio) dashboard for key metrics</li>
-                        <li>✅ WhatsApp + email reporting and insights</li>
+                        <li>✅ Meta and/or Google Ads management</li>
+                        <li>✅ Multi-campaign structure for testing</li>
+                        <li>✅ Advanced conversion tracking</li>
+                        <li>✅ Weekly optimization &amp; performance tuning</li>
+                        <li>✅ Monthly performance report</li>
+                        <li>✅ Strategy adjustments based on data</li>
                       </ul>
                     </div>
                     <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">Goal</p>
-                      <p className="text-neutral-300 text-sm md:text-base mt-1">Scale what works. The Growth System is designed to amplify winning campaigns, refine audiences, and boost conversions using continuous testing and analytics.</p>
+                      <p className="text-orange-400 font-semibold">Optional add-ons</p>
+                      <ul className="mt-1 space-y-1 text-sm md:text-base text-neutral-400">
+                        <li>+ Landing page design</li>
+                        <li>+ Looker Studio dashboard</li>
+                      </ul>
                     </div>
                   </div>
                 </Collapsible>
               </div>
               <div className="mt-6 flex justify-center">
                 <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_growth_call">
-                  Book Strategy Call →
+                  Book Strategy Call
                 </a>
               </div>
             </div>
