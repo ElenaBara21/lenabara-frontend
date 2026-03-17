@@ -194,47 +194,47 @@ export default function LandingPage() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Left column: Pilot Launch (big) */}
           <div className="relative rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-neutral-900 px-3 py-1 border border-orange-500/60 rounded-full text-[10px] tracking-wide uppercase text-orange-400">Save 1,400 AED</div>
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-neutral-900 px-3 py-1 border border-orange-500/60 rounded-full text-[10px] tracking-wide uppercase text-orange-400">Save AED 1,400</div>
             <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">PILOT<br className='md:hidden'/> LAUNCH</p>
+            <p className="mt-1 text-neutral-300 text-center text-base font-medium">Launch Your First Paid Ads Campaign</p>
 
             <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-              <p className="text-orange-400 font-extrabold">Launch Offer</p>
-              <p className="text-white font-semibold">AED 2,500 <span className="text-neutral-300 font-normal">(Founder's Offer &mdash; Save AED 1,400)</span></p>
-              <p className="text-xs text-neutral-400">(Regular price AED 3,900 | Only 5 spots available at this rate)</p>
+              <p className="text-white font-bold text-lg">AED 2,500</p>
+              <p className="text-orange-400 font-semibold text-sm">Founder's Offer &mdash; Save AED 1,400</p>
+              <p className="text-xs text-neutral-400">Regular price: AED 3,900</p>
+              <p className="text-xs text-neutral-400">(Limited to 5 businesses)</p>
             </div>
 
             <div className="mt-3 space-y-3 text-neutral-300">
               <p>
-                <span className="text-orange-400 font-semibold">Ideal for:</span>{" "}
-                <span className="text-neutral-300">UAE businesses or startups launching Meta or Google Ads for the first time and want to see measurable results before scaling.</span>
+                <span className="text-orange-400 font-semibold">Best for:</span>{" "}
+                <span className="text-neutral-300">UAE businesses launching Meta or Google Ads for the first time and wanting to test results before scaling.</span>
               </p>
-
 
               <Collapsible summary="Learn more">
                 <div className="space-y-2">
-                  <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Duration:</span> 2–3 weeks</p>
-                  <p className="uppercase text-center"><span className="text-orange-400 font-semibold">Ad spend:</span> Billed separately</p>
                   <div className="pt-1">
                     <p className="text-orange-400 font-semibold">What's Included</p>
                     <ul className="mt-2 space-y-1 text-sm md:text-base">
-                      <li>✅ One platform (Meta or Google)</li>
-                      <li>✅ Campaign setup (1–2 campaigns)</li>
+                      <li>✅ Campaign setup on 1 platform (Meta or Google)</li>
+                      <li>✅ 1–2 ad campaigns configured and launched</li>
                       <li>✅ Pixel + GA4 conversion tracking setup</li>
-                      <li>✅ 2 optimization rounds during campaign</li>
-                      <li>✅ Mini performance report at the end of the period</li>
-                      <li>✅ WhatsApp + email support</li>
+                      <li>✅ 2 campaign optimization rounds</li>
+                      <li>✅ Mini performance report with insights</li>
+                      <li>✅ WhatsApp &amp; email support</li>
                     </ul>
                   </div>
                   <div className="pt-1">
-                    <p className="text-orange-400 font-semibold">Goal</p>
-                    <p className="text-neutral-300 text-sm md:text-base mt-1">Deliver fast, data-driven results so you can test your market, validate your offer, and see how professional media buying improves performance before committing long-term.</p>
+                    <p className="text-orange-400 font-semibold">Timeline</p>
+                    <p className="text-neutral-300 text-sm md:text-base mt-1">2–3 weeks</p>
                   </div>
+                  <p className="text-xs text-neutral-500">Ad spend billed separately.</p>
                 </div>
               </Collapsible>
             </div>
             <div className="mt-6 flex justify-center">
               <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]">
-                Launch My Campaign →
+                Launch My Campaign
               </a>
             </div>
           </div>
