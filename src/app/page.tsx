@@ -492,6 +492,43 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Case Study Preview */}
+      <section id="case-study-preview" className="mx-auto max-w-7xl px-6 mt-12">
+        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Real Campaign Results</h4>
+        <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
+          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-orange-400">Case Study Preview</p>
+              <h3 className="mt-3 text-2xl md:text-4xl font-extrabold text-white">Fitness Studio Lead Generation - Dubai</h3>
+              <p className="mt-3 max-w-2xl text-neutral-300 text-sm md:text-base">A lead generation campaign built to drive qualified enquiries at an efficient acquisition cost while maintaining strong return on ad spend.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-wide text-neutral-400">Ad Spend</p>
+                <p className="mt-2 text-2xl font-bold text-white">AED 12,000</p>
+              </div>
+              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-wide text-neutral-400">Leads Generated</p>
+                <p className="mt-2 text-2xl font-bold text-white">380</p>
+              </div>
+              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-wide text-neutral-400">Cost per Lead</p>
+                <p className="mt-2 text-2xl font-bold text-white">AED 31</p>
+              </div>
+              <div className="rounded-2xl border border-orange-500/40 bg-orange-500/10 p-4">
+                <p className="text-xs uppercase tracking-wide text-orange-300">ROAS</p>
+                <p className="mt-2 text-2xl font-bold text-white">2.1x</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex justify-center">
+            <a href="/work" className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:bg-white/20">
+              View Case Studies
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Calculator */}
       <section id="calculator" className="mx-auto max-w-7xl px-6 my-16">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Estimate Your Budget</h4>
