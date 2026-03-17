@@ -657,6 +657,31 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Personal Authority */}
+      <section id="behind-the-strategy" className="mx-auto max-w-7xl px-6 mt-12">
+        <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
+          <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Behind the Strategy</p>
+              <h3 className="mt-3 text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tight">Behind the Strategy</h3>
+            </div>
+            <div>
+              <p className="text-xl md:text-2xl font-extrabold text-orange-400">Yelena Shelepova (Lena Bara)</p>
+              <p className="mt-1 text-sm md:text-base font-medium text-neutral-300">Founder - Lena Bara Boutique Performance Marketing Agency</p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-neutral-800 bg-black/20 px-4 py-3 text-sm text-white">Meta Certified Media Buyer</div>
+                <div className="rounded-2xl border border-neutral-800 bg-black/20 px-4 py-3 text-sm text-white">Google Ads Specialist</div>
+                <div className="rounded-2xl border border-neutral-800 bg-black/20 px-4 py-3 text-sm text-white">Data Science &amp; Business Analytics Graduate</div>
+                <div className="rounded-2xl border border-neutral-800 bg-black/20 px-4 py-3 text-sm text-white">Master&apos;s Degree in Marketing Management</div>
+              </div>
+
+              <p className="mt-6 text-sm md:text-base leading-relaxed text-neutral-300">My focus is building measurable lead generation systems for UAE businesses using paid media and analytics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="mx-auto max-w-7xl px-6 mt-12">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Testimonials</h4>
