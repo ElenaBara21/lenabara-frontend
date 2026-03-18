@@ -28,7 +28,7 @@ export default function LandingPage() {
   };
   
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
       {/* Header is provided globally via layout Header component */}
       <Hero />
 
@@ -164,7 +164,7 @@ export default function LandingPage() {
                style={{ backgroundImage: 'url(/hero/my-photo.png)' }}
           />
         </div>
-        <div className="mt-6 flex justify-center gap-4">
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
           <a href="#contact" className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
             Book Free 15-min Call
           </a>
@@ -325,7 +325,7 @@ export default function LandingPage() {
         </div>
       </section>
       {/* Add-on Options (full width) */}
-      <section id="addons" className="mx-auto max-7xl px-6 mt-12">
+      <section id="addons" className="mx-auto max-w-7xl px-6 mt-12">
         <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left intro copy */}
@@ -539,7 +539,7 @@ export default function LandingPage() {
       <section id="got-budget" className="mx-auto max-w-7xl px-6">
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8 text-center">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Want a custom growth plan for your business?</h3>
-          <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free Strategy Call</a>
               <DownloadKitModal triggerLabel={"Download Ads Readiness Kit"} buttonClassName={"bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]"} />
           </div>
