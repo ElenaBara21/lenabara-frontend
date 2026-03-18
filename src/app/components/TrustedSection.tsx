@@ -36,11 +36,8 @@ export default function TrustedSection() {
         setVisibleCount(1);
         return;
       }
-      if (window.innerWidth < 1280) {
-        setVisibleCount(2);
-        return;
-      }
-      setVisibleCount(3);
+      // In this layout, the carousel lives in a 2/3 column, so two cards fit reliably.
+      setVisibleCount(2);
     };
 
     updateVisibleCount();
@@ -78,7 +75,7 @@ export default function TrustedSection() {
             <div className="relative">
               <button
                 onClick={prev}
-                className="absolute left-1 top-1/2 z-20 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-none border border-orange-500/40 bg-black/60 text-orange-300 hover:bg-black/70"
+                className="absolute left-1 top-[62%] z-20 -translate-y-1/2 h-10 w-10 md:top-1/2 md:h-12 md:w-12 rounded-none border border-orange-500/40 bg-black/60 text-orange-300 hover:bg-black/70"
                 aria-label="Previous"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +84,7 @@ export default function TrustedSection() {
               </button>
               <button
                 onClick={next}
-                className="absolute right-1 top-1/2 z-20 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-none border border-orange-500/40 bg-black/60 text-orange-300 hover:bg-black/70"
+                className="absolute right-1 top-[62%] z-20 -translate-y-1/2 h-10 w-10 md:top-1/2 md:h-12 md:w-12 rounded-none border border-orange-500/40 bg-black/60 text-orange-300 hover:bg-black/70"
                 aria-label="Next"
               >
                 <svg viewBox="0 0 20 20" className="mx-auto h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
