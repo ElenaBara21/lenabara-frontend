@@ -1,8 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -26,8 +32,8 @@ export default function MobileMenu() {
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
-      {open && (
-        <div className="fixed inset-0 z-[100] bg-black">
+      {open && mounted && createPortal(
+        <div className="fixed inset-0 z-[9999] bg-black">
           <div className="flex h-full flex-col px-6 py-6">
             <div className="flex items-center justify-end">
               <button
@@ -50,7 +56,8 @@ export default function MobileMenu() {
               <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
             </nav>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
