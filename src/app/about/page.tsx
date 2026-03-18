@@ -146,6 +146,14 @@ export default function AboutPage() {
                       <span className="text-orange-400">✓</span>
                       <span>Master's Degree in Marketing Management</span>
                     </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-400">✓</span>
+                      <span>UAE Licensed Marketing Consultancy (RAKEZ)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-400">✓</span>
+                      <span>Social Media Advertiser Permit (National Media Authority)</span>
+                    </li>
                   </ul>
                 </div>
 
