@@ -27,7 +27,7 @@ export default function MobileMenu() {
         </svg>
       </button>
       {open && (
-        <div className="fixed inset-0 z-[100] bg-neutral-950/95 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[100] bg-black">
           <div className="flex h-full flex-col px-6 py-6">
             <div className="flex items-center justify-end">
               <button
