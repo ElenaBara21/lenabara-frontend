@@ -23,6 +23,24 @@ export default function AboutPage() {
               <p>
                 Instead of running random campaigns, I focus on:
               </p>
+              <ul className="space-y-2 text-neutral-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>building clear acquisition strategies</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>implementing proper tracking (GA4, Meta Pixel)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>optimizing campaigns based on real data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>improving lead quality — not just volume</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
