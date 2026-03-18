@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const ITEMS = [
   "Meta Certified Media Buying Professional",
@@ -28,8 +28,31 @@ const BADGE_MAP: Record<string, { src: string; alt: string }> = {
 
 export default function TrustedSection() {
   const [index, setIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  const maxIndex = useMemo(() => Math.max(0, ITEMS.length - 3), []);
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1);
+        return;
+      }
+      if (window.innerWidth < 1280) {
+        setVisibleCount(2);
+        return;
+      }
+      setVisibleCount(3);
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+  const maxIndex = useMemo(() => Math.max(0, ITEMS.length - visibleCount), [visibleCount]);
+
+  useEffect(() => {
+    setIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
 
   const prev = () => setIndex((i) => (i === 0 ? maxIndex : i - 1));
   const next = () => setIndex((i) => (i === maxIndex ? 0 : i + 1));
@@ -75,7 +98,7 @@ export default function TrustedSection() {
               <div className="mt-6 overflow-hidden">
                 <div
                   className="flex gap-6 transition-transform duration-300"
-                  style={{ transform: `translateX(-${index * 320}px)` }}
+                  style={{ transform: `translateX(-${index * 324}px)` }}
                 >
                   {ITEMS.map((text) => (
                     <div key={text} className="min-w-[300px] rounded-xl border border-white/10 bg-white/5 px-6 py-6">
