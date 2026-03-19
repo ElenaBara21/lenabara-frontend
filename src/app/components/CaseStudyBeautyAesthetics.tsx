@@ -83,7 +83,7 @@ export default function CaseStudyBeautyAesthetics({
         <button
           onClick={goToPrevious}
           aria-label="Previous slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full transition z-10 shadow-lg"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <polyline points="15 18 9 12 15 6" />
@@ -93,7 +93,7 @@ export default function CaseStudyBeautyAesthetics({
         <button
           onClick={goToNext}
           aria-label="Next slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full transition z-10 shadow-lg"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <polyline points="9 18 15 12 9 6" />
