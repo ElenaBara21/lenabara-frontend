@@ -1,6 +1,19 @@
 import CaseStudyGym from "../components/CaseStudyGym";
 import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 
+const beautyAestheticsSlides = [
+  "/case-studies/beauty-aesthetics/1.png",
+  "/case-studies/beauty-aesthetics/2.png",
+  "/case-studies/beauty-aesthetics/3.png",
+  "/case-studies/beauty-aesthetics/4.png",
+  "/case-studies/beauty-aesthetics/5.png",
+  "/case-studies/beauty-aesthetics/6.png",
+  "/case-studies/beauty-aesthetics/7.png",
+  "/case-studies/beauty-aesthetics/8.png",
+  "/case-studies/beauty-aesthetics/9.png",
+  "/case-studies/beauty-aesthetics/10.png",
+];
+
 const caseStudies = [
   {
     id: "case-gym",
@@ -30,7 +43,10 @@ export default function CaseStudiesPage() {
 
         {/* Case Study: Beauty Aesthetics Clinic (Images) */}
         <div className="mt-20">
-          <CaseStudyBeautyAesthetics title={caseStudies[1].title} />
+          <CaseStudyBeautyAesthetics
+            title={caseStudies[1].title}
+            images={beautyAestheticsSlides}
+          />
         </div>
       </div>
     </main>

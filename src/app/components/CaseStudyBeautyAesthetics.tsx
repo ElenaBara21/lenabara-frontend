@@ -4,14 +4,12 @@ import Image from "next/image";
 
 type CaseStudyBeautyAestheticsProps = {
   title?: string;
+  images?: string[];
 };
 
 export default function CaseStudyBeautyAesthetics({
   title = "Case Study: Beauty Aesthetics Clinic",
-}: CaseStudyBeautyAestheticsProps) {
-  const [current, setCurrent] = useState(0);
-
-  const images = [
+  images = [
     "/case-studies/beauty-aesthetics/1.png",
     "/case-studies/beauty-aesthetics/2.png",
     "/case-studies/beauty-aesthetics/3.png",
@@ -22,7 +20,9 @@ export default function CaseStudyBeautyAesthetics({
     "/case-studies/beauty-aesthetics/8.png",
     "/case-studies/beauty-aesthetics/9.png",
     "/case-studies/beauty-aesthetics/10.png",
-  ];
+  ],
+}: CaseStudyBeautyAestheticsProps) {
+  const [current, setCurrent] = useState(0);
 
   const totalSlides = images.length;
 
