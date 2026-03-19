@@ -95,7 +95,7 @@ export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymP
         <button
           onClick={goToPrevious}
           aria-label="Previous slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-orange-500 hover:text-orange-600 md:text-white md:hover:text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
         >
           <svg
             width="24"
@@ -113,7 +113,7 @@ export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymP
         <button
           onClick={goToNext}
           aria-label="Next slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent md:bg-orange-500 md:hover:bg-orange-600 text-orange-500 hover:text-orange-600 md:text-white md:hover:text-white p-2 md:p-3 rounded-full transition z-10 md:shadow-lg"
         >
           <svg
             width="24"
