@@ -1,4 +1,5 @@
 import CaseStudyGym from "../components/CaseStudyGym";
+import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 
 const caseStudies = [
   {
@@ -6,6 +7,12 @@ const caseStudies = [
     title: "Case Study: Gym Marketing Campaign",
     type: "images",
     componentName: "CaseStudyGym",
+  },
+  {
+    id: "case-beauty-aesthetics",
+    title: "Case Study: Beauty Aesthetics Clinic",
+    type: "images",
+    componentName: "CaseStudyBeautyAesthetics",
   },
 ];
 
@@ -20,6 +27,11 @@ export default function CaseStudiesPage() {
 
         {/* Case Study: Gym Marketing Campaign (Images) */}
         <CaseStudyGym title={caseStudies[0].title} />
+
+        {/* Case Study: Beauty Aesthetics Clinic (Images) */}
+        <div className="mt-20">
+          <CaseStudyBeautyAesthetics title={caseStudies[1].title} />
+        </div>
       </div>
     </main>
   );
