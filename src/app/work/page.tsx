@@ -1,6 +1,7 @@
 import CaseStudyGym from "../components/CaseStudyGym";
 import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 import CaseStudyRealEstate from "../components/CaseStudyRealEstate";
+import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
 
 const beautyAestheticsSlides = [
   "/case-studies/beauty-aesthetics/1.png",
@@ -52,6 +53,12 @@ const caseStudies = [
     type: "images",
     componentName: "CaseStudyRealEstate",
   },
+  {
+    id: "case-escape-room-analytics",
+    title: "Case Study 4: Analytics Infrastructure for a UAE Escape Room Business",
+    type: "pdf",
+    componentName: "CaseStudyEscapeRoom",
+  },
 ];
 
 export default function CaseStudiesPage() {
@@ -80,6 +87,11 @@ export default function CaseStudiesPage() {
             title={caseStudies[2].title}
             images={realEstateSlides}
           />
+        </div>
+
+        {/* Case Study 4: UAE Escape Room Analytics Infrastructure (PDF) */}
+        <div className="mt-20">
+          <CaseStudyEscapeRoom title={caseStudies[3].title} />
         </div>
       </div>
     </main>
