@@ -8,7 +8,7 @@ type CaseStudyEscapeRoomProps = {
 };
 
 export default function CaseStudyEscapeRoom({
-  title = "Case Study 4: Analytics Infrastructure for a UAE Escape Room Business",
+  title = "Case Study: Analytics Infrastructure for a UAE Escape Room Business",
   images = [
     "/case-studies/escape-room-analytics/1.png",
     "/case-studies/escape-room-analytics/2.png",

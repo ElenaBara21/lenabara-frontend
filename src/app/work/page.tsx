@@ -80,7 +80,7 @@ const caseStudies = [
   },
   {
     id: "case-escape-room-analytics",
-    title: "Case Study 4: Analytics Infrastructure for a UAE Escape Room Business",
+    title: "Case Study: Analytics Infrastructure for a UAE Escape Room Business",
     type: "images",
     componentName: "CaseStudyEscapeRoom",
   },
