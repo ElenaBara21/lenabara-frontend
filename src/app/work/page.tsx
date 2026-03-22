@@ -2,6 +2,7 @@ import CaseStudyGym from "../components/CaseStudyGym";
 import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 import CaseStudyRealEstate from "../components/CaseStudyRealEstate";
 import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
+import CaseStudyAccounting from "../components/CaseStudyAccounting";
 
 const beautyAestheticsSlides = [
   "/case-studies/beauty-aesthetics/1.png",
@@ -45,6 +46,19 @@ const escapeRoomSlides = [
   "/case-studies/escape-room-analytics/8.png",
 ];
 
+const accountingSlides = [
+  "/case-studies/accounting/1.png",
+  "/case-studies/accounting/2.png",
+  "/case-studies/accounting/3.png",
+  "/case-studies/accounting/4.png",
+  "/case-studies/accounting/5.png",
+  "/case-studies/accounting/6.png",
+  "/case-studies/accounting/7.png",
+  "/case-studies/accounting/8.png",
+  "/case-studies/accounting/9.png",
+  "/case-studies/accounting/10.png",
+];
+
 const caseStudies = [
   {
     id: "case-gym",
@@ -69,6 +83,12 @@ const caseStudies = [
     title: "Case Study 4: Analytics Infrastructure for a UAE Escape Room Business",
     type: "images",
     componentName: "CaseStudyEscapeRoom",
+  },
+  {
+    id: "case-accounting",
+    title: "Case study: UAE Accounting Firm",
+    type: "images",
+    componentName: "CaseStudyAccounting",
   },
 ];
 
@@ -105,6 +125,14 @@ export default function CaseStudiesPage() {
           <CaseStudyEscapeRoom
             title={caseStudies[3].title}
             images={escapeRoomSlides}
+          />
+        </div>
+
+        {/* Case Study: UAE Accounting Firm (Images) */}
+        <div className="mt-20">
+          <CaseStudyAccounting
+            title={caseStudies[4].title}
+            images={accountingSlides}
           />
         </div>
       </div>
