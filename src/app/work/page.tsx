@@ -34,6 +34,17 @@ const realEstateSlides = [
   "/case-studies/real-estate/15.png",
 ];
 
+const escapeRoomSlides = [
+  "/case-studies/escape-room-analytics/1.png",
+  "/case-studies/escape-room-analytics/2.png",
+  "/case-studies/escape-room-analytics/3.png",
+  "/case-studies/escape-room-analytics/4.png",
+  "/case-studies/escape-room-analytics/5.png",
+  "/case-studies/escape-room-analytics/6.png",
+  "/case-studies/escape-room-analytics/7.png",
+  "/case-studies/escape-room-analytics/8.png",
+];
+
 const caseStudies = [
   {
     id: "case-gym",
@@ -56,7 +67,7 @@ const caseStudies = [
   {
     id: "case-escape-room-analytics",
     title: "Case Study 4: Analytics Infrastructure for a UAE Escape Room Business",
-    type: "pdf",
+    type: "images",
     componentName: "CaseStudyEscapeRoom",
   },
 ];
@@ -89,9 +100,12 @@ export default function CaseStudiesPage() {
           />
         </div>
 
-        {/* Case Study 4: UAE Escape Room Analytics Infrastructure (PDF) */}
+        {/* Case Study 4: UAE Escape Room Analytics Infrastructure (Images) */}
         <div className="mt-20">
-          <CaseStudyEscapeRoom title={caseStudies[3].title} />
+          <CaseStudyEscapeRoom
+            title={caseStudies[3].title}
+            images={escapeRoomSlides}
+          />
         </div>
       </div>
     </main>
