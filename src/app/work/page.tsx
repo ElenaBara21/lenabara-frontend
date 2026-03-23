@@ -3,6 +3,7 @@ import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 import CaseStudyRealEstate from "../components/CaseStudyRealEstate";
 import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
 import CaseStudyAccounting from "../components/CaseStudyAccounting";
+import CaseStudyCompanyFormation from "../components/CaseStudyCompanyFormation";
 
 const beautyAestheticsSlides = [
   "/case-studies/beauty-aesthetics/1.png",
@@ -59,36 +60,55 @@ const accountingSlides = [
   "/case-studies/accounting/10.png",
 ];
 
+const companyFormationSlides = [
+  "/case-studies/company-formation/1_From-Unpredictable-Referrals-to-20-Qualified-Leads-Weekly.png",
+  "/case-studies/company-formation/2_Client-Overview-UAE-Business-Setup-Consultancy.png",
+  "/case-studies/company-formation/3_The-Challenge-Stuck-in-Unpredictable-Growth.png",
+  "/case-studies/company-formation/4_The-Approach-Building-a-Full-Funnel-System.png",
+  "/case-studies/company-formation/5_High-Intent-Capture-Google-Search-Strategy.png",
+  "/case-studies/company-formation/6_Demand-Creation-Retargeting-Meta-Ads-Strategy.png",
+  "/case-studies/company-formation/7_WhatsApp-First-Funnel-The-Core-Driver.png",
+  "/case-studies/company-formation/8_Results-Transforming-Lead-Generation-Performance.png",
+  "/case-studies/company-formation/9_Key-Insights-for-UAE-Service-Businesses.png",
+  "/case-studies/company-formation/10_Ready-to-Scale-Your-UAE-Business-Setup-Leads.png",
+];
+
 const caseStudies = [
   {
     id: "case-gym",
-    title: "Case Study: Gym Marketing Campaign",
+    title: "Gym Marketing Campaign",
     type: "images",
     componentName: "CaseStudyGym",
   },
   {
     id: "case-beauty-aesthetics",
-    title: "Case Study: Beauty Aesthetics Clinic",
+    title: "Beauty Aesthetics Clinic",
     type: "images",
     componentName: "CaseStudyBeautyAesthetics",
   },
   {
     id: "case-real-estate",
-    title: "Case Study: Real Estate",
+    title: "Real Estate",
     type: "images",
     componentName: "CaseStudyRealEstate",
   },
   {
     id: "case-escape-room-analytics",
-    title: "Case Study: Analytics Infrastructure for a UAE Escape Room Business",
+    title: "Analytics Infrastructure for a UAE Escape Room Business",
     type: "images",
     componentName: "CaseStudyEscapeRoom",
   },
   {
     id: "case-accounting",
-    title: "Case study: UAE Accounting Firm",
+    title: "UAE Accounting Firm",
     type: "images",
     componentName: "CaseStudyAccounting",
+  },
+  {
+    id: "case-company-formation",
+    title: "Company Formation Case Study",
+    type: "images",
+    componentName: "CaseStudyCompanyFormation",
   },
 ];
 
@@ -133,6 +153,14 @@ export default function CaseStudiesPage() {
           <CaseStudyAccounting
             title={caseStudies[4].title}
             images={accountingSlides}
+          />
+        </div>
+
+        {/* Case Study: Company Formation (Images) */}
+        <div className="mt-20">
+          <CaseStudyCompanyFormation
+            title={caseStudies[5].title}
+            images={companyFormationSlides}
           />
         </div>
       </div>
