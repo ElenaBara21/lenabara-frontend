@@ -8,7 +8,7 @@ type CaseStudyAccountingProps = {
 };
 
 export default function CaseStudyAccounting({
-  title = "Case study: UAE Accounting Firm",
+  title = "UAE Accounting Firm",
   images = [
     "/case-studies/accounting/1.png",
     "/case-studies/accounting/2.png",

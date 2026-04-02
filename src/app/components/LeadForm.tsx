@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { track } from "../lib/analytics";
+import { buildWhatsAppUrl } from "../lib/whatsapp";
 
 type Lead = {
   name: string;
@@ -128,7 +129,7 @@ export default function LeadForm() {
           {pending ? "Sending..." : "Send Request"}
         </button>
         <a
-          href="https://wa.me/971521595752"
+          href={buildWhatsAppUrl("971521595752")}
           className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-200 px-5 py-3 rounded-xl font-medium"
           aria-label="WhatsApp"
           data-track="cta_whatsapp_click"

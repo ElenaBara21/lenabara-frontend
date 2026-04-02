@@ -6,7 +6,7 @@ type CaseStudyGymProps = {
   title?: string;
 };
 
-export default function CaseStudyGym({ title = "Gym Case Study" }: CaseStudyGymProps) {
+export default function CaseStudyGym({ title = "Gym Marketing Campaign" }: CaseStudyGymProps) {
   const [current, setCurrent] = useState(0);
 
   // Array of image paths

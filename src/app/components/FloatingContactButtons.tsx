@@ -1,10 +1,12 @@
 "use client";
 
+import { buildWhatsAppUrl } from "../lib/whatsapp";
+
 export default function FloatingContactButtons() {
   return (
     <div className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
       <a
-        href="https://wa.me/971563256848"
+        href={buildWhatsAppUrl("971563256848")}
         target="_blank"
         rel="noopener noreferrer"
         data-gtm="cta_whatsapp_floating"

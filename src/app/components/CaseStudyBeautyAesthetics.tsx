@@ -8,7 +8,7 @@ type CaseStudyBeautyAestheticsProps = {
 };
 
 export default function CaseStudyBeautyAesthetics({
-  title = "Case Study: Beauty Aesthetics Clinic",
+  title = "Beauty Aesthetics Clinic",
   images = [
     "/case-studies/beauty-aesthetics/1.png",
     "/case-studies/beauty-aesthetics/2.png",

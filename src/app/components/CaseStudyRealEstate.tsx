@@ -8,7 +8,7 @@ type CaseStudyRealEstateProps = {
 };
 
 export default function CaseStudyRealEstate({
-  title = "Case Study: Real Estate",
+  title = "Real Estate",
   images = [
     "/case-studies/real-estate/1.png",
     "/case-studies/real-estate/2.png",

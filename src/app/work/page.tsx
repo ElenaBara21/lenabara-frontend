@@ -76,7 +76,7 @@ const companyFormationSlides = [
 const caseStudies = [
   {
     id: "case-gym",
-    title: "Gym Marketing Campaign",
+    title: "How We Generated 40–60 New Gym Members in 60 Days Using a Meta Ads Funnel (2.0–2.5x ROI)",
     type: "images",
     componentName: "CaseStudyGym",
   },
