@@ -30,21 +30,37 @@ async function sendTelegram(payload: LeadPayload) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (!token || !chatId) return { ok: false, skipped: true } as const;
 
-  const summaryParts = [
-    payload.plan ? `Plan: ${payload.plan}` : null,
-    typeof payload.spend === "number" ? `Spend: AED ${payload.spend}` : null,
-    payload.source ? `Source: ${payload.source}` : null,
-    payload.utm && (payload.utm as any).utm_source ? `UTM: ${(payload.utm as any).utm_source}` : null,
-  ].filter(Boolean);
+  const utmLines =
+    payload.utm && typeof payload.utm === "object"
+      ? Object.entries(payload.utm)
+          .filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== "")
+          .map(([key, value]) => `- ${key}: ${String(value)}`)
+      : [];
 
   const text = [
-    `New Lead — Name: ${payload.name || "-"} | Email: ${payload.email || "-"}`,
-    `Company: ${payload.company || "-"} | Website: ${payload.website || "-"}`,
-    summaryParts.length ? summaryParts.join(" | ") : undefined,
-    payload.message ? `Message: ${payload.message}` : undefined,
-  ]
-    .filter(Boolean)
-    .join("\n");
+    "NEW LEAD",
+    "--------------------",
+    "",
+    "Contact",
+    `Name: ${payload.name || "-"}`,
+    `Email: ${payload.email || "-"}`,
+    `Phone: ${payload.phone || "-"}`,
+    "",
+    "Business",
+    `Package: ${payload.package || "-"}`,
+    `Company: ${payload.company || "-"}`,
+    `Website: ${payload.website || "-"}`,
+    "",
+    "Tracking",
+    `Source: ${payload.source || "-"}`,
+    `Plan: ${payload.plan || "-"}`,
+    `Spend: ${typeof payload.spend === "number" ? `AED ${payload.spend}` : "-"}`,
+    "UTM:",
+    ...(utmLines.length ? utmLines : ["- none"]),
+    "",
+    "Message",
+    payload.message?.trim() || "-",
+  ].join("\n");
 
   const res = await postJSON(
     `https://api.telegram.org/bot${token}/sendMessage`,
