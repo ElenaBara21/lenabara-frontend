@@ -28,7 +28,13 @@ async function postJSON(url: string, data: unknown, init: RequestInit = {}) {
 async function sendTelegram(payload: LeadPayload) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return { ok: false, skipped: true } as const;
+  if (!token || !chatId) {
+    return {
+      ok: false,
+      skipped: true,
+      error: "Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID",
+    } as const;
+  }
 
   const utmLines =
     payload.utm && typeof payload.utm === "object"
@@ -66,7 +72,23 @@ async function sendTelegram(payload: LeadPayload) {
     `https://api.telegram.org/bot${token}/sendMessage`,
     { chat_id: chatId, text }
   );
-  return { ok: res.ok } as const;
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    return {
+      ok: false,
+      error: `Telegram API ${res.status}: ${body || "Unknown error"}`,
+    } as const;
+  }
+
+  const json = await res.json().catch(() => null);
+  if (!json || json.ok !== true) {
+    return {
+      ok: false,
+      error: `Telegram API response invalid: ${JSON.stringify(json)}`,
+    } as const;
+  }
+
+  return { ok: true } as const;
 }
 
 function getNotionProp(name: string, fallback: string) {
