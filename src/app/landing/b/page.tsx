@@ -45,6 +45,17 @@ export default function LandingVariantBPage() {
     <main data-landing="true" className="relative min-h-screen bg-[#efeeea] text-[#171717]">
       <LandingAttribution variant="b" />
 
+      <div className="absolute left-4 top-4 z-20 sm:left-8 sm:top-6 lg:left-12 lg:top-8">
+        <Image
+          src="/hero/lb-editorial-logo.svg"
+          alt="LenaBara logo"
+          width={170}
+          height={64}
+          priority
+          className="h-auto w-[124px] sm:w-[150px]"
+        />
+      </div>
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_84%_18%,rgba(0,0,0,0.08),transparent_28%),radial-gradient(circle_at_10%_80%,rgba(0,0,0,0.05),transparent_24%),linear-gradient(180deg,#f5f4ef_0%,#efeeea_46%,#e8e7e1_100%)]"

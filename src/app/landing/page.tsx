@@ -45,6 +45,17 @@ export default function LandingPage() {
     <main data-landing="true" className="relative min-h-screen bg-[#f4f3ef] text-[#1a1a1a]">
       <LandingAttribution variant="a" />
 
+      <div className="absolute left-4 top-4 z-20 sm:left-8 sm:top-6 lg:left-12 lg:top-8">
+        <Image
+          src="/hero/lb-editorial-logo.svg"
+          alt="LenaBara logo"
+          width={170}
+          height={64}
+          priority
+          className="h-auto w-[124px] sm:w-[150px]"
+        />
+      </div>
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(0,0,0,0.06),transparent_28%),radial-gradient(circle_at_88%_12%,rgba(0,0,0,0.05),transparent_26%),linear-gradient(180deg,#f7f6f2_0%,#f2f1ed_52%,#ecebe6_100%)]"
