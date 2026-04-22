@@ -62,8 +62,7 @@ export default function LandingVariantBPage() {
       />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pt-16">
-        <div className="mb-10 border-b border-black/20 pb-4 text-[0.68rem] font-semibold uppercase tracking-[0.19em] sm:mb-14 sm:flex sm:items-center sm:justify-between sm:text-xs">
-          <p>Edition B</p>
+        <div className="mb-10 border-b border-black/20 pb-4 text-[0.68rem] font-semibold uppercase tracking-[0.19em] sm:mb-14 sm:flex sm:items-center sm:justify-end sm:text-xs">
           <p>Performance Advertising Journal</p>
         </div>
 

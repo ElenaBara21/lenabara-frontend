@@ -62,8 +62,7 @@ export default function LandingPage() {
       />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pt-16">
-        <div className="mb-10 flex items-center justify-between border-b border-black/20 pb-4 text-[0.68rem] font-semibold uppercase tracking-[0.18em] sm:mb-14 sm:text-xs">
-          <p>Paid Traffic Landing</p>
+        <div className="mb-10 flex items-center justify-end border-b border-black/20 pb-4 text-[0.68rem] font-semibold uppercase tracking-[0.18em] sm:mb-14 sm:text-xs">
           <p>UAE Service Growth</p>
         </div>
 
