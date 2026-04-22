@@ -4,7 +4,7 @@ import { buildWhatsAppUrl } from "../lib/whatsapp";
 
 export default function FloatingContactButtons() {
   return (
-    <div className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
+    <div id="floating-contact-buttons" className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
       <a
         href={buildWhatsAppUrl("971563256848")}
         target="_blank"

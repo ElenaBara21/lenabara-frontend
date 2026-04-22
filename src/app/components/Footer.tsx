@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <div className="bg-neutral-950 pb-10">
-      <footer id="footer" className="mx-auto max-w-7xl px-6 py-12">
+    <div id="global-footer-wrap" className="bg-neutral-950 pb-10">
+      <footer id="global-footer" className="mx-auto max-w-7xl px-6 py-12">
         <div className="h-px w-full bg-neutral-800 mb-8" />
         <div className="flex flex-col md:flex-row gap-8 text-sm text-neutral-300">
         {/* Five columns */}
