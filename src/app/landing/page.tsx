@@ -25,7 +25,8 @@ export const metadata: Metadata = {
 };
 
 const WHATSAPP_PHONE = "971563256848";
-const WHATSAPP_MESSAGE = "Hi Lena, I saw your ad and want help with my ads.";
+const WHATSAPP_MESSAGE =
+  "Hi, I run a [business] in [city]. I spend [amount] AED/month on Meta ads. I want more enquiries. Can you audit my account?";
 
 const services = [
   "Meta Ads",
