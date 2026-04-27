@@ -14,7 +14,7 @@ import {
 
 type WhatsAppCtaButtonProps = {
   variant: LandingVariant;
-  placement: "hero" | "final" | "sticky";
+  placement: "hero" | "proof" | "results" | "pricing" | "final" | "sticky";
   phone: string;
   baseMessage: string;
   className: string;
