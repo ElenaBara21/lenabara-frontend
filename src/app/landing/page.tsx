@@ -498,15 +498,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="relative mx-auto max-w-6xl px-5 pb-28 text-center sm:px-8 lg:px-12 lg:pb-24">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/60">
-          [YOUR_BUSINESS_NAME] | [CURRENT_YEAR] | UAE Lead Generation
-        </p>
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-black/60">
-          [YOUR_WHATSAPP_LINK]
-        </p>
-      </footer>
-
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/15 bg-[#f5f4f0]/95 p-3 backdrop-blur md:hidden">
         <WhatsAppCtaButton
           variant="a"
