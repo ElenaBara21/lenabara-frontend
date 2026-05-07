@@ -70,15 +70,17 @@ export default function LandingVariantBPage() {
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-12">
           <div className="relative order-2 lg:order-1">
             <div className="relative h-[23rem] overflow-hidden border border-black/15 bg-[#d7d4cb] sm:h-[28rem] lg:h-[36rem]">
-              <Image
-                src="/hero/my-photo.jpg"
-                alt="Lena Bara"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
+              <video
+                className="h-full w-full object-cover"
+                src="/hero/landing-hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
