@@ -73,6 +73,12 @@ export default function LandingVariantBPage() {
               <video
                 className="h-full w-full object-cover"
                 src="/hero/landing-hero-video.mov"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
                 Your browser does not support the video tag.
               </video>
             </div>
