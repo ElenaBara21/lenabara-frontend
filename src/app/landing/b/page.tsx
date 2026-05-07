@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
 import LandingAttribution from "../components/LandingAttribution";
+import VideoWithEndCta from "../components/VideoWithEndCta";
 import WhatsAppCtaButton from "../components/WhatsAppCtaButton";
 
 const displayFont = Bebas_Neue({
@@ -70,17 +71,13 @@ export default function LandingVariantBPage() {
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-12">
           <div className="relative order-2 lg:order-1">
             <div className="relative h-[28rem] overflow-hidden border border-black/15 bg-[#d7d4cb] sm:h-[35rem] lg:h-[42rem]">
-              <video
-                className="h-full w-full object-cover"
+              <VideoWithEndCta
+                variant="b"
+                phone={WHATSAPP_PHONE}
+                baseMessage={WHATSAPP_MESSAGE}
                 src="/hero/landing-hero-video.mov"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-              >
-                Your browser does not support the video tag.
-              </video>
+                ctaLabel="Chat on WhatsApp"
+              />
             </div>
           </div>
 
