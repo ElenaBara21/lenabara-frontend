@@ -69,16 +69,10 @@ export default function LandingVariantBPage() {
 
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-12">
           <div className="relative order-2 lg:order-1">
-            <div className="relative h-[23rem] overflow-hidden border border-black/15 bg-[#d7d4cb] sm:h-[28rem] lg:h-[36rem]">
+            <div className="relative h-[28rem] overflow-hidden border border-black/15 bg-[#d7d4cb] sm:h-[35rem] lg:h-[42rem]">
               <video
                 className="h-full w-full object-cover"
-                src="/hero/landing-hero-video.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-              >
+                src="/hero/landing-hero-video.mov"
                 Your browser does not support the video tag.
               </video>
             </div>

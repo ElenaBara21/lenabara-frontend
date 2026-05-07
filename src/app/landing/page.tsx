@@ -142,13 +142,14 @@ export default function LandingPage() {
 
           <div className="relative">
             <div className="relative flex h-[20rem] flex-col justify-between border border-black/20 bg-white/70 p-5 sm:h-[25rem]">
+            <div className="relative flex h-[28rem] flex-col justify-between border border-black/20 bg-white/70 p-5 sm:h-[35rem] lg:h-[40rem]">
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-black/55 sm:text-xs">
                 Video or dashboard area
               </p>
               <div className="flex flex-1 items-center justify-center overflow-hidden rounded-[8px] border border-black/20 bg-black">
                 <video
                   className="h-full w-full object-cover"
-                  src="/hero/landing-hero-video.mp4"
+                  src="/hero/landing-hero-video.mov"
                   autoPlay
                   muted
                   loop
