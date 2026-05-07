@@ -145,10 +145,18 @@ export default function LandingPage() {
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-black/55 sm:text-xs">
                 Video or dashboard area
               </p>
-              <div className="flex flex-1 items-center justify-center rounded-[8px] border border-dashed border-black/30 bg-[#ece9e0]">
-                <p className={`${displayFont.className} px-6 text-center text-[1.45rem] uppercase leading-[0.95] tracking-[0.01em] text-black/65 sm:text-[1.8rem]`}>
-                  GA4 / Ads Dashboard Screenshot Placeholder
-                </p>
+              <div className="flex flex-1 items-center justify-center overflow-hidden rounded-[8px] border border-black/20 bg-black">
+                <video
+                  className="h-full w-full object-cover"
+                  src="/hero/landing-hero-video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
