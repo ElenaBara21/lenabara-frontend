@@ -288,26 +288,19 @@ export default function LandingPage() {
         </h2>
         <div className="grid gap-6 rounded-[10px] border border-black/15 bg-white/75 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
-            <p className="text-sm font-semibold text-black/75 sm:text-[0.95rem]">
-              Credentials
-              <br />
-              <br />
-              ✓ Meta Certified Media Buyer
-              <br />
-              ✓ Meta Certified AI &amp; Performance Marketing Specialist
-              <br />
-              ✓ Google Ads (Search) Certified
-              <br />
-              ✓ PGD in Data Science &amp; Business Analytics — UT Austin
-              <br />
-              ✓ Currently Pursuing an MA in Marketing Management
-              <br />
-              ✓ BEng + Bachelor’s Degree in Finance
-              <br />
-              ✓ UAE Licensed Marketing Consultancy (RAKEZ)
-              <br />
-              ✓ UAE Social Media Advertiser Permit (National Media Authority)
-            </p>
+            <div className="rounded-[8px] border border-black/15 bg-[#ece9e0] px-4 py-4 sm:px-5">
+              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-black/50">Credentials</p>
+              <ul className="mt-3 grid gap-2 text-xs font-semibold uppercase tracking-[0.09em] text-black/80 sm:text-sm">
+                <li>✓ Meta Certified Media Buyer</li>
+                <li>✓ Meta Certified AI &amp; Performance Marketing Specialist</li>
+                <li>✓ Google Ads (Search) Certified</li>
+                <li>✓ PGD in Data Science &amp; Business Analytics — UT Austin</li>
+                <li>✓ Currently Pursuing an MA in Marketing Management</li>
+                <li>✓ BEng + Bachelor&apos;s Degree in Finance</li>
+                <li>✓ UAE Licensed Marketing Consultancy (RAKEZ)</li>
+                <li>✓ UAE Social Media Advertiser Permit (National Media Authority)</li>
+              </ul>
+            </div>
 
             <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
               I&apos;ve spent 10+ years helping businesses acquire clients - first inside private companies, now through landing pages, paid ads, and conversion-focused lead systems for UAE businesses.
