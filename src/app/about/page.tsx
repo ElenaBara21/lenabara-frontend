@@ -166,7 +166,7 @@ export default function AboutPage() {
               <div className="flex justify-center md:justify-end">
                 <div className="relative w-[300px] h-[380px] md:w-[340px] md:h-[420px] rounded-2xl overflow-hidden shadow-xl border-2 border-orange-500">
                   <Image
-                    src="/hero/my-photo.png"
+                    src="/hero/lena.jpg"
                     alt="Lena Bara, Performance Marketing Strategist"
                     fill
                     style={{ objectFit: "cover", objectPosition: "center" }}
