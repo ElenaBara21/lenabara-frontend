@@ -282,43 +282,94 @@ export default function LandingPage() {
       </section>
 
       <section className="relative mx-auto max-w-[1200px] px-5 pb-16 sm:px-8 lg:px-12">
+        <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/55 sm:text-xs">Founder Profile</p>
         <h2 className={`${displayFont.className} mb-7 text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.8rem]`}>
           Who You&apos;ll Work With
         </h2>
-        <div className="rounded-[10px] border border-black/15 bg-white/75 p-6 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.11em] text-black/65 sm:text-base">
-            Meta Certified Media Buyer · Google Ads Certified · PG UT Austin Data Science and BA · BEng + BFin
-          </p>
-          <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
-            I&apos;ve spent 10 years acquiring clients - first inside private firms, now for businesses like yours.
-          </p>
+        <div className="grid gap-6 rounded-[10px] border border-black/15 bg-white/75 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-black/70 sm:text-[0.95rem]">
+              BEng + BFin · Meta Certified Media Buyer · Meta Certified AI and Performance Marketing Specialist · Google Ads Certified (Search) · UT Austin Data Science · MA in Marketing (in progress)
+            </p>
 
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">Recent result</p>
-          <p className={`${editorialSerif.className} mt-1 text-lg leading-tight text-black/80 sm:text-xl`}>
-            Accounting firm -&gt; 22-30 qualified leads/month
-          </p>
+            <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
+              I&apos;ve spent 10+ years helping businesses acquire clients - first inside private companies, now through landing pages, paid ads, and conversion-focused lead systems for UAE businesses.
+            </p>
 
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">What I actually build</p>
-          <p className="mt-1 text-sm font-semibold uppercase tracking-[0.1em] text-black/80 sm:text-base">
-            Meta Ads -&gt; Landing Page -&gt; WhatsApp -&gt; Full Tracking
-          </p>
+            <div className="mt-6 rounded-[8px] border border-black/15 bg-[#ece9e0] px-4 py-4 sm:px-5">
+              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-black/50">Recent Result</p>
+              <p className={`${editorialSerif.className} mt-1 text-lg leading-tight text-black/85 sm:text-xl`}>
+                Accounting Firm -&gt; 22-30 qualified leads/month
+              </p>
+            </div>
 
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">What you don&apos;t pay for</p>
-          <p className={`${editorialSerif.className} mt-1 text-lg leading-tight text-black/75 sm:text-xl`}>
-            Agency overhead, junior account managers, or guesswork.
-          </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[8px] border border-black/10 bg-white/70 p-4">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-black/50">What I Build</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.1em] text-black/80 sm:text-sm">
+                  Meta or Google Ads -&gt; Landing Page -&gt; WhatsApp Leads -&gt; Full Tracking
+                </p>
+              </div>
+              <div className="rounded-[8px] border border-black/10 bg-white/70 p-4">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-black/50">What You Don&apos;t Pay For</p>
+                <p className={`${editorialSerif.className} mt-2 text-lg leading-tight text-black/75`}>
+                  Agency overhead, junior account managers, or guesswork.
+                </p>
+              </div>
+            </div>
 
-          <p className="mt-6 text-base font-semibold uppercase tracking-[0.1em] text-black/80 sm:text-lg">From 1,500 AED/month</p>
+            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/75 sm:text-base">
+              Founder Offer: Starting from <span className="text-black">1,500 AED</span> for launch setup.
+            </p>
 
-          <WhatsAppCtaButton
-            variant="a"
-            placement="proof"
-            phone={WHATSAPP_PHONE}
-            baseMessage={WHATSAPP_MESSAGE}
-            className="mt-6 inline-flex items-center justify-center border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-transparent hover:text-black"
-          >
-            Tell me about my free audit
-          </WhatsAppCtaButton>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Image
+                src="/badges/meta-buyer-badge.png"
+                alt="Meta Certified Media Buyer badge"
+                width={90}
+                height={90}
+                className="h-[3.8rem] w-auto rounded border border-black/10 bg-white p-1 transition hover:-translate-y-0.5"
+              />
+              <Image
+                src="/badges/meta-performance-badge.png"
+                alt="Meta Certified AI and Performance Marketing Specialist badge"
+                width={90}
+                height={90}
+                className="h-[3.8rem] w-auto rounded border border-black/10 bg-white p-1 transition hover:-translate-y-0.5"
+              />
+              <Image
+                src="/badges/google-partner-badge.png"
+                alt="Google Ads Certified Search badge"
+                width={90}
+                height={90}
+                className="h-[3.8rem] w-auto rounded border border-black/10 bg-white p-1 transition hover:-translate-y-0.5"
+              />
+            </div>
+
+            <WhatsAppCtaButton
+              variant="a"
+              placement="proof"
+              phone={WHATSAPP_PHONE}
+              baseMessage={WHATSAPP_MESSAGE}
+              className="mt-6 inline-flex items-center justify-center border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-transparent hover:text-black"
+            >
+              Tell me about my free audit
+            </WhatsAppCtaButton>
+          </div>
+
+          <div className="self-start">
+            <div className="overflow-hidden rounded-[10px] border border-black/15 bg-[#ece9e0] shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+              <div className="relative aspect-[1179/760] w-full">
+                <Image
+                  src="/hero/my-photo.png"
+                  alt="Founder portrait"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 36vw, 100vw"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
