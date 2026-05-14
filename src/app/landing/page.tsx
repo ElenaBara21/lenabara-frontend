@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
 import LandingAttribution from "./components/LandingAttribution";
+import PricingCollapsible from "./components/PricingCollapsible";
 import VideoWithEndCta from "./components/VideoWithEndCta";
 import WhatsAppCtaButton from "./components/WhatsAppCtaButton";
 
@@ -253,6 +254,7 @@ export default function LandingPage() {
             ))}
           </ul>
           <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-black/60">Ad spend is separate</p>
+          <PricingCollapsible />
         </div>
       </section>
 
