@@ -285,13 +285,40 @@ export default function LandingPage() {
         <h2 className={`${displayFont.className} mb-7 text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.8rem]`}>
           Who You&apos;ll Work With
         </h2>
-        <div className="grid gap-6 rounded-[10px] border border-black/15 bg-white/75 p-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <p className={`${editorialSerif.className} text-xl leading-tight text-black/75 sm:text-2xl`}>
-            I&apos;m a performance strategist focused on UAE service businesses. I build lean ad systems that connect paid traffic, landing pages, WhatsApp conversion, and GA4 tracking into one measurable pipeline you can scale.
+        <div className="rounded-[10px] border border-black/15 bg-white/75 p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.11em] text-black/65 sm:text-base">
+            Meta Certified Media Buyer · Google Ads Certified · PG UT Austin Data Science and BA · BEng + BFin
           </p>
-          <div className="flex min-h-[15rem] items-center justify-center rounded-[8px] border border-dashed border-black/30 bg-[#ece9e0]">
-            <p className="px-4 text-center text-xs font-semibold uppercase tracking-[0.14em] text-black/55">Profile image placeholder</p>
-          </div>
+          <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
+            I&apos;ve spent 10 years acquiring clients - first inside private firms, now for businesses like yours.
+          </p>
+
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">Recent result</p>
+          <p className={`${editorialSerif.className} mt-1 text-lg leading-tight text-black/80 sm:text-xl`}>
+            Accounting firm -&gt; 22-30 qualified leads/month
+          </p>
+
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">What I actually build</p>
+          <p className="mt-1 text-sm font-semibold uppercase tracking-[0.1em] text-black/80 sm:text-base">
+            Meta Ads -&gt; Landing Page -&gt; WhatsApp -&gt; Full Tracking
+          </p>
+
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.1em] text-black/55">What you don&apos;t pay for</p>
+          <p className={`${editorialSerif.className} mt-1 text-lg leading-tight text-black/75 sm:text-xl`}>
+            Agency overhead, junior account managers, or guesswork.
+          </p>
+
+          <p className="mt-6 text-base font-semibold uppercase tracking-[0.1em] text-black/80 sm:text-lg">From 1,500 AED/month</p>
+
+          <WhatsAppCtaButton
+            variant="a"
+            placement="proof"
+            phone={WHATSAPP_PHONE}
+            baseMessage={WHATSAPP_MESSAGE}
+            className="mt-6 inline-flex items-center justify-center border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-transparent hover:text-black"
+          >
+            Tell me about my free audit
+          </WhatsAppCtaButton>
         </div>
       </section>
 
