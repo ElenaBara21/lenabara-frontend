@@ -121,7 +121,7 @@ export default function LandingPage() {
               Turn Traffic Into WhatsApp Leads with a High-Converting Landing Page + Meta Ads
             </h1>
             <p className={`${editorialSerif.className} mt-5 max-w-2xl text-lg leading-tight text-black/80 sm:text-[1.55rem]`}>
-              I build structured Meta &amp; Google lead systems with real tracking, landing pages, and WhatsApp conversion flow - so your ad spend turns into actual inquiries, not just clicks.
+              I build the landing page, run Meta or Google Ads, and set up tracking - so your ad spend turns into real WhatsApp inquiries, not just clicks.
             </p>
             <p className="mt-6 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-black/60 sm:text-xs">
               Meta &amp; Google Certified | GA4 &amp; Conversion Tracking Specialist
@@ -135,9 +135,11 @@ export default function LandingPage() {
                 baseMessage={WHATSAPP_MESSAGE}
                 className="inline-flex items-center justify-center border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-transparent hover:text-black"
               >
-                Get Free Audit - WhatsApp (Reply in 1 Hour)
+                👉 Get My Landing Page
               </WhatsAppCtaButton>
-              <p className="text-xs uppercase tracking-[0.11em] text-black/55">Limited to 2 new clients per week</p>
+              <p className="text-xs uppercase tracking-[0.11em] text-black/55">
+                Launch in 5-7 days • Designed for UAE service businesses • No complex websites
+              </p>
             </div>
           </div>
 
@@ -148,7 +150,7 @@ export default function LandingPage() {
                 phone={WHATSAPP_PHONE}
                 baseMessage={WHATSAPP_MESSAGE}
                 src="/hero/landing-hero-video.mov"
-                ctaLabel="Get Free Audit - WhatsApp"
+                ctaLabel="👉 Launch My Lead Funnel"
               />
             </div>
           </div>
