@@ -124,7 +124,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">About Me</h2>
                 <p className="text-neutral-300 text-base md:text-lg leading-relaxed mb-8">
-                  I'm Lena Bara (Yelena Shelepova) — a performance marketing strategist working with UAE service businesses.
+                  Hi, I’m Yelena Shelepova — founder of Lena Bara. I&apos;ve spent 10+ years helping businesses acquire clients - first inside private companies, now through landing pages, paid ads, and conversion-focused lead systems for UAE businesses.
                 </p>
 
                 <div className="bg-black/30 rounded-xl p-6 mb-8">
