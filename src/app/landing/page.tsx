@@ -303,6 +303,10 @@ export default function LandingPage() {
             </div>
 
             <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
+              Hi, I&apos;m Yelena Shelepova — founder of Lena Bara.
+            </p>
+
+            <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
               I&apos;ve spent 10+ years helping businesses acquire clients - first inside private companies, now through landing pages, paid ads, and conversion-focused lead systems for UAE businesses.
             </p>
 
