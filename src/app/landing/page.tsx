@@ -361,7 +361,7 @@ export default function LandingPage() {
             <div className="overflow-hidden rounded-[10px] border border-black/15 bg-[#ece9e0] shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
               <div className="relative aspect-[1179/760] w-full">
                 <Image
-                  src="/hero/lena.jpg"
+                  src="/hero/lena.png"
                   alt="Founder portrait"
                   fill
                   className="object-cover"
