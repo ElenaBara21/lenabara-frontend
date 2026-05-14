@@ -244,6 +244,9 @@ export default function LandingPage() {
         <h2 className={`${displayFont.className} mb-7 text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.8rem]`}>
           Simple Pricing
         </h2>
+        <p className="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-black/55">
+          Launch Offer — Limited Availability
+        </p>
         <div className="rounded-[10px] border border-black/20 bg-white/80 p-6 sm:p-8">
           <p className={`${displayFont.className} text-[2.3rem] uppercase leading-[0.92] tracking-[0.01em] sm:text-[3rem]`}>
             Starting from 1,500 AED/month
