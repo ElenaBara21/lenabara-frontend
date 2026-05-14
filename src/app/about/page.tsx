@@ -136,15 +136,23 @@ export default function AboutPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400">✓</span>
-                      <span>Google Ads Certified</span>
+                      <span>Meta Certified AI &amp; Performance Marketing Specialist</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400">✓</span>
-                      <span>Background in Data Science & Analytics</span>
+                      <span>Google Ads (Search) Certified</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400">✓</span>
-                      <span>Master's Degree in Marketing Management</span>
+                      <span>PGD in Data Science &amp; Business Analytics — UT Austin</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-400">✓</span>
+                      <span>Currently Pursuing an MA in Marketing Management</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-400">✓</span>
+                      <span>BEng + Bachelor's Degree in Finance</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400">✓</span>
@@ -152,7 +160,7 @@ export default function AboutPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400">✓</span>
-                      <span>Social Media Advertiser Permit (National Media Authority)</span>
+                      <span>UAE Social Media Advertiser Permit (National Media Authority)</span>
                     </li>
                   </ul>
                 </div>
