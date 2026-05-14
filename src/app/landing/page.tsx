@@ -136,7 +136,7 @@ export default function LandingPage() {
                 baseMessage={WHATSAPP_MESSAGE}
                 className="inline-flex items-center justify-center border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-transparent hover:text-black"
               >
-                👉 Get My Landing Page
+                👉 Launch My Lead Funnel
               </WhatsAppCtaButton>
               <p className="text-xs uppercase tracking-[0.11em] text-black/55">
                 Launch in 5-7 days • Designed for UAE service businesses • No complex websites
