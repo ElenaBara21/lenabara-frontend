@@ -118,7 +118,7 @@ export default function LandingPage() {
             <h1
               className={`${displayFont.className} text-[2.35rem] uppercase leading-[0.9] tracking-[0.01em] sm:text-[3.5rem] lg:text-[4.5rem]`}
             >
-              Most UAE Businesses Don&apos;t Lose Money on Ads - They Lose It on Broken Funnels &amp; No Tracking
+              Turn Traffic Into WhatsApp Leads with a High-Converting Landing Page + Meta Ads
             </h1>
             <p className={`${editorialSerif.className} mt-5 max-w-2xl text-lg leading-tight text-black/80 sm:text-[1.55rem]`}>
               I build structured Meta &amp; Google lead systems with real tracking, landing pages, and WhatsApp conversion flow - so your ad spend turns into actual inquiries, not just clicks.
