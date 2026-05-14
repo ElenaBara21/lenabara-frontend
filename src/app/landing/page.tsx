@@ -288,8 +288,25 @@ export default function LandingPage() {
         </h2>
         <div className="grid gap-6 rounded-[10px] border border-black/15 bg-white/75 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-black/70 sm:text-[0.95rem]">
-              BEng + BFin · Meta Certified Media Buyer · Meta Certified AI and Performance Marketing Specialist · Google Ads Certified (Search) · UT Austin Data Science · MA in Marketing (in progress)
+            <p className="text-sm font-semibold text-black/75 sm:text-[0.95rem]">
+              Credentials
+              <br />
+              <br />
+              ✓ Meta Certified Media Buyer
+              <br />
+              ✓ Meta Certified AI &amp; Performance Marketing Specialist
+              <br />
+              ✓ Google Ads (Search) Certified
+              <br />
+              ✓ PGD in Data Science &amp; Business Analytics — UT Austin
+              <br />
+              ✓ Currently Pursuing an MA in Marketing Management
+              <br />
+              ✓ BEng + Bachelor’s Degree in Finance
+              <br />
+              ✓ UAE Licensed Marketing Consultancy (RAKEZ)
+              <br />
+              ✓ UAE Social Media Advertiser Permit (National Media Authority)
             </p>
 
             <p className={`${editorialSerif.className} mt-4 text-xl leading-tight text-black/75 sm:text-2xl`}>
