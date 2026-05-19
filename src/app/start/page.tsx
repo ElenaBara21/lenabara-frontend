@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
 
 const displayFont = Bebas_Neue({ subsets: ["latin"], weight: "400" });
@@ -13,8 +12,8 @@ type FormState = Record<string, FormValue>;
 
 export default function LeadSystemAuditForm() {
   const [step, setStep] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<FormState>({});
-  const router = useRouter();
   const formContainerRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
 
@@ -38,7 +37,7 @@ export default function LeadSystemAuditForm() {
     },
     {
       title: "Current Lead Flow",
-      description: "This helps us understand how clients currently find you.",
+      description: "This helps us understand how clients currently find you and where the biggest bottlenecks may be.",
       fields: [
         {
           name: "leadSources",
@@ -58,13 +57,26 @@ export default function LeadSystemAuditForm() {
           name: "marketingChallenge",
           label: "What has been your biggest marketing challenge recently?",
           type: "radio",
+          required: true,
           options: ["Not enough leads", "Low-quality leads", "Expensive ads", "Weak conversion rate", "Inconsistent sales", "No tracking/data", "Poor follow-up process"],
         },
         {
           name: "conversionTracking",
           label: "Do you currently track conversions or leads?",
           type: "radio",
+          required: true,
           options: ["Yes", "No", "Not sure"],
+        },
+        {
+          name: "trackingMicrocopy",
+          type: "note",
+        },
+        {
+          name: "platformImprovement",
+          label: "Which platform would you most like to improve right now?",
+          type: "radio",
+          required: true,
+          options: ["Meta Ads", "Google Ads", "Landing page conversion", "WhatsApp lead flow", "Tracking & analytics", "Overall lead generation system"],
         },
       ],
     },
@@ -142,7 +154,7 @@ export default function LeadSystemAuditForm() {
   ];
 
   const current = sections[step];
-  const progress = Math.round(((step + 1) / sections.length) * 100);
+  const progress = submitted ? 100 : Math.round(((step + 1) / sections.length) * 100);
 
   useEffect(() => {
     if (!hasMountedRef.current) {
@@ -179,7 +191,77 @@ export default function LeadSystemAuditForm() {
 
   function handleSubmit() {
     console.log("Lead System Audit submission:", form);
-    router.push("/thank-you?source=start-audit&intent=lead-audit");
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (submitted) {
+    return (
+      <main className="min-h-screen bg-[#f5f4f0] px-4 py-4 text-black sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1120px]">
+          <header className="mb-10 flex items-center justify-between border-b border-black/10 pb-4">
+            <Link href="/" className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/55 transition hover:text-black">
+              Lena Bara
+            </Link>
+            <Link href="/contact" className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-black/45 transition hover:text-black">
+              Contact
+            </Link>
+          </header>
+
+          <section className="mx-auto max-w-3xl rounded-[10px] border border-black/15 bg-white/90 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.04)] sm:p-8 md:p-10">
+            <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/45">
+              Audit Request Received
+            </p>
+            <h1 className={`${displayFont.className} text-[2.8rem] uppercase leading-[0.92] tracking-[0.01em] sm:text-[4rem]`}>
+              Thank You — Audit Request Received
+            </h1>
+            <p className={`${editorialSerif.className} mt-5 max-w-2xl text-[1.08rem] leading-snug text-black/70 sm:text-[1.25rem]`}>
+              We&apos;ll review your business, lead flow, and current marketing setup before reaching out with next steps.
+            </p>
+
+            <div className="mt-8 rounded-[8px] border border-black/15 bg-[#f5f4f0] p-5 sm:p-6">
+              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-black/40">What Happens Next</p>
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {[
+                  {
+                    title: "Audit Review",
+                    desc: "We review your answers, current lead flow, and marketing setup.",
+                  },
+                  {
+                    title: "Strategy Recommendations",
+                    desc: "We identify potential issues in ads, tracking, funnel, or lead handling.",
+                  },
+                  {
+                    title: "Next Step Contact",
+                    desc: "If there&apos;s a good fit, we&apos;ll contact you within 24 hours with recommendations and next steps.",
+                  },
+                ].map((item, index) => (
+                  <div key={item.title} className="rounded-[8px] border border-black/10 bg-white px-4 py-4">
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-black/40">0{index + 1}</p>
+                    <h2 className={`${displayFont.className} mt-2 text-[1.6rem] uppercase leading-[0.95] tracking-[0.01em]`}>
+                      {item.title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-black/65">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-black px-7 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition duration-300 hover:bg-orange-500"
+              >
+                Book Strategy Call
+              </Link>
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-black/40">
+                Premium boutique review process
+              </span>
+            </div>
+          </section>
+        </div>
+      </main>
+    );
   }
 
   return (
@@ -257,10 +339,18 @@ export default function LeadSystemAuditForm() {
             <div className="mt-8 space-y-7 md:space-y-8">
               {current.fields.map((field) => (
                 <div key={field.name}>
-                  <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/82">
-                    {field.label}
-                    {field.required && <span className="ml-1 text-orange-500">*</span>}
-                  </label>
+                  {field.type !== "note" && (
+                    <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/86">
+                      {field.label}
+                      {field.required && <span className="ml-1 text-orange-500">*</span>}
+                    </label>
+                  )}
+
+                  {field.type === "note" && (
+                    <p className={`${editorialSerif.className} mt-1 max-w-2xl text-[0.98rem] leading-snug text-black/58`}>
+                      Many businesses lose leads due to missing tracking or delayed follow-up — not only because of ads.
+                    </p>
+                  )}
 
                   {(field.type === "text" || field.type === "email") && (
                     <input
