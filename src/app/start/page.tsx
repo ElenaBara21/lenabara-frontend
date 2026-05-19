@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
+
+const displayFont = Bebas_Neue({ subsets: ["latin"], weight: "400" });
+const editorialSerif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function LeadSystemAuditForm() {
   const [step, setStep] = useState(0);
@@ -162,86 +166,108 @@ export default function LeadSystemAuditForm() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-10 text-slate-900">
-      <div className="mx-auto max-w-3xl rounded-3xl bg-white p-6 shadow-sm md:p-10">
-        <div className="mb-8">
-          <p className="mb-2 text-sm font-medium uppercase tracking-wide text-slate-500">Lena Bara Boutique Performance Marketing Agency</p>
-          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Lead System Audit</h1>
-          <p className="mt-3 max-w-2xl text-slate-600">This short intake helps us understand your business, current lead flow, sales process, and growth goals before preparing recommendations.</p>
-          <p className="mt-2 text-sm text-slate-500">Estimated time: 3–5 minutes.</p>
+    <main className="min-h-screen bg-[#f5f4f0] px-5 py-12 text-black sm:px-8">
+      <div className="mx-auto max-w-2xl">
+
+        {/* Header */}
+        <div className="mb-10">
+          <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/50">
+            Lena Bara · Boutique Performance Marketing
+          </p>
+          <h1 className={`${displayFont.className} text-[3rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[4.5rem]`}>
+            Lead System<br />Audit
+          </h1>
+          <p className={`${editorialSerif.className} mt-4 text-xl leading-snug text-black/70 sm:text-2xl`}>
+            This short intake helps us understand your business, current lead flow, sales process, and growth goals before preparing recommendations.
+          </p>
+          <p className="mt-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-black/40">
+            Estimated time: 3–5 minutes
+          </p>
         </div>
 
+        {/* Progress */}
         <div className="mb-8">
-          <div className="mb-2 flex items-center justify-between text-sm text-slate-500">
+          <div className="mb-2 flex items-center justify-between text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-black/40">
             <span>Step {step + 1} of {sections.length}</span>
             <span>{progress}%</span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-            <div className="h-full rounded-full bg-slate-900 transition-all" style={{ width: `${progress}%` }} />
+          <div className="h-[3px] w-full overflow-hidden bg-black/10">
+            <div className="h-full bg-black transition-all" style={{ width: `${progress}%` }} />
           </div>
         </div>
 
-        <section>
-          <h2 className="text-2xl font-semibold">{current.title}</h2>
-          <p className="mt-2 text-slate-600">{current.description}</p>
+        {/* Step card */}
+        <div className="rounded-[10px] border border-black/15 bg-white/80 p-6 sm:p-8">
+          <p className="mb-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-black/40">
+            Section {step + 1}
+          </p>
+          <h2 className={`${displayFont.className} text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.6rem]`}>
+            {current.title}
+          </h2>
+          <p className={`${editorialSerif.className} mt-2 text-lg leading-snug text-black/60`}>
+            {current.description}
+          </p>
 
-          <div className="mt-8 space-y-7">
+          <div className="mt-7 space-y-6">
             {current.fields.map((field) => (
               <div key={field.name}>
-                <label className="mb-2 block font-medium">
-                  {field.label} {field.required && <span className="text-red-500">*</span>}
+                <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/70">
+                  {field.label}{field.required && <span className="ml-1 text-black">*</span>}
                 </label>
 
-                {field.type === "text" || field.type === "email" ? (
+                {(field.type === "text" || field.type === "email") && (
                   <input
                     type={field.type}
                     value={(form as Record<string, string>)[field.name] || ""}
                     placeholder={field.placeholder || ""}
                     onChange={(e) => updateValue(field.name, e.target.value)}
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-slate-900"
+                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black placeholder:text-black/30"
                   />
-                ) : null}
+                )}
 
-                {field.type === "textarea" ? (
+                {field.type === "textarea" && (
                   <textarea
                     value={(form as Record<string, string>)[field.name] || ""}
                     placeholder={field.placeholder || ""}
                     onChange={(e) => updateValue(field.name, e.target.value)}
                     rows={4}
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-slate-900"
+                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black placeholder:text-black/30"
                   />
-                ) : null}
+                )}
 
-                {field.type === "select" ? (
+                {field.type === "select" && (
                   <select
                     value={(form as Record<string, string>)[field.name] || ""}
                     onChange={(e) => updateValue(field.name, e.target.value)}
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-slate-900"
+                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black"
                   >
                     <option value="">Select one</option>
                     {field.options?.map((option) => (
                       <option key={option} value={option}>{option}</option>
                     ))}
                   </select>
-                ) : null}
+                )}
 
-                {field.type === "radio" ? (
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {field.options?.map((option) => (
-                      <button
-                        type="button"
-                        key={option}
-                        onClick={() => updateValue(field.name, option)}
-                        className={`rounded-2xl border px-4 py-3 text-left transition ${(form as Record<string, string>)[field.name] === option ? "border-slate-900 bg-slate-900 text-white" : "border-slate-200 hover:border-slate-400"}`}
-                      >
-                        {option}
-                      </button>
-                    ))}
+                {field.type === "radio" && (
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {field.options?.map((option) => {
+                      const active = (form as Record<string, string>)[field.name] === option;
+                      return (
+                        <button
+                          type="button"
+                          key={option}
+                          onClick={() => updateValue(field.name, option)}
+                          className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition ${active ? "border-black bg-black text-white" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-black/40"}`}
+                        >
+                          {option}
+                        </button>
+                      );
+                    })}
                   </div>
-                ) : null}
+                )}
 
-                {field.type === "checkbox" ? (
-                  <div className="grid gap-3 sm:grid-cols-2">
+                {field.type === "checkbox" && (
+                  <div className="grid gap-2 sm:grid-cols-2">
                     {field.options?.map((option) => {
                       const selected = ((form as Record<string, string[]>)[field.name] || []).includes(option);
                       return (
@@ -249,25 +275,26 @@ export default function LeadSystemAuditForm() {
                           type="button"
                           key={option}
                           onClick={() => toggleCheckbox(field.name, option)}
-                          className={`rounded-2xl border px-4 py-3 text-left transition ${selected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-200 hover:border-slate-400"}`}
+                          className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition ${selected ? "border-black bg-black text-white" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-black/40"}`}
                         >
                           {option}
                         </button>
                       );
                     })}
                   </div>
-                ) : null}
+                )}
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <div className="mt-10 flex items-center justify-between gap-4">
+        {/* Navigation */}
+        <div className="mt-6 flex items-center justify-between gap-4">
           <button
             type="button"
             onClick={() => setStep((prev) => Math.max(prev - 1, 0))}
             disabled={step === 0}
-            className="rounded-full border border-slate-200 px-5 py-3 font-medium text-slate-700 transition hover:border-slate-400 disabled:cursor-not-allowed disabled:opacity-40"
+            className="border border-black/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-black/70 transition hover:border-black hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
           >
             Back
           </button>
@@ -277,16 +304,16 @@ export default function LeadSystemAuditForm() {
               type="button"
               onClick={() => setStep((prev) => prev + 1)}
               disabled={!canContinue()}
-              className="rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="bg-black px-8 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-30"
             >
-              Continue
+              Continue →
             </button>
           ) : (
             <button
               type="button"
               onClick={handleSubmit}
               disabled={!canContinue()}
-              className="rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="bg-black px-8 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-30"
             >
               Submit Audit Request
             </button>
