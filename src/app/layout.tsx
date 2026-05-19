@@ -55,6 +55,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1145191804441934&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {/* Google Tag Manager (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17042420719"
@@ -104,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               t.async = !0;
               t.src = "https://connect.facebook.net/en_US/fbevents.js";
               document.head.appendChild(t);
-              n("init", "1217425950383428");
+              n("init", "1145191804441934");
               n("track", "PageView");
             })();
 
