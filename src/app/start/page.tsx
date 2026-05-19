@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
 
 const displayFont = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 const editorialSerif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
+type FormValue = string | string[];
+type FormState = Record<string, FormValue>;
+
 export default function LeadSystemAuditForm() {
   const [step, setStep] = useState(0);
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState<FormState>({});
+  const router = useRouter();
+  const formContainerRef = useRef<HTMLDivElement | null>(null);
+  const hasMountedRef = useRef(false);
 
   const sections = [
     {
@@ -136,13 +144,22 @@ export default function LeadSystemAuditForm() {
   const current = sections[step];
   const progress = Math.round(((step + 1) / sections.length) * 100);
 
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    formContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [step]);
+
   function updateValue(name: string, value: string) {
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
   function toggleCheckbox(name: string, option: string) {
-    setForm((prev: Record<string, unknown>) => {
-      const currentValues = (prev[name] as string[]) || [];
+    setForm((prev) => {
+      const currentValues = Array.isArray(prev[name]) ? prev[name] : [];
       const exists = currentValues.includes(option);
       return {
         ...prev,
@@ -154,7 +171,7 @@ export default function LeadSystemAuditForm() {
   function canContinue() {
     return current.fields.every((field) => {
       if (!field.required) return true;
-      const value = (form as Record<string, unknown>)[field.name];
+      const value = form[field.name];
       if (Array.isArray(value)) return value.length > 0;
       return value && String(value).trim().length > 0;
     });
@@ -162,164 +179,209 @@ export default function LeadSystemAuditForm() {
 
   function handleSubmit() {
     console.log("Lead System Audit submission:", form);
-    alert("Thank you — your audit request has been received. We'll review your answers and reach out with next steps.");
+    router.push("/thank-you?source=start-audit&intent=lead-audit");
   }
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] px-5 py-12 text-black sm:px-8">
-      <div className="mx-auto max-w-2xl">
+    <main className="min-h-screen bg-[#f5f4f0] px-4 py-4 text-black sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1120px]">
+        <header className="mb-10 flex items-center justify-between border-b border-black/10 pb-4">
+          <Link href="/" className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/55 transition hover:text-black">
+            Lena Bara
+          </Link>
+          <nav className="flex items-center gap-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-black/45">
+            <Link href="/" className="transition hover:text-black">
+              Home
+            </Link>
+            <Link href="/contact" className="transition hover:text-black">
+              Contact
+            </Link>
+          </nav>
+        </header>
 
-        {/* Header */}
-        <div className="mb-10">
+        <section className="mb-14 md:mb-16">
           <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/50">
-            Lena Bara · Boutique Performance Marketing
+            Boutique Performance Marketing Agency
           </p>
-          <h1 className={`${displayFont.className} text-[3rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[4.5rem]`}>
+          <h1 className={`${displayFont.className} max-w-4xl text-[3rem] uppercase leading-[0.92] tracking-[0.01em] sm:text-[4.4rem] lg:text-[5.2rem]`}>
             Lead System<br />Audit
           </h1>
-          <p className={`${editorialSerif.className} mt-4 text-xl leading-snug text-black/70 sm:text-2xl`}>
+          <p className={`${editorialSerif.className} mt-5 max-w-2xl text-[1.12rem] leading-snug text-black/72 sm:text-[1.35rem]`}>
             This short intake helps us understand your business, current lead flow, sales process, and growth goals before preparing recommendations.
           </p>
-          <p className="mt-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-black/40">
+          <p className="mt-3 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-black/45">
             Estimated time: 3–5 minutes
           </p>
-        </div>
 
-        {/* Progress */}
-        <div className="mb-8">
-          <div className="mb-2 flex items-center justify-between text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-black/40">
-            <span>Step {step + 1} of {sections.length}</span>
-            <span>{progress}%</span>
-          </div>
-          <div className="h-[3px] w-full overflow-hidden bg-black/10">
-            <div className="h-full bg-black transition-all" style={{ width: `${progress}%` }} />
-          </div>
-        </div>
-
-        {/* Step card */}
-        <div className="rounded-[10px] border border-black/15 bg-white/80 p-6 sm:p-8">
-          <p className="mb-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-            Section {step + 1}
-          </p>
-          <h2 className={`${displayFont.className} text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.6rem]`}>
-            {current.title}
-          </h2>
-          <p className={`${editorialSerif.className} mt-2 text-lg leading-snug text-black/60`}>
-            {current.description}
-          </p>
-
-          <div className="mt-7 space-y-6">
-            {current.fields.map((field) => (
-              <div key={field.name}>
-                <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/70">
-                  {field.label}{field.required && <span className="ml-1 text-black">*</span>}
-                </label>
-
-                {(field.type === "text" || field.type === "email") && (
-                  <input
-                    type={field.type}
-                    value={(form as Record<string, string>)[field.name] || ""}
-                    placeholder={field.placeholder || ""}
-                    onChange={(e) => updateValue(field.name, e.target.value)}
-                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black placeholder:text-black/30"
-                  />
-                )}
-
-                {field.type === "textarea" && (
-                  <textarea
-                    value={(form as Record<string, string>)[field.name] || ""}
-                    placeholder={field.placeholder || ""}
-                    onChange={(e) => updateValue(field.name, e.target.value)}
-                    rows={4}
-                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black placeholder:text-black/30"
-                  />
-                )}
-
-                {field.type === "select" && (
-                  <select
-                    value={(form as Record<string, string>)[field.name] || ""}
-                    onChange={(e) => updateValue(field.name, e.target.value)}
-                    className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition focus:border-black"
-                  >
-                    <option value="">Select one</option>
-                    {field.options?.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                )}
-
-                {field.type === "radio" && (
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    {field.options?.map((option) => {
-                      const active = (form as Record<string, string>)[field.name] === option;
-                      return (
-                        <button
-                          type="button"
-                          key={option}
-                          onClick={() => updateValue(field.name, option)}
-                          className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition ${active ? "border-black bg-black text-white" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-black/40"}`}
-                        >
-                          {option}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {field.type === "checkbox" && (
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    {field.options?.map((option) => {
-                      const selected = ((form as Record<string, string[]>)[field.name] || []).includes(option);
-                      return (
-                        <button
-                          type="button"
-                          key={option}
-                          onClick={() => toggleCheckbox(field.name, option)}
-                          className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition ${selected ? "border-black bg-black text-white" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-black/40"}`}
-                        >
-                          {option}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              "Meta Certified",
+              "Google Ads Certified",
+              "UAE Licensed",
+              "GA4 & Tracking Setup",
+            ].map((item) => (
+              <span
+                key={item}
+                className="border border-black/15 bg-white/75 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-black/65"
+              >
+                {item}
+              </span>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Navigation */}
-        <div className="mt-6 flex items-center justify-between gap-4">
-          <button
-            type="button"
-            onClick={() => setStep((prev) => Math.max(prev - 1, 0))}
-            disabled={step === 0}
-            className="border border-black/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-black/70 transition hover:border-black hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
-          >
-            Back
-          </button>
+        <div ref={formContainerRef} className="rounded-[10px] border border-black/15 bg-white/86 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] sm:p-8 md:p-10">
+          <div className="mb-8">
+            <div className="mb-2 flex items-center justify-between text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-black/45">
+              <span>
+                Step {step + 1} of {sections.length}
+              </span>
+              <span>{progress}%</span>
+            </div>
+            <div className="h-[3px] w-full overflow-hidden bg-black/10">
+              <div className="h-full bg-orange-500 transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
 
-          {step < sections.length - 1 ? (
+          <section key={step} style={{ animation: "fadeInUp 260ms ease-out" }}>
+            <p className="mb-2 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-black/40">
+              Section {step + 1}
+            </p>
+            <h2 className={`${displayFont.className} text-[2rem] uppercase leading-[0.95] tracking-[0.01em] sm:text-[2.8rem]`}>
+              {current.title}
+            </h2>
+            <p className={`${editorialSerif.className} mt-3 max-w-2xl text-[1.05rem] leading-snug text-black/62 sm:text-[1.15rem]`}>
+              {current.description}
+            </p>
+
+            <div className="mt-8 space-y-7 md:space-y-8">
+              {current.fields.map((field) => (
+                <div key={field.name}>
+                  <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/82">
+                    {field.label}
+                    {field.required && <span className="ml-1 text-orange-500">*</span>}
+                  </label>
+
+                  {(field.type === "text" || field.type === "email") && (
+                    <input
+                      type={field.type}
+                      value={form[field.name] ? String(form[field.name]) : ""}
+                      placeholder={field.placeholder || ""}
+                      onChange={(e) => updateValue(field.name, e.target.value)}
+                      className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition duration-300 placeholder:text-black/30 focus:border-orange-500 focus:bg-white"
+                    />
+                  )}
+
+                  {field.type === "textarea" && (
+                    <textarea
+                      value={form[field.name] ? String(form[field.name]) : ""}
+                      placeholder={field.placeholder || ""}
+                      onChange={(e) => updateValue(field.name, e.target.value)}
+                      rows={4}
+                      className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition duration-300 placeholder:text-black/30 focus:border-orange-500 focus:bg-white"
+                    />
+                  )}
+
+                  {field.type === "select" && (
+                    <select
+                      value={form[field.name] ? String(form[field.name]) : ""}
+                      onChange={(e) => updateValue(field.name, e.target.value)}
+                      className="w-full rounded-[8px] border border-black/20 bg-[#f5f4f0] px-4 py-3 text-sm outline-none transition duration-300 focus:border-orange-500 focus:bg-white"
+                    >
+                      <option value="">Select one</option>
+                      {field.options?.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+
+                  {field.type === "radio" && (
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {field.options?.map((option) => {
+                        const active = form[field.name] === option;
+                        return (
+                          <button
+                            type="button"
+                            key={option}
+                            onClick={() => updateValue(field.name, option)}
+                            className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition duration-300 ${active ? "border-orange-500 bg-orange-50 text-black shadow-[0_0_0_1px_rgba(249,115,22,0.18)]" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-orange-500 hover:bg-white"}`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {field.type === "checkbox" && (
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {field.options?.map((option) => {
+                        const selected = Array.isArray(form[field.name]) && (form[field.name] as string[]).includes(option);
+                        return (
+                          <button
+                            type="button"
+                            key={option}
+                            onClick={() => toggleCheckbox(field.name, option)}
+                            className={`rounded-[8px] border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.09em] transition duration-300 ${selected ? "border-orange-500 bg-orange-50 text-black shadow-[0_0_0_1px_rgba(249,115,22,0.18)]" : "border-black/15 bg-[#f5f4f0] text-black/80 hover:border-orange-500 hover:bg-white"}`}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="mt-10 flex items-center justify-between gap-4 pt-2">
             <button
               type="button"
-              onClick={() => setStep((prev) => prev + 1)}
-              disabled={!canContinue()}
-              className="bg-black px-8 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-30"
+              onClick={() => setStep((prev) => Math.max(prev - 1, 0))}
+              disabled={step === 0}
+              className="border border-black/20 px-5 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-black/70 transition duration-300 hover:border-black hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
             >
-              Continue →
+              Back
             </button>
-          ) : (
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={!canContinue()}
-              className="bg-black px-8 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-30"
-            >
-              Submit Audit Request
-            </button>
-          )}
+
+            {step < sections.length - 1 ? (
+              <button
+                type="button"
+                onClick={() => setStep((prev) => prev + 1)}
+                disabled={!canContinue()}
+                className="bg-black px-7 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition duration-300 hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-30"
+              >
+                Continue →
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={!canContinue()}
+                className="bg-black px-7 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition duration-300 hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-30"
+              >
+                Submit Audit Request
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </main>
   );
 }
