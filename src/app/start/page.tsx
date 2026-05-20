@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Bebas_Neue, Cormorant_Garamond } from "next/font/google";
+import { supabase } from "@/lib/supabase";
 
 const displayFont = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 const editorialSerif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -10,14 +11,33 @@ const editorialSerif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", 
 type FormValue = string | string[];
 type FormState = Record<string, FormValue>;
 
+type FieldType = "text" | "email" | "textarea" | "select" | "radio" | "checkbox" | "note";
+
+type FormField = {
+  name: string;
+  label?: string;
+  type: FieldType;
+  required?: boolean;
+  placeholder?: string;
+  options?: string[];
+};
+
+type FormSection = {
+  title: string;
+  description: string;
+  fields: FormField[];
+};
+
 export default function LeadSystemAuditForm() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>({});
   const formContainerRef = useRef<HTMLDivElement | null>(null);
   const hasMountedRef = useRef(false);
 
-  const sections = [
+  const sections: FormSection[] = [
     {
       title: "Business Basics",
       description: "Let's start with a quick overview of your business.",
@@ -153,7 +173,7 @@ export default function LeadSystemAuditForm() {
     },
   ];
 
-  const current = sections[step];
+  const current: FormSection = sections[step];
   const progress = submitted ? 100 : Math.round(((step + 1) / sections.length) * 100);
 
   useEffect(() => {
@@ -189,10 +209,63 @@ export default function LeadSystemAuditForm() {
     });
   }
 
-  function handleSubmit() {
-    console.log("Lead System Audit submission:", form);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const missingRequiredFields = current.fields
+    .filter((field) => field.required)
+    .filter((field) => {
+      const value = form[field.name];
+      if (Array.isArray(value)) return value.length === 0;
+      return !value || String(value).trim().length === 0;
+    })
+    .filter((field) => field.type !== "note")
+    .map((field) => field.label);
+
+  async function handleSubmit() {
+    setLoading(true);
+    setSubmitError(null);
+
+    try {
+      const getStr = (key: string) => {
+        const value = form[key];
+        return Array.isArray(value) ? value.join(", ") : (value ?? "") || null;
+      };
+
+      const payload = {
+        business_name: getStr("businessName"),
+        contact_name: getStr("contactName"),
+        email: getStr("email"),
+        phone: getStr("whatsapp"),
+        website: getStr("website"),
+        industry: getStr("industry"),
+        offer: getStr("mainOffer"),
+        average_price: getStr("customerValue"),
+        location: getStr("location"),
+        current_marketing: getStr("leadSources"),
+        ads_experience: getStr("adsExperience"),
+        crm: getStr("crm"),
+        lead_response_process: getStr("inquiryProcess"),
+        monthly_budget: getStr("monthlyBudget"),
+        main_goal: getStr("primaryGoal"),
+        notes: getStr("notes"),
+      };
+
+      const { error } = await supabase.from("lead_intake").insert([payload]);
+
+      if (error) {
+        console.error("Supabase lead_intake insert failed:", error);
+        setSubmitError("Something went wrong. Please try again or contact me directly on WhatsApp.");
+        return;
+      }
+
+      setForm({});
+      setStep(0);
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      console.error("Unexpected lead intake submit error:", error);
+      setSubmitError("Something went wrong. Please try again or contact me directly on WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -213,10 +286,10 @@ export default function LeadSystemAuditForm() {
               Audit Request Received
             </p>
             <h1 className={`${displayFont.className} text-[2.8rem] uppercase leading-[0.92] tracking-[0.01em] sm:text-[4rem]`}>
-              Thank You — Audit Request Received
+              Thank You
             </h1>
             <p className={`${editorialSerif.className} mt-5 max-w-2xl text-[1.08rem] leading-snug text-black/70 sm:text-[1.25rem]`}>
-              We&apos;ll review your business, lead flow, and current marketing setup before reaching out with next steps.
+              Thank you — your answers were received. I’ll review your business details and contact you with the next steps.
             </p>
 
             <div className="mt-8 rounded-[8px] border border-black/15 bg-[#f5f4f0] p-5 sm:p-6">
@@ -337,7 +410,7 @@ export default function LeadSystemAuditForm() {
             </p>
 
             <div className="mt-8 space-y-7 md:space-y-8">
-              {current.fields.map((field) => (
+              {current.fields.map((field: FormField) => (
                 <div key={field.name}>
                   {field.type !== "note" && (
                     <label className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/86">
@@ -450,13 +523,25 @@ export default function LeadSystemAuditForm() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                disabled={!canContinue()}
+                disabled={!canContinue() || loading}
                 className="bg-black px-7 py-3 text-xs font-semibold uppercase tracking-[0.13em] text-white transition duration-300 hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-30"
               >
-                Submit Audit Request
+                {loading ? "Submitting…" : "Submit Audit Request"}
               </button>
             )}
           </div>
+
+          {!canContinue() && missingRequiredFields.length > 0 && (
+            <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.13em] text-black/45">
+              Please complete the required fields to continue: {missingRequiredFields.join(", ")}.
+            </p>
+          )}
+
+          {submitError && (
+            <p className="mt-4 text-[0.75rem] font-semibold text-red-600">
+              {submitError}
+            </p>
+          )}
         </div>
       </div>
 
