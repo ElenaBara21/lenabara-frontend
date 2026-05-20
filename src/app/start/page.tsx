@@ -255,6 +255,29 @@ export default function LeadSystemAuditForm() {
         return;
       }
 
+      try {
+        const notifyRes = await fetch("/api/notify-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            business_name: payload.business_name,
+            contact_name: payload.contact_name,
+            email: payload.email,
+            phone: payload.phone,
+            website: payload.website,
+            main_goal: payload.main_goal,
+            monthly_budget: payload.monthly_budget,
+          }),
+        });
+
+        if (!notifyRes.ok) {
+          const notifyError = await notifyRes.text().catch(() => "");
+          console.error("Lead notify API returned non-OK response:", notifyError || notifyRes.statusText);
+        }
+      } catch (notifyError) {
+        console.error("Lead notify API request failed:", notifyError);
+      }
+
       setForm({});
       setStep(0);
       setSubmitted(true);
