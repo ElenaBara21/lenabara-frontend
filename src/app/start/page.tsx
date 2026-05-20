@@ -11,12 +11,10 @@ const editorialSerif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", 
 type FormValue = string | string[];
 type FormState = Record<string, FormValue>;
 
-type FieldType = "text" | "email" | "textarea" | "select" | "radio" | "checkbox" | "note";
-
 type FormField = {
   name: string;
-  label?: string;
-  type: FieldType;
+  label: string;
+  type: string;
   required?: boolean;
   placeholder?: string;
   options?: string[];
@@ -89,6 +87,7 @@ export default function LeadSystemAuditForm() {
         },
         {
           name: "trackingMicrocopy",
+          label: "",
           type: "note",
         },
         {
@@ -173,7 +172,7 @@ export default function LeadSystemAuditForm() {
     },
   ];
 
-  const current: FormSection = sections[step];
+  const current: FormSection = sections[step] as FormSection;
   const progress = submitted ? 100 : Math.round(((step + 1) / sections.length) * 100);
 
   useEffect(() => {
