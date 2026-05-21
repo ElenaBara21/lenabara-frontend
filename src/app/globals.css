@@ -26,10 +26,8 @@ html, body {
   min-height: 100%;
 }
 
-/* Hide global header and floating buttons for dedicated paid-traffic landing routes */
+/* Hide only global header for dedicated paid-traffic landing routes */
 body:has(main[data-landing="true"]) #global-header,
-body:has(main[data-landing="true"]) #floating-contact-buttons,
-body.landing-only #global-header,
-body.landing-only #floating-contact-buttons {
+body.landing-only #global-header {
   display: none !important;
 }
