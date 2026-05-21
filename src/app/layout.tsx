@@ -55,15 +55,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1145191804441934&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
         {/* Google Tag Manager (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17042420719"
@@ -98,23 +89,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               ga.async = true;
               ga.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
               document.head.appendChild(ga);
-            })();
-
-            // Meta Pixel
-            (function loadMetaPixel() {
-              if (window.fbq) return;
-              var n = window.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
-              if (!window._fbq) window._fbq = n;
-              n.push = n;
-              n.loaded = !0;
-              n.version = "2.0";
-              n.queue = [];
-              var t = document.createElement("script");
-              t.async = !0;
-              t.src = "https://connect.facebook.net/en_US/fbevents.js";
-              document.head.appendChild(t);
-              n("init", "1145191804441934");
-              n("track", "PageView");
             })();
 
             // Placeholder for Google Ads / Search Ads remarketing
