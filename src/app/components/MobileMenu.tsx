@@ -2,7 +2,15 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function MobileMenu() {
+type MobileMenuProps = {
+  isPortfolioHome?: boolean;
+  hasCv?: boolean;
+};
+
+export default function MobileMenu({
+  isPortfolioHome = false,
+  hasCv = false,
+}: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -51,9 +59,16 @@ export default function MobileMenu() {
             <nav className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
               <a href="/" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Home</a>
               <a href="/about" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>About</a>
-              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Case Studies</a>
+              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>{isPortfolioHome ? "Work" : "Case Studies"}</a>
               <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
               <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
+              {isPortfolioHome && (
+                hasCv ? (
+                  <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
+                ) : (
+                  <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
+                )
+              )}
             </nav>
           </div>
         </div>,

@@ -1,8 +1,15 @@
 "use client";
 
 import { buildWhatsAppUrl } from "../lib/whatsapp";
+import { usePathname } from "next/navigation";
 
 export default function FloatingContactButtons() {
+  const pathname = usePathname();
+
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <div id="floating-contact-buttons" className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
       <a
