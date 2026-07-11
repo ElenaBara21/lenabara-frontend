@@ -1,18 +1,18 @@
 'use client';
 
  // app/page.tsx (reconstructed)
-import PromoCountdown from "./packages-details/components/PromoCountdown";
-import { PROMO, isPromoActive } from "./packages-details/lib/promo";
-import BudgetCalculator from "./packages-details/components/BudgetCalculator";
-import LeadForm from "./components/LeadForm";
-import DownloadKitModal from "./components/DownloadKitModal";
-import Hero from "./components/Hero";
-import TrustedSection from "./components/TrustedSection";
-import HowWeDoIt from "./components/HowWeDoIt";
-import Testimonials from "./components/Testimonials";
-import Collapsible from "./components/Collapsible";
-import FAQList from "./components/FAQList";
-import { FAQ_GROUPS } from "./content/faq";
+import PromoCountdown from "../packages-details/components/PromoCountdown";
+import { PROMO, isPromoActive } from "../packages-details/lib/promo";
+import BudgetCalculator from "../packages-details/components/BudgetCalculator";
+import LeadForm from "../components/LeadForm";
+import DownloadKitModal from "../components/DownloadKitModal";
+import Hero from "../components/Hero";
+import TrustedSection from "../components/TrustedSection";
+import HowWeDoIt from "../components/HowWeDoIt";
+import Testimonials from "../components/Testimonials";
+import Collapsible from "../components/Collapsible";
+import FAQList from "../components/FAQList";
+import { FAQ_GROUPS } from "../content/faq";
 
 export default function LandingPage() {
   const promoActive = isPromoActive(PROMO);
