@@ -15,7 +15,7 @@ export default function Header() {
           <div className="leading-tight">
             {isPortfolioHome ? (
               <>
-                <p className="font-semibold tracking-wide">YELENA "LENA BARA" SHELEPOVA</p>
+                <p className="font-semibold tracking-wide">YELENA SHELEPOVA</p>
                 <p className="text-xs text-neutral-400">Performance &amp; Growth Marketing Portfolio</p>
               </>
             ) : (
