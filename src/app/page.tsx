@@ -6,7 +6,7 @@ const hasCv = false; // TODO: set to true when a verified CV PDF is added to /pu
 export const metadata: Metadata = {
   title: "Performance & Growth Marketing Portfolio | Lena Bara",
   description:
-    "Portfolio of Yelena \"Lena Bara\" Shelepova, a performance and growth marketing specialist experienced in Google Ads, Meta Ads, analytics, conversion tracking, and the UAE market.",
+    "Portfolio of Yelena Shelepova, a performance and growth marketing specialist experienced in Google Ads, Meta Ads, analytics, conversion tracking, and the UAE market.",
   alternates: {
     canonical: "/",
   },
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-orange-400">Personal Marketing Portfolio</p>
             <h1 className="mt-4 text-4xl font-extrabold uppercase leading-[1.03] text-white sm:text-5xl md:text-6xl">
-              Yelena "Lena Bara" Shelepova
+              Yelena Shelepova
             </h1>
             <p className="mt-4 text-lg font-semibold text-neutral-200 sm:text-xl">
               Performance &amp; Growth Marketing | Paid Acquisition | Marketing Analytics
@@ -163,7 +163,7 @@ export default function HomePage() {
             <div className="relative h-[520px] overflow-hidden border border-neutral-800 bg-neutral-900 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:h-[560px]">
               <Image
                 src="/hero/lena.png"
-                alt="Portrait of Yelena Lena Bara Shelepova"
+                alt="Portrait of Yelena Shelepova"
                 fill
                 priority
                 className="object-cover object-center"
