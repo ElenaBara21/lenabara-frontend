@@ -1,6 +1,5 @@
 import CaseStudyGym from "../components/CaseStudyGym";
 import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
-import CaseStudyRealEstate from "../components/CaseStudyRealEstate";
 import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
 import CaseStudyAccounting from "../components/CaseStudyAccounting";
 import CaseStudyCompanyFormation from "../components/CaseStudyCompanyFormation";
@@ -16,24 +15,6 @@ const beautyAestheticsSlides = [
   "/case-studies/beauty-aesthetics/8.png",
   "/case-studies/beauty-aesthetics/9.png",
   "/case-studies/beauty-aesthetics/10.png",
-];
-
-const realEstateSlides = [
-  "/case-studies/real-estate/1.png",
-  "/case-studies/real-estate/2.png",
-  "/case-studies/real-estate/3.png",
-  "/case-studies/real-estate/4.png",
-  "/case-studies/real-estate/5.png",
-  "/case-studies/real-estate/6.png",
-  "/case-studies/real-estate/7.png",
-  "/case-studies/real-estate/8.png",
-  "/case-studies/real-estate/9.png",
-  "/case-studies/real-estate/10.png",
-  "/case-studies/real-estate/11.png",
-  "/case-studies/real-estate/12.png",
-  "/case-studies/real-estate/13.png",
-  "/case-studies/real-estate/14.png",
-  "/case-studies/real-estate/15.png",
 ];
 
 const escapeRoomSlides = [
@@ -87,12 +68,6 @@ const caseStudies = [
     componentName: "CaseStudyBeautyAesthetics",
   },
   {
-    id: "case-real-estate",
-    title: "Real Estate",
-    type: "images",
-    componentName: "CaseStudyRealEstate",
-  },
-  {
     id: "case-escape-room-analytics",
     title: "Analytics Infrastructure for a UAE Escape Room Business",
     type: "images",
@@ -132,18 +107,10 @@ export default function CaseStudiesPage() {
           />
         </div>
 
-        {/* Case Study: Real Estate (Images) */}
-        <div className="mt-20">
-          <CaseStudyRealEstate
-            title={caseStudies[2].title}
-            images={realEstateSlides}
-          />
-        </div>
-
         {/* Case Study 4: UAE Escape Room Analytics Infrastructure (Images) */}
         <div className="mt-20">
           <CaseStudyEscapeRoom
-            title={caseStudies[3].title}
+            title={caseStudies[2].title}
             images={escapeRoomSlides}
           />
         </div>
@@ -151,7 +118,7 @@ export default function CaseStudiesPage() {
         {/* Case Study: UAE Accounting Firm (Images) */}
         <div className="mt-20">
           <CaseStudyAccounting
-            title={caseStudies[4].title}
+            title={caseStudies[3].title}
             images={accountingSlides}
           />
         </div>
@@ -159,7 +126,7 @@ export default function CaseStudiesPage() {
         {/* Case Study: Company Formation (Images) */}
         <div className="mt-20">
           <CaseStudyCompanyFormation
-            title={caseStudies[5].title}
+            title={caseStudies[4].title}
             images={companyFormationSlides}
           />
         </div>
