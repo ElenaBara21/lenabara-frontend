@@ -57,13 +57,13 @@ const companyFormationSlides = [
 const caseStudies = [
   {
     id: "case-gym",
-    title: "How We Generated 40–60 New Gym Members in 60 Days Using a Meta Ads Funnel (2.0–2.5x ROI)",
+    title: "Meta Ads Funnel Design for a UAE Fitness Studio",
     type: "images",
     componentName: "CaseStudyGym",
   },
   {
     id: "case-beauty-aesthetics",
-    title: "Beauty Aesthetics Clinic",
+    title: "Patient Acquisition Funnel for a UAE Aesthetics Clinic",
     type: "images",
     componentName: "CaseStudyBeautyAesthetics",
   },
@@ -75,13 +75,13 @@ const caseStudies = [
   },
   {
     id: "case-accounting",
-    title: "UAE Accounting Firm",
+    title: "Lead Generation System for a UAE Accounting Firm",
     type: "images",
     componentName: "CaseStudyAccounting",
   },
   {
     id: "case-company-formation",
-    title: "Company Formation Case Study",
+    title: "WhatsApp-First Funnel Architecture for a UAE Business Setup Consultancy",
     type: "images",
     componentName: "CaseStudyCompanyFormation",
   },
@@ -161,11 +161,13 @@ export default function CaseStudiesPage() {
               Seven end-to-end data projects completed during the Post Graduate Program in Data Science &amp; Business Analytics (UT Austin McCombs / Great Learning), each framed around a business decision:
             </p>
             <ul className="mt-6 list-disc space-y-3 pl-5 text-neutral-300">
-              <li><strong>A/B testing a landing page</strong> — hypothesis testing, two-proportion and chi-square tests to determine whether a redesign genuinely improved conversion</li>
-              <li><strong>Predicting booking cancellations</strong> — logistic regression and decision trees, 86.6% accuracy, 0.84 recall</li>
-              <li><strong>Customer segmentation</strong> — K-means and hierarchical clustering for portfolio grouping</li>
-              <li><strong>Pricing models</strong> — OLS regression with full assumption testing, R² 0.845</li>
-              <li><strong>Churn / failure prediction</strong> — imbalanced-data handling with SMOTE, 0.88 recall</li>
+              <li><strong>E-news Express</strong> — A/B testing a redesigned landing page: hypothesis testing, two-proportion and chi-square tests to establish whether the new design genuinely lifted conversion</li>
+              <li><strong>INN Hotels</strong> — predicting booking cancellations with logistic regression and decision trees; 86.6% accuracy, 0.84 recall</li>
+              <li><strong>ReneWind</strong> — failure prediction on imbalanced data using SMOTE and hyperparameter tuning; 0.88 recall</li>
+              <li><strong>EasyVisa</strong> — visa approval classification with ensemble methods (Bagging, Random Forest, AdaBoost, XGBoost, Stacking); F1 0.821</li>
+              <li><strong>ReCell</strong> — pricing model for refurbished devices using OLS regression with full assumption testing; R² 0.845, MAPE 4.5%</li>
+              <li><strong>Trade&amp;Ahead</strong> — stock segmentation using K-means and hierarchical clustering</li>
+              <li><strong>FoodHub</strong> — exploratory data analysis of order data in Python to surface operational insights</li>
             </ul>
             <p className="mt-6 text-neutral-300">Stack: Python · pandas · scikit-learn · statsmodels · scipy</p>
             <div className="mt-6 flex flex-col gap-2 text-sm text-neutral-300 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
