@@ -92,44 +92,102 @@ export default function CaseStudiesPage() {
     <main className="min-h-screen bg-neutral-950 text-neutral-100 py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Case Studies</h1>
-          <p className="text-neutral-300 text-lg">Explore real-world examples of how we've helped brands grow through data-driven advertising and strategic media buying.</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Case Studies & Strategy Work</h1>
+          <p className="mx-auto max-w-3xl text-neutral-300 text-lg">
+            A selection of funnel architectures, media strategies and analytics setups built for UAE service businesses.
+          </p>
+          <p className="mx-auto mt-4 max-w-4xl text-neutral-400">
+            Each case walks through the full thinking: audience segmentation, offer positioning, funnel design, channel mix and measurement setup. Projected figures are based on UAE market benchmarks and unit-economics modelling, and are labelled as such.
+          </p>
+          <p className="mx-auto mt-6 max-w-4xl text-xs uppercase tracking-[0.18em] text-orange-300/80">
+            Cases marked Strategy Concept are strategy and funnel frameworks developed in-house. Cases marked Live Project were executed with active client accounts.
+          </p>
         </div>
 
-        {/* Case Study: Gym Marketing Campaign (Images) */}
-        <CaseStudyGym title={caseStudies[0].title} />
+        <div className="mt-16">
+          <div className="mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-orange-300/80">Strategy Concept</p>
+          </div>
+          <CaseStudyGym title={caseStudies[0].title} />
+        </div>
 
-        {/* Case Study: Beauty Aesthetics Clinic (Images) */}
         <div className="mt-20">
+          <div className="mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-orange-300/80">Strategy Concept</p>
+          </div>
           <CaseStudyBeautyAesthetics
             title={caseStudies[1].title}
             images={beautyAestheticsSlides}
           />
         </div>
 
-        {/* Case Study 4: UAE Escape Room Analytics Infrastructure (Images) */}
         <div className="mt-20">
+          <div className="mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-orange-300/80">Live Project</p>
+          </div>
           <CaseStudyEscapeRoom
             title={caseStudies[2].title}
             images={escapeRoomSlides}
           />
         </div>
 
-        {/* Case Study: UAE Accounting Firm (Images) */}
         <div className="mt-20">
+          <div className="mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-orange-300/80">Strategy Concept</p>
+          </div>
           <CaseStudyAccounting
             title={caseStudies[3].title}
             images={accountingSlides}
           />
         </div>
 
-        {/* Case Study: Company Formation (Images) */}
         <div className="mt-20">
+          <div className="mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-orange-300/80">Strategy Concept</p>
+          </div>
           <CaseStudyCompanyFormation
             title={caseStudies[4].title}
             images={companyFormationSlides}
           />
         </div>
+
+        <section className="mt-24 border-t border-neutral-800 pt-16">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Data & Analytics</h2>
+            <p className="text-neutral-300">
+              Alongside campaign work, I build the measurement layer that makes performance marketing accountable — tracking setup, dashboards, and statistical analysis.
+            </p>
+            <p className="mt-4 text-neutral-300">
+              Seven end-to-end data projects completed during the Post Graduate Program in Data Science &amp; Business Analytics (UT Austin McCombs / Great Learning), each framed around a business decision:
+            </p>
+            <ul className="mt-6 list-disc space-y-3 pl-5 text-neutral-300">
+              <li><strong>A/B testing a landing page</strong> — hypothesis testing, two-proportion and chi-square tests to determine whether a redesign genuinely improved conversion</li>
+              <li><strong>Predicting booking cancellations</strong> — logistic regression and decision trees, 86.6% accuracy, 0.84 recall</li>
+              <li><strong>Customer segmentation</strong> — K-means and hierarchical clustering for portfolio grouping</li>
+              <li><strong>Pricing models</strong> — OLS regression with full assumption testing, R² 0.845</li>
+              <li><strong>Churn / failure prediction</strong> — imbalanced-data handling with SMOTE, 0.88 recall</li>
+            </ul>
+            <p className="mt-6 text-neutral-300">Stack: Python · pandas · scikit-learn · statsmodels · scipy</p>
+            <div className="mt-6 flex flex-col gap-2 text-sm text-neutral-300 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+              <a
+                href="https://github.com/ElenaBara21/Portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-300 hover:text-orange-200"
+              >
+                View the code: github.com/ElenaBara21/Portfolio
+              </a>
+              <a
+                href="https://mygreatlearning.com/certificate/ZPQUJUFK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-300 hover:text-orange-200"
+              >
+                Academic transcript (GPA 4.05): mygreatlearning.com/certificate/ZPQUJUFK
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

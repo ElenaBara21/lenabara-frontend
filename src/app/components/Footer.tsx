@@ -15,7 +15,6 @@ export default function Footer() {
           <div className="mb-2">Serving clients across the GCC and globally.</div>
           <div className="mb-2">Registered with RAKEZ (Ras Al Khaimah Economic Zone), UAE. Licensed under: Media / Digital Marketing Consultancy.</div>
           <div className="flex gap-2 mt-3">
-            <img src="/badges/google-partner-badge.png" alt="Google Partner" className="h-7 w-auto" />
             <img src="/badges/meta-buyer-badge.png" alt="Meta Certified Media Buying Professional" className="h-7 w-auto" />
           </div>
         </div>

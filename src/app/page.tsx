@@ -258,9 +258,6 @@ export default function HomePage() {
             <div className="flex items-center justify-center border border-neutral-800 bg-neutral-900/60 p-4">
               <Image src="/badges/meta-performance-badge.png" alt="Meta Certified Performance Marketing Specialist badge" width={170} height={70} className="h-auto w-auto max-h-[64px]" />
             </div>
-            <div className="flex items-center justify-center border border-neutral-800 bg-neutral-900/60 p-4 sm:col-span-2">
-              <Image src="/badges/google-partner-badge.png" alt="Google Ads Search certification badge" width={190} height={70} className="h-auto w-auto max-h-[64px]" />
-            </div>
           </div>
 
           <div className="border border-neutral-800 bg-neutral-900/60 p-6">

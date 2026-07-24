@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 const ITEMS = [
   "Meta Certified Media Buying Professional",
   "Meta Certified Performance Marketing Specialist",
-  "Google Ads Certified",
   "Data Science & Business Analytics (UT Austin)",
   "UAE Licensed Marketing Consultancy (RAKEZ)",
   "Social Media Advertiser Permit (National Media Authority)",
@@ -19,10 +18,6 @@ const BADGE_MAP: Record<string, { src: string; alt: string }> = {
   "Meta Certified Performance Marketing Specialist": {
     src: "/badges/meta-performance-badge.png",
     alt: "Meta Certified Performance Marketing Specialist",
-  },
-  "Google Ads Certified": {
-    src: "/badges/google-partner-badge.png",
-    alt: "Google Partner",
   },
 };
 
