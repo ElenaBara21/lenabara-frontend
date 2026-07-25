@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import CaseStudyGym from "../components/CaseStudyGym";
 import CaseStudyBeautyAesthetics from "../components/CaseStudyBeautyAesthetics";
 import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
 import CaseStudyAccounting from "../components/CaseStudyAccounting";
 import CaseStudyCompanyFormation from "../components/CaseStudyCompanyFormation";
+
+const isWorkPageUnderConstruction = process.env.WORK_PAGE_UNDER_CONSTRUCTION === "true";
+
+export function generateMetadata(): Metadata {
+  if (isWorkPageUnderConstruction) {
+    return {
+      title: "Work | Temporarily Unavailable",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: "Case Studies & Strategy Work | LenaBara",
+  };
+}
 
 const beautyAestheticsSlides = [
   "/case-studies/beauty-aesthetics/1.png",
@@ -58,36 +77,49 @@ const caseStudies = [
   {
     id: "case-gym",
     title: "Meta Ads Funnel Design for a UAE Fitness Studio",
-    type: "images",
-    componentName: "CaseStudyGym",
   },
   {
     id: "case-beauty-aesthetics",
     title: "Patient Acquisition Funnel for a UAE Aesthetics Clinic",
-    type: "images",
-    componentName: "CaseStudyBeautyAesthetics",
   },
   {
     id: "case-escape-room-analytics",
     title: "Analytics Infrastructure for a UAE Escape Room Business",
-    type: "images",
-    componentName: "CaseStudyEscapeRoom",
   },
   {
     id: "case-accounting",
     title: "Lead Generation System for a UAE Accounting Firm",
-    type: "images",
-    componentName: "CaseStudyAccounting",
   },
   {
     id: "case-company-formation",
     title: "WhatsApp-First Funnel Architecture for a UAE Business Setup Consultancy",
-    type: "images",
-    componentName: "CaseStudyCompanyFormation",
   },
 ];
 
 export default function CaseStudiesPage() {
+  if (isWorkPageUnderConstruction) {
+    return (
+      <main className="min-h-[70vh] bg-neutral-950 text-neutral-100">
+        <section className="mx-auto flex max-w-3xl flex-col items-center px-6 py-24 text-center md:py-32">
+          <p className="text-xs uppercase tracking-[0.2em] text-orange-300/80">Temporarily Unavailable</p>
+          <h1 className="mt-4 text-4xl font-extrabold text-white md:text-5xl">Work Page Under Construction</h1>
+          <p className="mt-6 max-w-2xl text-lg text-neutral-300">
+            This page is temporarily closed while updates are in progress.
+          </p>
+          <p className="mt-2 max-w-2xl text-neutral-400">
+            Please check back later today.
+          </p>
+          <a
+            href="/"
+            className="mt-10 inline-flex items-center justify-center border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-black transition hover:bg-orange-600"
+          >
+            Back to Home
+          </a>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 py-16">
       <div className="mx-auto max-w-6xl px-6">
