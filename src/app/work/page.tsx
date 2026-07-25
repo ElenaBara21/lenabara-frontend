@@ -5,7 +5,7 @@ import CaseStudyEscapeRoom from "../components/CaseStudyEscapeRoom";
 import CaseStudyAccounting from "../components/CaseStudyAccounting";
 import CaseStudyCompanyFormation from "../components/CaseStudyCompanyFormation";
 
-const isWorkPageUnderConstruction = process.env.WORK_PAGE_UNDER_CONSTRUCTION === "true";
+const isWorkPageUnderConstruction = true;
 
 export function generateMetadata(): Metadata {
   if (isWorkPageUnderConstruction) {
