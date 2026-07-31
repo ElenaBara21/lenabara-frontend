@@ -57,12 +57,14 @@ const automationItems = [
       "Quiz responses auto-logged to a Google Sheets lead database via a Make webhook.",
     screenshots: [
       {
-        title: "Make scenario (Webhooks -> Sheets)",
-        alt: "Placeholder screenshot for the Make webhook scenario sending Marquiz responses to Google Sheets",
+        title: "Marquiz quiz dashboard",
+        src: "/work/marquiz-dashboard-live.png",
+        alt: "Marquiz dashboard showing the quiz used for lead capture",
       },
       {
-        title: "Sheets leads table",
-        alt: "Placeholder screenshot for the Google Sheets lead database populated by Marquiz responses",
+        title: "Make scenario (Webhooks -> Sheets)",
+        src: "/work/make-marquiz-sheets-live.png",
+        alt: "Make scenario connecting Marquiz webhook data to Google Sheets",
       },
     ],
   },
@@ -220,7 +222,7 @@ export default function WorkPage() {
                       <p className="text-sm font-medium text-white">{shot.title}</p>
                       <div className="mt-3 overflow-hidden rounded-xl border border-neutral-800">
                         <Image
-                          src="/work/todo-screenshot-placeholder.svg"
+                          src={shot.src ?? "/work/todo-screenshot-placeholder.svg"}
                           alt={shot.alt}
                           width={1600}
                           height={900}
