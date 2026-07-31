@@ -1,0 +1,31 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="28" fill="#F6F2EC"/>
+  <rect x="64" y="64" width="1472" height="772" rx="24" fill="#FFFFFF" stroke="#E6DED4" stroke-width="2"/>
+  <rect x="104" y="116" width="280" height="36" rx="10" fill="#F1E9DF"/>
+  <text x="244" y="141" text-anchor="middle" fill="#6B5B4B" font-size="22" font-family="Arial, sans-serif" font-weight="700">Integration Typeform</text>
+
+  <circle cx="600" cy="450" r="170" fill="#111111"/>
+  <text x="600" y="460" text-anchor="middle" fill="#FFFFFF" font-size="72" font-family="Georgia, serif" font-weight="700">tally*</text>
+  <circle cx="690" cy="360" r="18" fill="#FFFFFF" opacity="0.96"/>
+  <circle cx="690" cy="360" r="44" fill="none" stroke="#FFFFFF" stroke-width="10" opacity="0.24"/>
+
+  <circle cx="1100" cy="450" r="170" fill="#FF7A59"/>
+  <path d="M1030 405L1078 442L1120 405L1162 450" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1100" cy="450" r="36" stroke="#FFFFFF" stroke-width="18"/>
+  <circle cx="1030" cy="405" r="14" fill="#FFFFFF"/>
+  <circle cx="1078" cy="442" r="14" fill="#FFFFFF"/>
+  <circle cx="1120" cy="405" r="14" fill="#FFFFFF"/>
+  <circle cx="1162" cy="450" r="14" fill="#FFFFFF"/>
+
+  <path d="M780 450H960" stroke="#B8AAA0" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="805" cy="450" r="18" fill="#8A7C72"/>
+  <circle cx="865" cy="450" r="18" fill="#B69C8D"/>
+  <circle cx="925" cy="450" r="18" fill="#D9B3A1"/>
+
+  <rect x="660" y="300" width="96" height="54" rx="27" fill="#FFFFFF"/>
+  <text x="708" y="335" text-anchor="middle" fill="#1F2937" font-size="24" font-family="Arial, sans-serif" font-weight="700">1</text>
+  <rect x="1060" y="300" width="96" height="54" rx="27" fill="#FFFFFF"/>
+  <text x="1108" y="335" text-anchor="middle" fill="#1F2937" font-size="24" font-family="Arial, sans-serif" font-weight="700">1</text>
+
+  <text x="800" y="735" text-anchor="middle" fill="#4B5563" font-size="40" font-family="Arial, sans-serif">Tally → Make → HubSpot</text>
+</svg>

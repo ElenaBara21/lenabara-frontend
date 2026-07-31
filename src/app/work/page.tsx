@@ -22,20 +22,19 @@ export const metadata: Metadata = {
 const realCases = cases.filter((item) => item.type === "real");
 const conceptCases = cases.filter((item) => item.type === "concept");
 
-const analyticsScreenshots = [
-  {
-    title: "GTM Tags list",
-    src: "/work/gtm-tags-live.png",
-    alt: "Google Tag Manager tags list showing configured tracking tags",
-  },
-  {
-    title: "GTM container overview",
-    src: "/work/gtm-overview-live.png",
-    alt: "Google Tag Manager container overview on the live site",
-  },
-];
+type AutomationScreenshot = {
+  title: string;
+  alt: string;
+  src?: string;
+};
 
-const automationItems = [
+type AutomationItem = {
+  title: string;
+  description: string;
+  screenshots: AutomationScreenshot[];
+};
+
+const automationItems: AutomationItem[] = [
   {
     title: "Tally -> Make -> HubSpot",
     description:
@@ -43,11 +42,13 @@ const automationItems = [
     screenshots: [
       {
         title: "Make scenario (Tally -> HubSpot)",
-        alt: "Placeholder screenshot for the Make scenario connecting Tally form submissions to HubSpot",
+        src: "/work/tally-make-hubspot-scenario.svg",
+        alt: "Tally to Make to HubSpot automation scenario with a Tally trigger and HubSpot action",
       },
       {
         title: "HubSpot contacts",
-        alt: "Placeholder screenshot for HubSpot contact records created by the Tally to HubSpot workflow",
+        src: "/work/tally-hubspot-contacts.svg",
+        alt: "HubSpot contacts table showing records created by the Tally to HubSpot workflow",
       },
     ],
   },
@@ -57,14 +58,19 @@ const automationItems = [
       "Quiz responses auto-logged to a Google Sheets lead database via a Make webhook.",
     screenshots: [
       {
-        title: "Marquiz quiz dashboard",
-        src: "/work/marquiz-dashboard-live.png",
-        alt: "Marquiz dashboard showing the quiz used for lead capture",
+        title: "Marquiz integrations setup",
+        src: "/work/marquiz-integrations-live.png",
+        alt: "Marquiz integrations page showing connected webhooks and Google Sheets options",
       },
       {
         title: "Make scenario (Webhooks -> Sheets)",
         src: "/work/make-marquiz-sheets-live.png",
         alt: "Make scenario connecting Marquiz webhook data to Google Sheets",
+      },
+      {
+        title: "Google Sheets lead log",
+        src: "/work/marquiz-sheet-live.svg",
+        alt: "Google Sheets table logging Marquiz leads with name, email, phone, budget and goal columns",
       },
     ],
   },
@@ -181,28 +187,20 @@ export default function WorkPage() {
             title="Analytics & Tracking"
             intro="End-to-end tracking built from scratch on this live site (lenabara.com)."
           />
-          <p className="mt-4 max-w-4xl text-neutral-300">
-            Google Tag Manager configured from scratch - 14 tags across GA4, Meta Pixel, Google Ads and Microsoft Clarity. All key conversions tracked through GTM without editing site code: form submissions, WhatsApp clicks, phone calls, scroll depth. This makes it possible to see traffic sources, calculate cost per action (CPL/CPA) by channel, and build retargeting audiences.
-          </p>
-          <p className="mt-4 text-sm uppercase tracking-[0.14em] text-neutral-400">
-            GTM · GA4 · Meta Pixel · Google Ads · Microsoft Clarity · Next.js
-          </p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {analyticsScreenshots.map((shot) => (
-              <article key={shot.title} className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-5">
-                <h3 className="text-lg font-semibold text-white">{shot.title}</h3>
-                <div className="mt-3 overflow-hidden rounded-xl border border-neutral-800">
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={1600}
-                    height={900}
-                    loading="lazy"
-                    className="h-auto w-full"
-                  />
-                </div>
-              </article>
-            ))}
+            <article className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-5">
+              <h3 className="text-lg font-semibold text-white">GTM Overview</h3>
+              <div className="mt-3 overflow-hidden rounded-xl border border-neutral-800">
+                <Image
+                  src="/work/gtm-overview-live.png"
+                  alt="Google Tag Manager workspace overview for lenabara.com"
+                  width={1600}
+                  height={900}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </div>
+            </article>
           </div>
         </section>
 

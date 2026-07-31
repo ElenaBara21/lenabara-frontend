@@ -170,7 +170,7 @@ export default function Demo3Page() {
             ].map((node, idx) => (
               <div key={node} className="flex items-center gap-4">
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700">{node}</div>
-                {idx < 4 && <span className="text-xl text-slate-400">-></span>}
+                {idx < 4 && <span className="text-xl text-slate-400">&rarr;</span>}
               </div>
             ))}
           </div>
