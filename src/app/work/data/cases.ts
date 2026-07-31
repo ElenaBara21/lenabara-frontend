@@ -372,6 +372,20 @@ export const cases: CaseStudy[] = [
       "GA4 + GTM + Meta Pixel configured from scratch on a live business site - full-funnel measurement for WhatsApp clicks, calls and bookings.",
     metaDescription:
       "A real analytics implementation: GA4, Google Tag Manager and Meta Pixel configured from scratch on a live site, tracking WhatsApp clicks, calls and booking intent for full-funnel attribution.",
+    proofScreenshots: [
+      {
+        title: "GTM Tags list",
+        src: "/work/gtm-tags-live.png",
+        alt: "Google Tag Manager tags list showing the configured measurement setup",
+        caption: "Live GTM container tags configured for GA4, Meta Pixel and conversion tracking.",
+      },
+      {
+        title: "GTM container overview",
+        src: "/work/gtm-overview-live.png",
+        alt: "Google Tag Manager container overview for the live business site",
+        caption: "Container-level view confirming active setup on the live site.",
+      },
+    ],
     sections: {
       context: {
         heading: "The Context",

@@ -1,4 +1,5 @@
 import type { CaseStudy } from "../types";
+import Image from "next/image";
 
 function TextSection({
   title,
@@ -77,6 +78,33 @@ export default function CaseStudy({ study }: { study: CaseStudy }) {
           body={study.sections.execution.body}
           items={study.sections.execution.items}
         />
+
+        {study.proofScreenshots && study.proofScreenshots.length > 0 && (
+          <section className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
+            <h2 className="text-2xl font-extrabold text-white md:text-3xl">Live GTM Evidence</h2>
+            <p className="mt-4 text-neutral-300 leading-relaxed">
+              Screenshots from the live container setup used in this implementation.
+            </p>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              {study.proofScreenshots.map((shot) => (
+                <article key={shot.title} className="rounded-xl border border-neutral-800 bg-neutral-950/50 p-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-300">{shot.title}</h3>
+                  <div className="mt-3 overflow-hidden rounded-lg border border-neutral-800">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={1600}
+                      height={900}
+                      loading="lazy"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                  {shot.caption && <p className="mt-3 text-sm text-neutral-400">{shot.caption}</p>}
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
           <h2 className="text-2xl font-extrabold text-white md:text-3xl">Projected Outcomes</h2>

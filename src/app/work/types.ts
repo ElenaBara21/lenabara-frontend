@@ -16,6 +16,13 @@ export type FunnelStage = {
   body: string;
 };
 
+export type ProofScreenshot = {
+  title: string;
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type CaseStudy = {
   slug: string;
   type: "real" | "concept";
@@ -23,6 +30,7 @@ export type CaseStudy = {
   premise: string;
   disclaimer?: string;
   metaDescription: string;
+  proofScreenshots?: ProofScreenshot[];
   sections: {
     context: Section;
     whatsBroken: Section;
