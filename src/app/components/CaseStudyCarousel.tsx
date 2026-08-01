@@ -23,14 +23,14 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
   if (caseStudies.length === 0) {
-    return <div className="text-center text-neutral-400">No case studies available yet.</div>;
+    return <div className="text-center text-neutral-400">No work available yet.</div>;
   }
 
   const currentCaseStudy = caseStudies[currentCaseStudyIndex];
   const currentPage = currentCaseStudy.pages[currentPageIndex];
   const totalPages = currentCaseStudy.pages.length;
 
-  // Navigate pages within the current case study
+  // Navigate pages within the current work item
   const goToPreviousPage = () => {
     setCurrentPageIndex((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
   };
@@ -43,7 +43,7 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
     setCurrentPageIndex(index);
   };
 
-  // Navigate case studies
+  // Navigate work items
   const goToPreviousCaseStudy = () => {
     setCurrentCaseStudyIndex((prev) => (prev === 0 ? caseStudies.length - 1 : prev - 1));
     setCurrentPageIndex(0);
@@ -56,7 +56,7 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
 
   return (
     <div className="w-full">
-      {/* Case Study Title */}
+      {/* Work Title */}
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white">{currentCaseStudy.title}</h2>
       </div>
@@ -150,17 +150,17 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
         </div>
       )}
 
-      {/* Case Study Navigation (Switch between case studies) */}
+      {/* Work Navigation (Switch between work items) */}
       <div className="flex items-center justify-center gap-6">
         <button
           onClick={goToPreviousCaseStudy}
-          aria-label="Previous case study"
+          aria-label="Previous work item"
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition font-medium"
         >
-          ← Previous Case Study
+          ← Previous Work
         </button>
 
-        {/* Case Study Indicators */}
+        {/* Work Indicators */}
         <div className="flex gap-2">
           {caseStudies.map((_, index) => (
             <button
@@ -169,7 +169,7 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
                 setCurrentCaseStudyIndex(index);
                 setCurrentPageIndex(0);
               }}
-              aria-label={`Go to case study ${index + 1}`}
+              aria-label={`Go to work item ${index + 1}`}
               className={`h-2 rounded-full transition ${
                 index === currentCaseStudyIndex
                   ? "bg-orange-500 w-6"
@@ -181,16 +181,16 @@ export default function CaseStudyCarousel({ caseStudies }: CaseStudyCarouselProp
 
         <button
           onClick={goToNextCaseStudy}
-          aria-label="Next case study"
+          aria-label="Next work item"
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition font-medium"
         >
-          Next Case Study →
+          Next Work →
         </button>
       </div>
 
-      {/* Case Study Counter */}
+      {/* Work Counter */}
       <div className="text-center mt-4 text-sm text-neutral-400">
-        Case Study {currentCaseStudyIndex + 1} / {caseStudies.length}
+        Work {currentCaseStudyIndex + 1} / {caseStudies.length}
       </div>
     </div>
   );

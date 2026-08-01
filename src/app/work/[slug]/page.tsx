@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!study) {
     return {
-      title: "Case Study Not Found | LenaBara",
+      title: "Work Not Found | LenaBara",
       robots: { index: false, follow: false },
     };
   }

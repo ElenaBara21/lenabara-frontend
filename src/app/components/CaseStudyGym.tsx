@@ -81,7 +81,7 @@ export default function CaseStudyGym({ title = "Gym Marketing Campaign" }: CaseS
             >
               <Image
                 src={imagePath}
-                alt={`Gym Case Study Slide ${index + 1}`}
+                alt={`Gym Work Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"

@@ -70,7 +70,7 @@ export default function CaseStudyBeautyAesthetics({
             >
               <Image
                 src={imagePath}
-                alt={`Beauty Aesthetics Case Study Slide ${index + 1}`}
+                alt={`Beauty Aesthetics Work Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"

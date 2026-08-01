@@ -30,7 +30,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <a href="/" className="text-sm text-neutral-200 hover:text-white transition">Home</a>
           <a href="/about" className="text-sm text-neutral-200 hover:text-white transition">About</a>
-          <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">{isPortfolioHome ? "Work" : "Case Studies"}</a>
+          <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">Work</a>
           <a href="/contact" className="text-sm text-neutral-200 hover:text-white transition">Contact</a>
           <a href="/blog" className="text-sm text-neutral-200 hover:text-white transition">Blog</a>
           {isPortfolioHome && (

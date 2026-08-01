@@ -8,7 +8,7 @@ type CaseStudyCompanyFormationProps = {
 };
 
 export default function CaseStudyCompanyFormation({
-  title = "Company Formation Case Study",
+  title = "Company Formation Work",
   images = [
     "/case-studies/company-formation/1_From-Unpredictable-Referrals-to-20-Qualified-Leads-Weekly.png",
     "/case-studies/company-formation/2_Client-Overview-UAE-Business-Setup-Consultancy.png",
@@ -75,7 +75,7 @@ export default function CaseStudyCompanyFormation({
             >
               <Image
                 src={imagePath}
-                alt={`Company Formation Case Study Slide ${index + 1}`}
+                alt={`Company Formation Work Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"

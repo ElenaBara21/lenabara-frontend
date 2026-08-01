@@ -73,7 +73,7 @@ export default function CaseStudyRealEstate({
             >
               <Image
                 src={imagePath}
-                alt={`Real Estate Case Study Slide ${index + 1}`}
+                alt={`Real Estate Work Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"
