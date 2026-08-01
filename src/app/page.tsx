@@ -13,18 +13,19 @@ export const metadata: Metadata = {
 };
 
 const expertiseAreas = [
-  "Google Ads",
-  "Meta Ads",
-  "Campaign Strategy",
-  "Marketing Analytics",
+  "SQL",
+  "Python",
   "GA4",
   "Google Tag Manager",
   "Conversion Tracking",
+  "Unit Economics (LTV:CAC / payback)",
+  "Cohort & Retention Analysis",
+  "A/B Testing & Experimentation",
   "Looker Studio",
-  "Landing Page Optimization",
-  "A/B Testing",
-  "Lead Generation",
-  "AI-Assisted Creative Production",
+  "Attribution & UTM Architecture",
+  "Google Ads",
+  "Meta Ads",
+  "Marketing Analytics",
 ];
 
 const realWorkHighlights = [
@@ -89,9 +90,9 @@ const strategyConcepts = [
 const careerTimeline = [
   {
     period: "Current",
-    title: "Performance Marketing and Growth Marketing Specialist",
+    title: "Marketing / Growth Analyst",
     detail:
-      "Focused on paid acquisition systems, experimentation, and analytics-backed growth strategy for UAE and international projects.",
+      "Focused on measurement, unit economics, and experimentation-backed growth analytics for UAE and international projects, with paid acquisition execution as applied depth.",
   },
   {
     period: "Previous",
@@ -130,12 +131,6 @@ export default function HomePage() {
               >
                 Hire Me
               </a>
-              <a
-                href="/landing"
-                className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-neutral-100 transition hover:border-neutral-400 hover:bg-neutral-800"
-              >
-                Work With My Agency
-              </a>
             </div>
             <div className="mt-4 flex flex-wrap gap-4 text-sm text-neutral-300">
               <a href={CV_HREF} className="underline underline-offset-4 hover:text-orange-300">
@@ -171,13 +166,13 @@ export default function HomePage() {
           <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">About My Work</h2>
           <div className="mt-5 space-y-4 text-neutral-300 md:text-lg">
             <p>
-              I have worked across international business environments in digital marketing, paid acquisition, analytics, and operations, with hands-on experience turning marketing spend into measurable outcomes.
+              I work across international business environments in analytics, paid acquisition, and marketing operations, with hands-on experience turning marketing spend into measurable outcomes.
             </p>
             <p>
-              My UAE market work has focused on building practical acquisition systems that connect campaign strategy, tracking quality, and consistent optimization.
+              My work centres on building the measurement layer - analytics architecture, tracking quality, attribution, and unit economics - that lets acquisition decisions be made against numbers rather than intuition. This is grounded in a finance and data-science background applied directly to marketing.
             </p>
             <p>
-              Today, my core focus is on Performance Marketing, Growth Marketing, and Marketing Analytics - combining execution depth with strong measurement discipline.
+              Today my core focus is Marketing Analytics and Growth Analytics - measurement, experimentation, and unit economics - with paid acquisition execution as applied depth.
             </p>
           </div>
         </div>
@@ -285,7 +280,7 @@ export default function HomePage() {
           <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Open to New Opportunities</p>
           <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Employer Contact</h2>
           <p className="mt-4 max-w-3xl text-neutral-200 md:text-lg">
-            I am currently exploring remote and international opportunities in Performance Marketing, Growth Marketing, and Marketing Analytics.
+            I am currently exploring remote and international opportunities in Marketing Analytics, Growth Analytics, and Performance Marketing.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
