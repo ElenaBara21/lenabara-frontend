@@ -13,7 +13,7 @@ export default function Header() {
         <a href="/" className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">LB</div>
           <div className="leading-tight">
-            <p className="font-semibold tracking-wide">YELENA SHELEPOVA</p>
+            <p className="font-semibold tracking-wide">Yelena Shelepova</p>
             <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
           </div>
         </a>
@@ -21,15 +21,13 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <a href="/" className="text-sm text-neutral-200 hover:text-white transition">Home</a>
           <a href="/about" className="text-sm text-neutral-200 hover:text-white transition">About</a>
-          <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">Case Studies</a>
+          <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">Work</a>
           <a href="/contact" className="text-sm text-neutral-200 hover:text-white transition">Contact</a>
           <a href="/blog" className="text-sm text-neutral-200 hover:text-white transition">Blog</a>
-          {isPortfolioHome && (
-            hasCv ? (
-              <a href="/resume.pdf" className="text-sm text-neutral-200 hover:text-white transition">Download CV</a>
-            ) : (
-              <span aria-disabled="true" className="text-sm text-neutral-500">Download CV (coming soon)</span>
-            )
+          {hasCv ? (
+            <a href="/resume.pdf" className="text-sm text-neutral-200 hover:text-white transition">Download CV</a>
+          ) : (
+            <span aria-disabled="true" className="text-sm text-neutral-500">Download CV (coming soon)</span>
           )}
         </nav>
         {/* Mobile burger menu */}

@@ -59,19 +59,17 @@ export default function MobileMenu({
             <nav className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
               <a href="/" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Home</a>
               <a href="/about" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>About</a>
-              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Case Studies</a>
+              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Work</a>
               <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
               <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
               <div className="pt-2 text-center">
-                <p className="text-xl font-semibold tracking-wide text-white">YELENA SHELEPOVA</p>
+                <p className="text-xl font-semibold tracking-wide text-white">Yelena Shelepova</p>
                 <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
               </div>
-              {isPortfolioHome && (
-                hasCv ? (
-                  <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
-                ) : (
-                  <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
-                )
+              {hasCv ? (
+                <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
+              ) : (
+                <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
               )}
             </nav>
           </div>
