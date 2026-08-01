@@ -62,6 +62,10 @@ export default function MobileMenu({
               <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Case Studies</a>
               <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
               <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
+              <div className="pt-2 text-center">
+                <p className="text-xl font-semibold tracking-wide text-white">YELENA SHELEPOVA</p>
+                <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
+              </div>
               {isPortfolioHome && (
                 hasCv ? (
                   <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
