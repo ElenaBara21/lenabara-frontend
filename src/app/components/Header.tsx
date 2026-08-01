@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   const isPortfolioHome = pathname === "/";
-  const hasCv = false; // TODO: set to true and update href when a verified resume PDF is added to /public.
+  const hasCv = true;
 
   return (
     <header id="global-header" className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">

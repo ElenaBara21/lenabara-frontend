@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-const hasCv = false; // TODO: set to true when a verified CV PDF is added to /public.
+const CV_HREF = "/resume.pdf";
 
 export const metadata: Metadata = {
   title: "Performance & Growth Marketing Portfolio | Lena Bara",
   description:
-    "Portfolio of Yelena Shelepova, a performance and growth marketing specialist experienced in Google Ads, Meta Ads, analytics, conversion tracking, and the UAE market.",
+    "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems.",
   alternates: {
     canonical: "/",
   },
@@ -27,73 +27,62 @@ const expertiseAreas = [
   "AI-Assisted Creative Production",
 ];
 
-const highlights = [
+const realWorkHighlights = [
   {
-    context: "Fitness / Gym campaign",
-    responsibility: "Owned paid acquisition strategy and performance optimization.",
-    actions:
-      "Built a Meta Ads funnel with audience testing, creative iteration, and conversion-oriented funnel logic.",
-    result: "40-60 new gym members in 60 days and reported 2.0-2.5x ROI.",
+    title: "Tracking & Analytics Foundation (Live Implementation)",
+    scope: "GA4 + GTM + Meta Pixel configured from scratch on a live business site.",
+    detail:
+      "Full-funnel measurement for WhatsApp clicks, calls, and booking intent with clean attribution setup.",
+    href: "/work/tracking-analytics-foundation",
   },
   {
-    context: "UAE business setup consultancy",
-    responsibility: "Led full-funnel lead generation strategy across Google and Meta.",
-    actions:
-      "Implemented high-intent search capture, Meta retargeting, and a WhatsApp-first conversion flow.",
-    result: "Shifted from unpredictable referrals to a qualified weekly pipeline.",
+    title: "Tally -> Make -> HubSpot Automation Pipeline",
+    scope: "Documented demo build",
+    detail:
+      "Lead form submissions mapped into CRM contacts through Make automation scenarios with visible process flow and output records.",
+    href: "/work#marketing-automation-heading",
   },
   {
-    context: "UAE accounting firm",
-    responsibility: "Managed campaign structure and analytics foundations.",
-    actions:
-      "Combined channel execution with clearer tracking and conversion attribution to improve decision quality.",
-    result: "Produced a more structured lead generation process and measurable optimization workflow.",
+    title: "Data Science Portfolio (7 Projects)",
+    scope: "UT Austin / Great Learning portfolio",
+    detail:
+      "Applied work in A/B testing, classification, clustering, regression, and churn prediction - with code and documented outputs.",
+    href: "https://github.com/ElenaBara21/Portfolio",
   },
   {
-    context: "UAE escape room",
-    responsibility: "Owned marketing analytics and measurement setup.",
-    actions:
-      "Designed analytics infrastructure to connect traffic sources, user behavior, and outcome tracking.",
-    result: "Enabled data-backed reporting and better campaign planning.",
+    title: "Live Next.js Landing Pages",
+    scope: "Working funnel demos",
+    detail:
+      "Three live landing page builds connected to measurable conversion flows and event tracking hooks.",
+    href: "/work#landing-pages-heading",
+  },
+  {
+    title: "Real-Estate Unit Economics Work",
+    scope: "Analyst-led CPL/CAC/ROMI planning",
+    detail:
+      "Modeled spend-to-revenue decisions and conversion economics for property-focused lead generation decisions.",
+    href: "/growth",
   },
 ];
 
-const featuredStudies = [
+const strategyConcepts = [
   {
-    title: "Gym Membership Growth",
-    scope: "Paid acquisition funnel",
+    title: "Aesthetic Clinic Growth System",
     summary:
-      "Meta funnel built for member acquisition with iterative testing and performance optimization.",
-    tools: "Meta Ads, funnel strategy, testing",
-    result: "40-60 new members in 60 days | 2.0-2.5x ROI",
-    href: "/work#case-gym",
+      "Concept model for rebuilding a clinic funnel around measurable WhatsApp acquisition.",
+    href: "/work/aesthetic-clinic",
   },
   {
-    title: "Company Formation",
-    scope: "Lead generation system",
+    title: "B2B SaaS Acquisition & Retention",
     summary:
-      "From referral-heavy growth to a more stable weekly lead flow using search + retargeting.",
-    tools: "Google Ads, Meta Ads, WhatsApp-first flow",
-    result: "Qualified weekly lead pipeline",
-    href: "/work#case-company-formation",
+      "Concept model linking paid acquisition to retention and LTV:CAC decision logic.",
+    href: "/work/saas-growth-system",
   },
   {
-    title: "Accounting Firm",
-    scope: "Performance + measurement",
+    title: "EdTech Enrollment Growth",
     summary:
-      "Structured campaigns and tracking discipline to support higher-confidence optimization.",
-    tools: "Google Ads, GA4, conversion tracking",
-    result: "Clearer attribution and reporting cadence",
-    href: "/work#case-accounting",
-  },
-  {
-    title: "Escape Room Analytics",
-    scope: "Analytics implementation",
-    summary:
-      "Built analytics infrastructure to support decision-making for paid growth.",
-    tools: "GA4, event design, reporting",
-    result: "Improved visibility into marketing outcomes",
-    href: "/work#case-escape-room-analytics",
+      "Concept model for enrollment growth with full-funnel attribution and unit-economics planning.",
+    href: "/work/edtech-growth-system",
   },
 ];
 
@@ -129,33 +118,35 @@ export default function HomePage() {
               Yelena Shelepova
             </h1>
             <p className="mt-4 text-lg font-semibold text-neutral-200 sm:text-xl">
-              Performance &amp; Growth Marketing | Paid Acquisition | Marketing Analytics
+              Marketing Analyst &amp; Performance Marketer | Measurement | Unit Economics | Paid Acquisition
             </p>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">
-              I plan, launch, and optimize data-driven customer acquisition campaigns across Google Ads and Meta Ads, supported by analytics, conversion tracking, and continuous experimentation.
+              I build measurement-first growth systems: analytics architecture, attribution quality, paid acquisition execution, and financial logic for decision-making.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/work"
+                href="#employer-contact"
                 className="inline-flex items-center justify-center border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-black transition hover:bg-orange-600"
               >
-                View Case Studies
+                Hire Me
               </a>
-              {hasCv ? (
-                <a
-                  href="/resume.pdf"
-                  className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-neutral-100 transition hover:border-neutral-400 hover:bg-neutral-800"
-                >
-                  Download CV
-                </a>
-              ) : (
-                <span
-                  aria-disabled="true"
-                  className="inline-flex cursor-not-allowed items-center justify-center border border-neutral-700 bg-neutral-900/80 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-neutral-500"
-                >
-                  Download CV (coming soon)
-                </span>
-              )}
+              <a
+                href="/landing"
+                className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-neutral-100 transition hover:border-neutral-400 hover:bg-neutral-800"
+              >
+                Work With My Agency
+              </a>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-neutral-300">
+              <a href={CV_HREF} className="underline underline-offset-4 hover:text-orange-300">
+                Download CV
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-orange-300">
+                LinkedIn
+              </a>
+              <a href="#employer-contact" className="underline underline-offset-4 hover:text-orange-300">
+                Employer Contact
+              </a>
             </div>
           </div>
 
@@ -205,33 +196,16 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
-        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Experience and Results</p>
-        <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Selected Work Highlights</h2>
-        <div className="mt-7 grid gap-5 lg:grid-cols-2">
-          {highlights.map((item) => (
-            <article key={item.context} className="border border-neutral-800 bg-neutral-900/60 p-6">
-              <p className="text-sm font-extrabold uppercase tracking-[0.1em] text-orange-400">{item.context}</p>
-              <p className="mt-3 text-sm text-neutral-300"><span className="font-semibold text-white">Responsibility:</span> {item.responsibility}</p>
-              <p className="mt-2 text-sm text-neutral-300"><span className="font-semibold text-white">Actions:</span> {item.actions}</p>
-              <p className="mt-2 text-sm text-neutral-200"><span className="font-semibold text-white">Result:</span> {item.result}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
-        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Featured Case Studies</p>
-        <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Recent Projects</h2>
+        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Real Work Assets</p>
+        <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Measurement-First Highlights</h2>
         <div className="mt-7 grid gap-5 md:grid-cols-2">
-          {featuredStudies.map((study) => (
-            <article key={study.title} className="group border border-neutral-800 bg-[#121212] p-6 transition hover:border-orange-500/60 hover:bg-[#151515]">
-              <p className="text-xs uppercase tracking-[0.12em] text-neutral-400">{study.scope}</p>
-              <h3 className="mt-2 text-2xl font-extrabold uppercase text-white">{study.title}</h3>
-              <p className="mt-3 text-sm text-neutral-300">{study.summary}</p>
-              <p className="mt-3 text-xs uppercase tracking-[0.1em] text-neutral-400">Tools: {study.tools}</p>
-              <p className="mt-2 text-sm font-semibold text-orange-400">{study.result}</p>
-              <a href={study.href} className="mt-4 inline-block text-sm font-extrabold uppercase tracking-[0.1em] text-white underline underline-offset-4 transition hover:text-orange-400">
-                View full case study
+          {realWorkHighlights.map((item) => (
+            <article key={item.title} className="border border-neutral-800 bg-neutral-900/60 p-6">
+              <p className="text-xs uppercase tracking-[0.12em] text-neutral-400">{item.scope}</p>
+              <h3 className="mt-2 text-2xl font-extrabold uppercase text-white">{item.title}</h3>
+              <p className="mt-3 text-sm text-neutral-300">{item.detail}</p>
+              <a href={item.href} className="mt-4 inline-block text-sm font-extrabold uppercase tracking-[0.1em] text-white underline underline-offset-4 transition hover:text-orange-400">
+                Open evidence
               </a>
             </article>
           ))}
@@ -241,8 +215,27 @@ export default function HomePage() {
             href="/work"
             className="inline-flex items-center justify-center border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-black transition hover:bg-orange-600"
           >
-            View All Case Studies
+            View All Work
           </a>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
+        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Labeled Concept Models</p>
+        <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Strategy Concepts</h2>
+        <div className="mt-7 grid gap-5 md:grid-cols-3">
+          {strategyConcepts.map((item) => (
+            <article key={item.title} className="border border-neutral-800 bg-neutral-900/60 p-6">
+              <span className="rounded-full border border-neutral-600 bg-neutral-800 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-neutral-300">
+                Strategy Concept
+              </span>
+              <h3 className="mt-3 text-xl font-semibold text-white">{item.title}</h3>
+              <p className="mt-3 text-sm text-neutral-300">{item.summary}</p>
+              <a href={item.href} className="mt-4 inline-block text-sm font-extrabold uppercase tracking-[0.1em] text-white underline underline-offset-4 transition hover:text-orange-400">
+                Open concept case
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -287,7 +280,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
+      <section id="employer-contact" className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
         <div className="border border-orange-500/40 bg-orange-500/10 p-8 md:p-10">
           <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Open to New Opportunities</p>
           <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Employer Contact</h2>
@@ -302,15 +295,9 @@ export default function HomePage() {
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
               LinkedIn
             </a>
-            {hasCv ? (
-              <a href="/resume.pdf" className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
-                Download CV
-              </a>
-            ) : (
-              <span aria-disabled="true" className="inline-flex cursor-not-allowed items-center justify-center border border-neutral-700 bg-neutral-900/80 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-neutral-500">
-                Download CV (coming soon)
-              </span>
-            )}
+            <a href={CV_HREF} className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
+              Download CV
+            </a>
           </div>
 
           <p className="mt-6 text-sm text-neutral-300">
