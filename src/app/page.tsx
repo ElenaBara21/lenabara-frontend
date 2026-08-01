@@ -4,7 +4,7 @@ import Image from "next/image";
 const CV_HREF = "/resume.pdf";
 
 export const metadata: Metadata = {
-  title: "Performance & Growth Marketing Portfolio | Lena Bara",
+  title: "Marketing Analytics & Growth Portfolio | Lena Bara",
   description:
     "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems.",
   alternates: {
@@ -16,6 +16,7 @@ const expertiseAreas = [
   "SQL",
   "Python",
   "GA4",
+  "Marketing Analytics",
   "Google Tag Manager",
   "Conversion Tracking",
   "Unit Economics (LTV:CAC / payback)",
@@ -25,7 +26,6 @@ const expertiseAreas = [
   "Attribution & UTM Architecture",
   "Google Ads",
   "Meta Ads",
-  "Marketing Analytics",
 ];
 
 const realWorkHighlights = [

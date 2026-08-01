@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="h-8 w-8 rounded-xl bg-orange-500 flex items-center justify-center font-bold text-black">LB</div>
             <span className="font-extrabold text-white text-lg">LENABARA</span>
           </div>
-          <div className="mb-2">A boutique performance marketing agency based in the UAE, specializing in paid media, analytics, and creative execution.</div>
+          <div className="mb-2">A boutique marketing analytics and growth agency based in the UAE, specializing in measurement, analytics, and paid acquisition.</div>
           <div className="mb-2">Dubai • Abu Dhabi • Sharjah • Ras Al Khaimah • Ajman</div>
           <div className="mb-2">Serving clients across the GCC and globally.</div>
           <div className="mb-2">Registered with RAKEZ (Ras Al Khaimah Economic Zone), UAE. Licensed under: Media / Digital Marketing Consultancy.</div>
