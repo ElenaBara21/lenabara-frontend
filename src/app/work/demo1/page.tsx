@@ -298,7 +298,7 @@ export default function Demo1Page() {
             <a href="#" className="hover:text-cyan-200">Features</a>
             <Link href="/privacy-policy" className="hover:text-cyan-200">Privacy</Link>
             <Link href="/contact" className="hover:text-cyan-200">Contact</Link>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-200">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/lenabara/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-200">LinkedIn</a>
           </div>
         </div>
       </footer>

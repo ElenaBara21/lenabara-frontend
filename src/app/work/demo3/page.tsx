@@ -196,7 +196,7 @@ export default function Demo3Page() {
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/contact" className="hover:text-slate-900">Contact</Link>
             <Link href="/privacy-policy" className="hover:text-slate-900">Privacy</Link>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/lenabara/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">LinkedIn</a>
           </div>
         </div>
       </footer>

@@ -240,7 +240,7 @@ export default function Demo2Page() {
           <p className={`${displayFont.className} text-base uppercase tracking-[0.05em] text-black`}>LenaBara Audit Desk</p>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/contact" className="hover:text-black">Contact</Link>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-black">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/lenabara/" target="_blank" rel="noopener noreferrer" className="hover:text-black">LinkedIn</a>
           </div>
         </div>
       </footer>

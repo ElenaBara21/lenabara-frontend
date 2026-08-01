@@ -136,7 +136,7 @@ export default function HomePage() {
               <a href={CV_HREF} className="underline underline-offset-4 hover:text-orange-300">
                 Download CV
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-orange-300">
+              <a href="https://www.linkedin.com/in/lenabara/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-orange-300">
                 LinkedIn
               </a>
               <a href="#employer-contact" className="underline underline-offset-4 hover:text-orange-300">
@@ -287,7 +287,7 @@ export default function HomePage() {
             <a href="mailto:info@lenabara.com" className="inline-flex items-center justify-center border border-neutral-300 bg-white px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-neutral-950 transition hover:bg-neutral-200">
               Email
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
+            <a href="https://www.linkedin.com/in/lenabara/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
               LinkedIn
             </a>
             <a href={CV_HREF} className="inline-flex items-center justify-center border border-neutral-600 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800">
