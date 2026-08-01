@@ -4,11 +4,11 @@ import Link from "next/link";
 import { cases } from "./data/cases";
 
 export const metadata: Metadata = {
-  title: "Work | LenaBara",
-  description: "Work and strategy concepts in performance marketing and analytics.",
+  title: "Case Studies | LenaBara",
+  description: "Case studies and strategy concepts in performance marketing and analytics.",
   openGraph: {
-    title: "Work | LenaBara",
-    description: "Work and strategy concepts in performance marketing and analytics.",
+    title: "Case Studies | LenaBara",
+    description: "Case studies and strategy concepts in performance marketing and analytics.",
     url: "https://lenabara.com/work",
     siteName: "LenaBara",
     type: "website",
@@ -119,19 +119,19 @@ export default function WorkPage() {
     <main className="min-h-screen bg-neutral-950 py-12 text-neutral-100 md:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <section className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 md:p-10">
-          <h1 className="text-3xl font-extrabold text-white md:text-5xl">Work</h1>
+          <h1 className="text-3xl font-extrabold text-white md:text-5xl">Case Studies</h1>
           <p className="mt-3 max-w-3xl text-base text-neutral-300 md:text-lg">
-            Detailed work and strategy concepts in performance marketing and analytics.
+            Detailed case studies and strategy concepts in performance marketing and analytics.
           </p>
         </section>
 
         <section className="mt-12" aria-labelledby="real-cases-heading">
           <h2 id="real-cases-heading" className="text-2xl font-extrabold text-white md:text-3xl">
-            Real Work
+            Real Case Studies
           </h2>
           {realCases.length === 0 ? (
             <p className="mt-4 rounded-xl border border-dashed border-neutral-700 bg-neutral-900 px-4 py-3 text-sm text-neutral-400">
-              No real work published yet.
+              No real case studies published yet.
             </p>
           ) : (
             <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -143,7 +143,7 @@ export default function WorkPage() {
                     href={`/work/${item.slug}`}
                     className="mt-4 inline-flex text-sm font-semibold text-orange-300 underline-offset-4 transition hover:text-orange-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                   >
-                    Open work
+                    Open case study
                   </Link>
                 </article>
               ))}
@@ -174,7 +174,7 @@ export default function WorkPage() {
                     href={`/work/${item.slug}`}
                     className="mt-4 inline-flex text-sm font-semibold text-orange-300 underline-offset-4 transition hover:text-orange-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                   >
-                    Open work
+                    Open case study
                   </Link>
                 </article>
               ))}

@@ -25,7 +25,7 @@ export default function Carousel({ slides }: CarouselProps) {
   };
 
   if (slides.length === 0) {
-    return <div className="text-center text-neutral-400">No work available yet.</div>;
+    return <div className="text-center text-neutral-400">No case studies available yet.</div>;
   }
 
   return (

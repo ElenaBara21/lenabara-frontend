@@ -73,7 +73,7 @@ export default function CaseStudyEscapeRoom({
             >
               <Image
                 src={imagePath}
-                alt={`Escape Room Analytics Work Slide ${index + 1}`}
+                alt={`Escape Room Analytics Case Study Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"

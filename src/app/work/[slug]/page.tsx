@@ -17,16 +17,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!study) {
     return {
-      title: "Work Not Found | LenaBara",
+      title: "Case Study Not Found | LenaBara",
       robots: { index: false, follow: false },
     };
   }
 
   return {
-    title: `${study.title} | Work | LenaBara`,
+    title: `${study.title} | Case Studies | LenaBara`,
     description: study.metaDescription,
     openGraph: {
-      title: `${study.title} | Work | LenaBara`,
+      title: `${study.title} | Case Studies | LenaBara`,
       description: study.metaDescription,
       url: `https://lenabara.com/work/${study.slug}`,
       siteName: "LenaBara",

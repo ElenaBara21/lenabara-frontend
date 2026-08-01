@@ -163,7 +163,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-14 md:py-16">
         <div className="max-w-4xl">
           <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Professional Summary</p>
-          <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">About My Work</h2>
+          <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">About My Case Studies</h2>
           <div className="mt-5 space-y-4 text-neutral-300 md:text-lg">
             <p>
               I work across international business environments in analytics, paid acquisition, and marketing operations, with hands-on experience turning marketing spend into measurable outcomes.
@@ -191,7 +191,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-16">
-        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Real Work Assets</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Real Case Studies Assets</p>
         <h2 className="mt-3 text-3xl font-extrabold uppercase text-white md:text-4xl">Measurement-First Highlights</h2>
         <div className="mt-7 grid gap-5 md:grid-cols-2">
           {realWorkHighlights.map((item) => (
@@ -210,7 +210,7 @@ export default function HomePage() {
             href="/work"
             className="inline-flex items-center justify-center border border-orange-500 bg-orange-500 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-black transition hover:bg-orange-600"
           >
-            View All Work
+            View All Case Studies
           </a>
         </div>
       </section>

@@ -59,7 +59,7 @@ export default function MobileMenu({
             <nav className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
               <a href="/" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Home</a>
               <a href="/about" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>About</a>
-              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Work</a>
+              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Case Studies</a>
               <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
               <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
               {isPortfolioHome && (

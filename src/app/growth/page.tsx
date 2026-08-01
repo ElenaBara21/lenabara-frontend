@@ -492,13 +492,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Work Preview */}
+      {/* Case Studies Preview */}
       <section id="case-study-preview" className="mx-auto max-w-7xl px-6 mt-12">
         <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Real Campaign Results</h4>
         <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
           <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-orange-400">Work Preview</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-orange-400">Case Studies Preview</p>
               <h3 className="mt-3 text-2xl md:text-4xl font-extrabold text-white">Fitness Studio Lead Generation - Dubai</h3>
               <p className="mt-3 max-w-2xl text-neutral-300 text-sm md:text-base">A lead generation campaign built to drive qualified enquiries at an efficient acquisition cost while maintaining strong return on ad spend.</p>
             </div>
@@ -523,7 +523,7 @@ export default function LandingPage() {
           </div>
           <div className="mt-8 flex justify-center">
             <a href="/work" className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:bg-white/20">
-              View Work
+              View Case Studies
             </a>
           </div>
         </div>

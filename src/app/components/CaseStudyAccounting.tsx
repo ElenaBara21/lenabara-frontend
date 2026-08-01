@@ -75,7 +75,7 @@ export default function CaseStudyAccounting({
             >
               <Image
                 src={imagePath}
-                alt={`UAE Accounting Firm Work Slide ${index + 1}`}
+                alt={`UAE Accounting Firm Case Study Slide ${index + 1}`}
                 fill
                 priority={index === 0}
                 className="object-contain"
