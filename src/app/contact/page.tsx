@@ -73,12 +73,14 @@ export default function ContactPage() {
             >
               Email
             </a>
-            <span
-              aria-label="LinkedIn TODO"
-              className="inline-flex items-center justify-center border border-neutral-700 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white"
+            <a
+              href="https://www.linkedin.com/in/lenabara/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center border border-neutral-700 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800"
             >
-              LinkedIn (TODO: add real profile URL)
-            </span>
+              LinkedIn
+            </a>
             <a
               href="/resume.pdf"
               className="inline-flex items-center justify-center border border-neutral-700 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-400 hover:bg-neutral-800"
