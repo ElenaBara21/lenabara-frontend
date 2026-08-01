@@ -43,14 +43,6 @@ export default function Header() {
         </nav>
         {/* Mobile burger menu */}
         <MobileMenu isPortfolioHome={isPortfolioHome} hasCv={hasCv} />
-        {!isPortfolioHome && (
-          <a
-            href="#contact"
-            className="hidden md:inline-block bg-orange-500 text-black px-4 py-2 rounded-none text-sm font-extrabold uppercase tracking-[0.1em] hover:bg-orange-600 transition cta-book-audit"
-          >
-            BOOK FREE AUDIT
-          </a>
-        )}
       </div>
     </header>
   );

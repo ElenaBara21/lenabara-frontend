@@ -28,8 +28,8 @@ export default function Footer() {
         </div>
         <div className="flex-1 min-w-[180px]">
           <div className="font-bold text-white mb-2">NAVIGATION</div>
-          <div className="mb-1">PACKAGES</div>
-          <div className="mb-1">WHAT MAKES US DIFFERENT</div>
+          <div className="mb-1">WORK</div>
+          <div className="mb-1">ABOUT</div>
           <div className="mb-1">CONTACT</div>
         </div>
         <div className="flex-1 min-w-[180px]">
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
         <div className="flex-1 min-w-[180px]">
           <div className="font-bold text-white mb-2">COLLABORATIONS</div>
-          <div className="mb-1">We love working with creative freelancers and marketing specialists. If you'd like to collaborate, send your portfolio or proposal to:</div>
+          <div className="mb-1">For employer conversations or portfolio requests, reach out through the contact page:</div>
           <div className="mb-1">info@lenabara.com</div>
           <div className="font-extrabold text-white text-lg mt-6 mb-2">START A PROJECT</div>
           <a href="https://lenabara.com/contact" target="_blank" rel="noopener noreferrer" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2 rounded-none font-extrabold uppercase tracking-[0.1em] transition mb-2">Contact</a>

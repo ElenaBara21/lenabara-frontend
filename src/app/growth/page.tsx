@@ -1,689 +1,111 @@
-'use client';
+import Link from "next/link";
 
- // app/page.tsx (reconstructed)
-import PromoCountdown from "../packages-details/components/PromoCountdown";
-import { PROMO, isPromoActive } from "../packages-details/lib/promo";
-import BudgetCalculator from "../packages-details/components/BudgetCalculator";
-import LeadForm from "../components/LeadForm";
-import DownloadKitModal from "../components/DownloadKitModal";
-import Hero from "../components/Hero";
-import TrustedSection from "../components/TrustedSection";
-import HowWeDoIt from "../components/HowWeDoIt";
-import Testimonials from "../components/Testimonials";
-import Collapsible from "../components/Collapsible";
-import FAQList from "../components/FAQList";
-import { FAQ_GROUPS } from "../content/faq";
+const focusAreas = [
+  "Measurement architecture",
+  "GA4 / GTM / Pixel setup",
+  "Lead quality and funnel analysis",
+  "Landing page review",
+  "Unit economics and attribution",
+  "Experimentation and reporting",
+];
 
-export default function LandingPage() {
-  const promoActive = isPromoActive(PROMO);
-  
-  const handleCatalogDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const link = document.createElement('a');
-    link.href = '/catalog.pdf';
-    link.download = 'Lenabara-Dashboard-Catalog.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-  
+const selectedWork = [
+  {
+    title: "Tracking & Analytics Foundation",
+    detail:
+      "Live implementation of GA4, GTM, and Meta Pixel for a business site with WhatsApp, call, and booking-intent tracking.",
+    href: "/work/tracking-analytics-foundation",
+  },
+  {
+    title: "Case Studies",
+    detail:
+      "Selected examples showing how structured measurement, creative, and offer clarity change campaign outcomes.",
+    href: "/work",
+  },
+  {
+    title: "Data Science Portfolio",
+    detail:
+      "Applied analytics work across classification, clustering, regression, A/B testing, and churn prediction.",
+    href: "https://github.com/ElenaBara21/Portfolio",
+  },
+];
+
+const processSteps = [
+  "Audit the measurement layer before touching budget.",
+  "Map the funnel from impression to qualified lead.",
+  "Separate proven results from modeled assumptions.",
+  "Use reporting to decide what to scale, fix, or stop.",
+];
+
+export default function GrowthPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
-      {/* Header is provided globally via layout Header component */}
-      <Hero />
-
-      {/* Trusted performance marketing expertise */}
-      <TrustedSection />
-
-      {/* Problems we solve */}
-      <section className="mx-auto max-w-7xl px-6 mt-12">
-        <p className="text-sm uppercase tracking-widest text-neutral-400 text-center">PROBLEMS WE SOLVE</p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white text-center uppercase mt-3">
-          Why Most UAE Businesses Lose Money on Paid Ads
-        </h2>
-        <div className="h-0.5 w-20 bg-orange-500 mx-auto my-4" />
-        <div className="mx-auto max-w-3xl text-neutral-200">
-          <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
-            <li>Ads generate clicks but not real leads</li>
-            <li>Agencies don’t install proper conversion tracking</li>
-            <li>WhatsApp leads are impossible to measure</li>
-            <li>Ad budgets are wasted on the wrong audiences</li>
-            <li>Business owners cannot see real ROI</li>
-          </ul>
-          <p className="mt-6 text-white text-lg md:text-xl font-semibold text-center">We fix this with structured lead generation systems.</p>
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:bg-white/20"
-            >
-              Book Free Audit
-            </a>
-          </div>
+    <main className="min-h-screen bg-neutral-950 text-neutral-100">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <p className="text-xs uppercase tracking-[0.18em] text-orange-400">Employer-facing profile</p>
+        <h1 className="mt-4 text-4xl font-extrabold uppercase leading-[1.02] text-white sm:text-5xl md:text-6xl">
+          Growth Analytics and Measurement
+        </h1>
+        <p className="mt-5 max-w-3xl text-lg text-neutral-300 md:text-xl">
+          I work across analytics, paid acquisition, and conversion tracking, with a focus on turning marketing spend
+          into measurable decisions rather than vanity output.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/work"
+            className="inline-flex items-center justify-center border border-neutral-700 bg-neutral-900 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:border-neutral-500 hover:bg-neutral-800"
+          >
+            Case Studies
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center border border-neutral-700 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-neutral-200 transition hover:border-neutral-500 hover:text-white"
+          >
+            Contact
+          </Link>
         </div>
       </section>
 
-      {/* Lead magnet / Readiness kit (restored) */}
-      <section id="lead-magnet" className="mx-auto max-w-7xl px-6 mt-8">
-        <div className="rounded-2xl border border-neutral-800 bg-[#0e0c0c] p-8 md:p-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm uppercase tracking-widest text-neutral-300">Free resource for UAE businesses</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 mt-3 mb-3 uppercase">Is your business ready for paid ads?</h2>
-            <div className="h-0.5 w-20 bg-orange-500 mx-auto mb-4" />
-            <p className="text-neutral-300 max-w-2xl mx-auto mb-6">Find out in 10 minutes if your business is ready for high-performance ads — and what to fix first.</p>
-
-            <div className="flex justify-center mb-4">
-              <DownloadKitModal triggerLabel={"Download the UAE Ads Readiness Kit (Free)"} buttonClassName="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]" />
-            </div>
-
-            <div className="text-sm text-neutral-400">
-              <p>No spam. No generic tips — just insights tailored for UAE businesses ready to scale.</p>
-            </div>
-
-            <div className="mt-4 max-w-3xl mx-auto text-left">
-              <Collapsible summary="Learn more">
-                <div className="space-y-3 text-neutral-300">
-                  <p>The Readiness Kit helps you quickly audit whether your website, tracking and creative are set up to support high-performance paid ads.</p>
-                  <ul className="list-inside list-none space-y-2">
-                    <li>✅ Landing page checklist (conversion drivers, load speed, CTA clarity)</li>
-                    <li>✅ Tracking & analytics guide (pixel, GA4, conversion events)</li>
-                    <li>✅ Creative brief template for quick A/B tests</li>
-                    <li>✅ Prioritised fix list so you can act in the right order</li>
-                  </ul>
-                </div>
-              </Collapsible>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes LenaBara Stand Out */}
-      <section id="standout" className="mx-auto max-w-7xl px-6 mt-12">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">
-          What Makes LenaBara Stand Out
-        </h4>
-        <div className="rounded-2xl border border-neutral-800 bg-[#100C0B] p-6 md:p-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                t: "Conversion Tracking First",
-                q: "Before launching campaigns we implement GA4, Meta Pixel, and Google tracking so every lead can be measured.",
-                s: "Tracking is not an afterthought — it's the foundation of every high-performing funnel.",
-              },
-              {
-                t: "Performance-Driven Strategy",
-                q: "Campaigns are built around measurable business outcomes: leads, bookings, and sales.",
-                s: "We design tests, budgets, and creative to move real ROI metrics, not vanity KPIs.",
-              },
-              {
-                t: "Transparent Reporting",
-                q: "Clear dashboards and reporting show exactly where your marketing budget goes.",
-                s: "No surprises. You see the numbers, the spend, and the impact — in real time.",
-              },
-              {
-                t: "Data + Marketing Expertise",
-                q: "Background in Data Science and Marketing allows decisions based on real performance data, not guesswork.",
-                s: "We combine analytics rigor with creative strategy to scale what works and stop what doesn't.",
-              },
-            ].map((n, i) => (
-              <div
-                key={i}
-                className={`relative ${["-rotate-2","rotate-2","-rotate-1","rotate-1","-rotate-2","rotate-2"][i % 6]} transform-gpu will-change-transform transition-transform duration-200 ease-out hover:rotate-0 hover:scale-[1.02]`}
-              >
-                <div className="rounded-none border border-neutral-700 bg-[#100C0B] text-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] p-5">
-                  <p className="font-medium tracking-wide text-orange-400 text-2xl md:text-3xl">{n.t}</p>
-                  <p className="mt-2 italic font-normal">{n.q}</p>
-                  <p className="mt-2 text-sm md:text-base font-normal">{n.s}</p>
-                </div>
+      <section className="mx-auto max-w-7xl px-6 pb-14">
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 md:p-8">
+          <p className="text-sm uppercase tracking-[0.16em] text-orange-400">Focus Areas</p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {focusAreas.map((item) => (
+              <div key={item} className="border border-neutral-800 bg-neutral-950/50 p-4 text-sm text-neutral-200">
+                {item}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Performance. Transparency. Expertise */}
-      
-
-      {/* UAE Certified Intro */}
-      <section id="uae-certified" className="mx-auto max-w-7xl px-6 mt-12">
-        <h4 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-tight font-extrabold text-orange-500 mb-6 text-center uppercase">
-          Performance. Transparency. Expertise. UAE Insight
-        </h4>
-        <div className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6">
-          <div className="relative min-h-[320px] md:min-h-[420px]">
-            {/* Vertical orange rectangle background */}
-            <div className="absolute inset-y-0 left-0 w-40 md:w-48 bg-orange-500" />
-            {/* Content on top */}
-            <div className="relative pl-10 md:pl-14 pr-4 mt-28 md:mt-40">
-              <p className="text-white text-sm md:text-base leading-relaxed max-w-[620px]">
-                <span className="font-semibold">LenaBara Media</span> combines global certification standards with local UAE market expertise. Every campaign is personally managed by Lena Bara, a Meta Certified Media Buying Professional and Google Ads Specialist, ensuring data-driven results and complete transparency.
-              </p>
-              <div className="mt-5 h-0.5 w-24 bg-white/80" />
-            </div>
-          </div>
-          <div className="rounded-none border border-neutral-800 bg-cover bg-center min-h-[320px] md:min-h-[420px]"
-               style={{ backgroundImage: 'url(/hero/my-photo.png)' }}
-          />
-        </div>
-        <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <a href="#contact" className="bg-orange-500 hover:bg-orange-600 transition text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
-            Book Free 15-min Call
-          </a>
-          <a href="#packages" className="bg-neutral-800 hover:bg-neutral-700 transition text-white px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">
-            See Packages
-          </a>
-        </div>
-      </section>
-
-      {/* Packages */}
-      <section id="packages" className="mx-auto max-w-7xl px-6 mt-10">
-        <h2 className="text-[40px] md:text-[56px] tracking-tight font-extrabold text-white mb-4 text-center">PACKAGES</h2>
-
-        {promoActive && (
-          <div className="mb-8 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-8 py-8 text-center">
-            <h4 className="text-3xl md:text-4xl font-extrabold text-white uppercase">Limited Time: 20% OFF for a Pilot Launch Package</h4>
-            <p className="mt-4 text-sm uppercase tracking-wide text-neutral-300">Ends in</p>
-            <div className="mt-2 flex justify-center">
-              <PromoCountdown endsAtISO={PROMO.endsAtISO} />
-            </div>
-            {PROMO.note && (
-              <p className="text-xs text-neutral-400 mt-3">{PROMO.note}</p>
-            )}
-          </div>
-        )}
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Left column: Pilot Launch (big) */}
-          <div className="relative rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-neutral-900 px-3 py-1 border border-orange-500/60 rounded-full text-[10px] tracking-wide uppercase text-orange-400">Save AED 1,400</div>
-            <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">PILOT<br className='md:hidden'/> LAUNCH</p>
-            <p className="mt-1 text-neutral-300 text-center text-base font-medium">Launch Your First Paid Ads Campaign</p>
-
-            <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-              <p className="text-white font-bold text-lg">AED 2,500</p>
-              <p className="text-orange-400 font-semibold text-sm">Founder's Offer &mdash; Save AED 1,400</p>
-              <p className="text-xs text-neutral-400">Regular price: AED 3,900</p>
-              <p className="text-xs text-neutral-400">(Limited to 5 businesses)</p>
-            </div>
-
-            <div className="mt-3 space-y-3 text-neutral-300">
-              <p>
-                <span className="text-orange-400 font-semibold">Best for:</span>{" "}
-                <span className="text-neutral-300">UAE businesses launching Meta or Google Ads for the first time and wanting to test results before scaling.</span>
-              </p>
-
-              <Collapsible summary="Learn more">
-                <div className="space-y-2">
-                  <div className="pt-1">
-                    <p className="text-orange-400 font-semibold">What's Included</p>
-                    <ul className="mt-2 space-y-1 text-sm md:text-base">
-                      <li>✅ Campaign setup on 1 platform (Meta or Google)</li>
-                      <li>✅ 1–2 ad campaigns configured and launched</li>
-                      <li>✅ Pixel + GA4 conversion tracking setup</li>
-                      <li>✅ 2 campaign optimization rounds</li>
-                      <li>✅ Mini performance report with insights</li>
-                      <li>✅ WhatsApp &amp; email support</li>
-                    </ul>
-                  </div>
-                  <div className="pt-1">
-                    <p className="text-orange-400 font-semibold">Timeline</p>
-                    <p className="text-neutral-300 text-sm md:text-base mt-1">2–3 weeks</p>
-                  </div>
-                  <p className="text-xs text-neutral-500">Ad spend billed separately.</p>
-                </div>
-              </Collapsible>
-            </div>
-            <div className="mt-6 flex justify-center">
-              <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]">
-                Launch My Campaign
-              </a>
-            </div>
-          </div>
-
-          {/* Right column: Growth + Performance cards */}
-          <div className="grid gap-6">
-            {/* Growth System */}
-            <div className="relative rounded-3xl border border-orange-500/40 bg-neutral-900/50 p-6 md:p-8 shadow-[0_0_32px_0_rgba(249,115,22,0.15)]">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 px-3 py-1 rounded-full text-[10px] tracking-wide uppercase text-black font-bold">⭐ Most Popular</div>
-              <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">GROWTH<br className='md:hidden'/> SYSTEM</p>
-              <p className="mt-1 text-neutral-300 text-center text-base font-medium">Scale Your Lead Generation</p>
-
-              {/* Investment panel */}
-              <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-                <p className="text-white font-bold text-lg">AED 5,000</p>
-              </div>
-
-              <div className="mt-3 space-y-3 text-neutral-300">
-                <p><span className="text-orange-400 font-semibold">Best for:</span> UAE businesses that already tested ads and want stronger results through optimization and analytics.</p>
-
-                <Collapsible summary="Learn more">
-                  <div className="space-y-2">
-                    <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">What's Included</p>
-                      <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>✅ Meta and/or Google Ads management</li>
-                        <li>✅ Multi-campaign structure for testing</li>
-                        <li>✅ Advanced conversion tracking</li>
-                        <li>✅ Weekly optimization &amp; performance tuning</li>
-                        <li>✅ Monthly performance report</li>
-                        <li>✅ Strategy adjustments based on data</li>
-                      </ul>
-                    </div>
-                    <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">Optional add-ons</p>
-                      <ul className="mt-1 space-y-1 text-sm md:text-base text-neutral-400">
-                        <li>+ Landing page design</li>
-                        <li>+ Looker Studio dashboard</li>
-                      </ul>
-                    </div>
-                  </div>
-                </Collapsible>
-              </div>
-              <div className="mt-6 flex justify-center">
-                <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_growth_call">
-                  Book Strategy Call
-                </a>
-              </div>
-            </div>
-
-            {/* Performance Partner */}
-            <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
-              <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">PERFORMANCE<br className='md:hidden'/> PARTNER</p>
-              <p className="mt-1 text-neutral-300 text-center text-base font-medium">Full Performance Marketing Partnership</p>
-
-              {/* Investment panel */}
-              <div className="mt-3 rounded-2xl border border-orange-500/40 bg-orange-500/10 px-4 py-3 text-center">
-                <p className="text-white font-bold text-lg">AED 9,000 <span className="text-sm font-normal text-neutral-400">/ month</span></p>
-              </div>
-
-              <div className="mt-3 space-y-3 text-neutral-300">
-                <p><span className="text-orange-400 font-semibold">Best for:</span> Established UAE businesses ready to scale their lead generation with ongoing campaign management and strategy.</p>
-
-                <Collapsible summary="Learn more">
-                  <div className="space-y-2">
-                    <div className="pt-1">
-                      <p className="text-orange-400 font-semibold">What's Included</p>
-                      <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>✅ Meta + Google Ads management</li>
-                        <li>✅ Full-funnel campaign strategy</li>
-                        <li>✅ Advanced analytics &amp; reporting</li>
-                        <li>✅ Weekly optimization cycles</li>
-                        <li>✅ Monthly strategy calls</li>
-                        <li>✅ Dedicated campaign management</li>
-                      </ul>
-                    </div>
-                  </div>
-                </Collapsible>
-              </div>
-              <div className="mt-6 flex justify-center">
-                <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-2.5 rounded-none font-extrabold uppercase tracking-[0.1em]" data-track="services_partner_apply">
-                  Apply for Partnership
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      {/* Add-on Options (full width) */}
-      <section id="addons" className="mx-auto max-w-7xl px-6 mt-12">
-        <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* Left intro copy */}
-            <div>
-              <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide uppercase leading-tight">Add‑On Options</p>
-              <p className="mt-2 text-neutral-400 text-sm md:text-base max-w-md">Enhance your package with conversion‑focused assets, better analytics, and clear strategy deliverables — all aligned to your brand.</p>
-            </div>
-            {/* Right grid of cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {/* Card 1 - Landing page design & build */}
-              <div className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-orange-300">
-                    <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 5h12M4 9h8M4 13h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <div className="flex-1">
-                    <p className="text-white font-semibold">Landing page design & build</p>
-                    <p className="text-neutral-400 text-xs mt-1">High‑converting page tailored to your offer and audience.</p>
-                    
-                    <Collapsible summary="See details">
-                      <div className="mt-3 space-y-2 text-sm text-neutral-300">
-                        <p className="text-orange-400 font-semibold">What you get</p>
-                        <ul className="space-y-1 text-xs">
-                          <li>• 1 premium landing page (desktop + mobile)</li>
-                          <li>• Modern, fast build (Next.js)</li>
-                          <li>• Conversion-focused layout & UX</li>
-                          <li>• Persuasive copy sections (headline, benefits, social proof, FAQ)</li>
-                          <li>• Basic SEO (titles, meta, OG tags)</li>
-                          <li>• Tracking setup (GA4 + Meta Pixel + Google Ads tag)</li>
-                          <li>• Integration with your form / WhatsApp / booking / email tool</li>
-                          <li>• 1 feedback round + final QA on all devices</li>
-                        </ul>
-                        <p className="text-orange-400 font-semibold mt-3">Perfect for</p>
-                        <p className="text-xs">Brands running Meta/Google ads that need a page built for leads & sales, not just "looking pretty."</p>
-                        <p className="text-orange-400 font-semibold mt-3">Tech stack</p>
-                        <p className="text-xs">Built on Next.js – fast loading, SEO-friendly, easy to scale.</p>
-                        <div className="mt-4">
-                          <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            From AED 2,900 — contact us →
-                          </a>
-                        </div>
-                      </div>
-                    </Collapsible>
-                  </div>
-                </div>
-              </div>
-              {/* Card 2 */}
-              <a href="#contact" aria-label="Ask about social media add-on" className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-orange-300">
-                    <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 14l6-8 6 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="text-white font-semibold">Social media</p>
-                    <p className="text-neutral-400 text-xs mt-1">Scroll‑stopping static + video variants for testing.</p>
-                  </div>
-                </div>
-              </a>
-              {/* Card 3 - Analytics dashboard (Looker Studio) */}
-              <div className="group rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/15 text-orange-400 group-hover:bg-orange-500/20 group-hover:text-orange-300">
-                    <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 14h12M4 10h8M4 6h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <div className="flex-1">
-                    <p className="text-white font-semibold">Analytics dashboard (Looker Studio)</p>
-                    <p className="text-neutral-400 text-xs mt-1">All your marketing KPIs in one real-time dashboard. See your results clearly. Make decisions instantly. No spreadsheets. No guessing.</p>
-
-                    <Collapsible summary="See details">
-                      <div className="mt-3 space-y-3 text-sm text-neutral-300">
-                        <div>
-                          <p className="text-orange-400 font-semibold">What You Get</p>
-                          <ul className="space-y-1 text-xs mt-2">
-                            <li>✔ One clean Looker Studio dashboard</li>
-                            <li>✔ Connected to GA4, Meta Ads & Google Ads</li>
-                            <li>✔ Your brand colors & layout</li>
-                            <li>✔ Mobile-friendly, real-time view</li>
-                            <li>✔ Clear KPIs: ROAS, CPA, Revenue, Leads, Traffic, Funnels</li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <p className="text-orange-400 font-semibold">Choose Your Dashboard</p>
-                          <p className="text-xs mb-2">Pick 1 or mix 2–3 from my ready-made collection:</p>
-                          <ul className="space-y-1 text-xs">
-                            <li>• CEO Performance Overview</li>
-                            <li>• Ads Dashboard (Meta + Google)</li>
-                            <li>• GA4 Website Analytics</li>
-                            <li>• Ecommerce Funnel & Revenue</li>
-                            <li>• Paid vs Organic Traffic</li>
-                            <li>• Lead Generation Funnel</li>
-                            <li>• Customer Cohort & Retention</li>
-                            <li>• Creative Testing Dashboard</li>
-                            <li>• Social Media Insights</li>
-                          <li>• Monthly Marketing Scorecard</li>
-                        </ul>
-                        <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block mt-2 text-orange-400 hover:text-orange-300 text-xs underline">
-                          Preview catalog →
-                        </a>
-                        </div>
-
-                        <div>
-                          <p className="text-orange-400 font-semibold">Pricing</p>
-                          <div className="space-y-2 text-xs mt-2">
-                            <div>
-                              <p className="font-semibold text-white">Starter — AED 900</p>
-                              <p>1 dashboard + 1 data source + branding + 1 revision.</p>
-                            </div>
-                            <div>
-                              <p className="font-semibold text-white">Pro — AED 2,500</p>
-                              <p>3 dashboards + GA4/Pixel/Ads setup + branding + 2 revisions.</p>
-                            </div>
-                            <div>
-                              <p className="font-semibold text-white">Custom — from AED 4,500</p>
-                              <p>Fully custom build + advanced events + ecommerce funnels.</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div>
-                          <p className="text-orange-400 font-semibold">Why Work With Me</p>
-                          <p className="text-xs">Meta Certified • Google Analytics & Ads Certified • Master's in Marketing • Specialist in performance & reporting.</p>
-                        </div>
-
-                        <div className="border-t border-neutral-700 pt-3">
-                          <p className="text-white font-semibold mb-2">Want to see your business clearly?<br/>Get your dashboard today.</p>
-                          <div className="flex flex-wrap gap-2">
-                            <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            Order Your Dashboard →
-                          </a>
-                          <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            Preview catalog →
-                          </a>
-                          </div>
-                        </div>
-                      </div>
-                    </Collapsible>
-                  </div>
-                </div>
-              </div>
-              {/* Card 4 */}
-              <a href="#contact" aria-label="Ask about integrated marketing plan add-on" className="group rounded-2xl border border-orange-500/40 bg-orange-500/5 p-4 transition transform hover:scale-[1.02] hover:border-orange-500/60 hover:bg-orange-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 cursor-pointer">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/20 text-orange-400 group-hover:bg-orange-500/30 group-hover:text-orange-300">
-                    <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 4h8v12H6z" stroke="currentColor" strokeWidth="2" />
-                      <path d="M8 7h4M8 10h4M8 13h3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="text-white font-semibold">Integrated Marketing Plan & Creative Brief — from AED 950</p>
-                    <p className="text-neutral-400 text-xs mt-1">Helps align your brand message and campaigns before launch.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Preview */}
-      <section id="case-study-preview" className="mx-auto max-w-7xl px-6 mt-12">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Real Campaign Results</h4>
-        <div className="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
-          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-orange-400">Case Studies Preview</p>
-              <h3 className="mt-3 text-2xl md:text-4xl font-extrabold text-white">Fitness Studio Lead Generation - Dubai</h3>
-              <p className="mt-3 max-w-2xl text-neutral-300 text-sm md:text-base">A lead generation campaign built to drive qualified enquiries at an efficient acquisition cost while maintaining strong return on ad spend.</p>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
-                <p className="text-xs uppercase tracking-wide text-neutral-400">Ad Spend</p>
-                <p className="mt-2 text-2xl font-bold text-white">AED 12,000</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
-                <p className="text-xs uppercase tracking-wide text-neutral-400">Leads Generated</p>
-                <p className="mt-2 text-2xl font-bold text-white">380</p>
-              </div>
-              <div className="rounded-2xl border border-neutral-800 bg-black/20 p-4">
-                <p className="text-xs uppercase tracking-wide text-neutral-400">Cost per Lead</p>
-                <p className="mt-2 text-2xl font-bold text-white">AED 31</p>
-              </div>
-              <div className="rounded-2xl border border-orange-500/40 bg-orange-500/10 p-4">
-                <p className="text-xs uppercase tracking-wide text-orange-300">ROAS</p>
-                <p className="mt-2 text-2xl font-bold text-white">2.1x</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 flex justify-center">
-            <a href="/work" className="inline-flex items-center justify-center rounded-none border border-white/30 bg-white/10 px-8 py-3 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:bg-white/20">
-              View Case Studies
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator */}
-      <section id="calculator" className="mx-auto max-w-7xl px-6 my-16">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Estimate Your Budget</h4>
-        <BudgetCalculator />
-      </section>
-
-      {/* Got your estimated budget? — restored expanded block */}
-      <section id="got-budget" className="mx-auto max-w-7xl px-6">
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8 text-center">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Want a custom growth plan for your business?</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]">Book Free Strategy Call</a>
-              <DownloadKitModal triggerLabel={"Download Ads Readiness Kit"} buttonClassName={"bg-neutral-800 hover:bg-neutral-700 text-white px-5 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]"} />
-          </div>
-        </div>
-      </section>
-
-      {/* This Is How We Do It */}
-      <section id="how-we-do-it" className="mx-auto max-w-7xl px-6 mt-12">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">This is how we do it</h4>
-        <HowWeDoIt />
-      </section>
-
-      {/* Industries I Work With */}
-      <section id="industries" className="mx-auto max-w-7xl px-6 mt-12">
-        <h2 className="text-[40px] md:text-[56px] tracking-tight font-extrabold text-orange-500 mb-8 text-center">Industries I Work With</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 9l7-6 7 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M5 9v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Real Estate & Property</p>
-                <p className="text-neutral-400 text-xs mt-1">Leads for rentals, sales, and off‑plan projects.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 17s-6-3.2-6-7a3.5 3.5 0 0 1 6 0 3.5 3.5 0 0 1 6 0c0 3.8-6 7-6 7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Fitness & Gyms</p>
-                <p className="text-neutral-400 text-xs mt-1">Memberships, class sign-ups, and trial passes.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="6" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="2" />
-                  <path d="M7 6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">E‑com & Retail</p>
-                <p className="text-neutral-400 text-xs mt-1">Product sales with full-funnel remarketing.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Healthcare & Clinics</p>
-                <p className="text-neutral-400 text-xs mt-1">Leads for clinics, labs, and specialists.</p>
-              </div>
-            </li>
-            
-          </ul>
-          <ul className="space-y-3 text-sm md:text-base">
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 8l8-4 8 4-8 4-8-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M6 10v4a6 6 0 0 0 8 0v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Beauty & Wellness</p>
-                <p className="text-neutral-400 text-xs mt-1">Bookings for treatments, facials, and packages.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 3v10M4 13V3m6 10V3m3 0v6a3 3 0 0 1-3 3h0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M14 7h3v10h-3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Education & Training</p>
-                <p className="text-neutral-400 text-xs mt-1">Course enrollments and open day sign‑ups.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Food & Beverage / Hospitality</p>
-                <p className="text-neutral-400 text-xs mt-1">Bookings for dining, venues, and hospitality.</p>
-              </div>
-            </li>
-            
-            <li className="flex items-start gap-3 pb-0 border-b border-transparent last:border-b-0">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/15 text-orange-400">
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 11l6-2 3-6 2 6 5 2-5 2-2 6-3-6-6-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-white font-semibold">Travel & Events</p>
-                <p className="text-neutral-400 text-xs mt-1">Venue bookings, tours, and experiences.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section id="testimonials" className="mx-auto max-w-7xl px-6 mt-12">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Testimonials</h4>
-        <Testimonials />
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl px-6 mt-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-orange-400 mb-8 text-center">FAQ</h2>
-        <div className="space-y-10">
-          {FAQ_GROUPS.map((g, idx) => (
-            <div key={idx}>
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">{g.title}</h3>
-              <FAQList items={g.items} />
-            </div>
+      <section className="mx-auto max-w-7xl px-6 pb-14">
+        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">Selected Work</p>
+        <div className="mt-5 grid gap-5 md:grid-cols-3">
+          {selectedWork.map((item) => (
+            <article key={item.title} className="border border-neutral-800 bg-neutral-900/60 p-6">
+              <h2 className="text-xl font-extrabold uppercase text-white">{item.title}</h2>
+              <p className="mt-3 text-sm text-neutral-300">{item.detail}</p>
+              <Link
+                href={item.href}
+                className="mt-4 inline-flex text-sm font-semibold text-orange-300 underline-offset-4 transition hover:text-orange-200 hover:underline"
+              >
+                Open
+              </Link>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-6 mt-12 mb-16">
-        <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 text-center uppercase tracking-tight">Let's make a change</h4>
-        <LeadForm />
+      <section className="mx-auto max-w-7xl px-6 pb-14">
+        <p className="text-xs uppercase tracking-[0.16em] text-orange-400">How I Work</p>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          {processSteps.map((step) => (
+            <div key={step} className="border border-neutral-800 bg-neutral-900/60 p-5 text-neutral-200">
+              {step}
+            </div>
+          ))}
+        </div>
       </section>
-
-      {/* Footer is now provided by layout Footer component */}
-    </div>
+    </main>
   );
 }
-
