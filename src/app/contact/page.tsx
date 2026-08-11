@@ -1,3 +1,17 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Book a Free Ads Audit | LenaBara Media Dubai",
+  description:
+    "Book a free 15-minute strategy call with LenaBara Media. We audit your Meta Ads, Google Ads, and tracking setup for UAE businesses. No commitment.",
+  alternates: { canonical: "https://www.lenabara.com/contact" },
+  openGraph: {
+    title: "Contact | Book a Free Ads Audit | LenaBara Media Dubai",
+    description: "Book a free 15-minute strategy call. We audit your Meta Ads, Google Ads, and tracking setup for UAE businesses.",
+    url: "https://www.lenabara.com/contact",
+  },
+};
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-neutral-950 py-16 text-neutral-100">

@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Lena Bara | Performance Marketing Specialist UAE",
+  description:
+    "Lena Bara is a Meta Certified media buyer and Google Ads specialist based in Dubai. Background in data science and marketing analytics. Helping UAE businesses generate qualified leads.",
+  alternates: { canonical: "https://www.lenabara.com/about" },
+  openGraph: {
+    title: "About Lena Bara | Performance Marketing Specialist UAE",
+    description: "Meta Certified media buyer and Google Ads specialist in Dubai. Data science background. Helping UAE businesses generate qualified leads.",
+    url: "https://www.lenabara.com/about",
+  },
+};
 
 const principles = [
   {
