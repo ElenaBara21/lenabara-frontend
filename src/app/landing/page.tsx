@@ -92,7 +92,7 @@ export default function LandingPage() {
       <LandingAttribution variant="a" />
 
       {/* Logo */}
-      <div className="absolute left-4 top-4 z-20 sm:left-8 sm:top-6 lg:left-12 lg:top-8">
+      <a href="/growth" className="absolute left-4 top-4 z-20 sm:left-8 sm:top-6 lg:left-12 lg:top-8">
         <Image
           src="/hero/lb-editorial-logo.svg"
           alt="LenaBara logo"
@@ -101,7 +101,7 @@ export default function LandingPage() {
           priority
           className="h-auto w-[110px] sm:w-[150px]"
         />
-      </div>
+      </a>
 
       {/* Background */}
       <div
