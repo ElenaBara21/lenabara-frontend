@@ -5,11 +5,21 @@ import { createPortal } from "react-dom";
 type MobileMenuProps = {
   isPortfolioHome?: boolean;
   hasCv?: boolean;
+  isGrowth?: boolean;
 };
+
+const growthNavLinks = [
+  { label: "Services", href: "#packages" },
+  { label: "Case Studies", href: "#case-study-preview" },
+  { label: "How It Works", href: "#how-we-do-it" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function MobileMenu({
   isPortfolioHome = false,
   hasCv = false,
+  isGrowth = false,
 }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -57,19 +67,30 @@ export default function MobileMenu({
             </div>
 
             <nav className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
-              <a href="/" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Home</a>
-              <a href="/about" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>About</a>
-              <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Work</a>
-              <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
-              <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
-              <div className="pt-2 text-center">
-                <p className="text-xl font-semibold tracking-wide text-white">Yelena Shelepova</p>
-                <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
-              </div>
-              {hasCv ? (
-                <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
+              {isGrowth ? (
+                <>
+                  {growthNavLinks.map((l) => (
+                    <a key={l.href} href={l.href} className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>{l.label}</a>
+                  ))}
+                  <a href="#contact" className="mt-2 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em]" onClick={() => setOpen(false)}>Book a Call</a>
+                </>
               ) : (
-                <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
+                <>
+                  <a href="/" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Home</a>
+                  <a href="/about" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>About</a>
+                  <a href="/work" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Work</a>
+                  <a href="/contact" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Contact</a>
+                  <a href="/blog" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Blog</a>
+                  <div className="pt-2 text-center">
+                    <p className="text-xl font-semibold tracking-wide text-white">Yelena Shelepova</p>
+                    <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
+                  </div>
+                  {hasCv ? (
+                    <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
+                  ) : (
+                    <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
+                  )}
+                </>
               )}
             </nav>
           </div>
