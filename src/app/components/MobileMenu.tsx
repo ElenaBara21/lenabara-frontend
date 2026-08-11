@@ -10,6 +10,7 @@ type MobileMenuProps = {
 
 const growthNavLinks = [
   { label: "Services", href: "#packages" },
+  { label: "Offer", href: "https://www.lenabara.com/landing" },
   { label: "Case Studies", href: "#case-study-preview" },
   { label: "How It Works", href: "#how-we-do-it" },
   { label: "FAQ", href: "#faq" },
