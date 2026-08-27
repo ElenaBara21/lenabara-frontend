@@ -45,7 +45,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-3xl text-neutral-200">
           <ul className="space-y-3 list-disc list-inside text-base md:text-lg">
             <li>Ads generate clicks but not real leads</li>
-            <li>Agencies donΓÇÖt install proper conversion tracking</li>
+            <li>Agencies don't install proper conversion tracking</li>
             <li>WhatsApp leads are impossible to measure</li>
             <li>Ad budgets are wasted on the wrong audiences</li>
             <li>Business owners cannot see real ROI</li>
@@ -69,14 +69,14 @@ export default function LandingPage() {
             <p className="text-sm uppercase tracking-widest text-neutral-300">Free resource for UAE businesses</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-orange-500 mt-3 mb-3 uppercase">Is your business ready for paid ads?</h2>
             <div className="h-0.5 w-20 bg-orange-500 mx-auto mb-4" />
-            <p className="text-neutral-300 max-w-2xl mx-auto mb-6">Find out in 10 minutes if your business is ready for high-performance ads ΓÇö and what to fix first.</p>
+            <p className="text-neutral-300 max-w-2xl mx-auto mb-6">Find out in 10 minutes if your business is ready for high-performance ads - and what to fix first.</p>
 
             <div className="flex justify-center mb-4">
               <DownloadKitModal triggerLabel={"Download the UAE Ads Readiness Kit (Free)"} buttonClassName="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-none font-extrabold uppercase tracking-[0.1em]" />
             </div>
 
             <div className="text-sm text-neutral-400">
-              <p>No spam. No generic tips ΓÇö just insights tailored for UAE businesses ready to scale.</p>
+              <p>No spam. No generic tips - just insights tailored for UAE businesses ready to scale.</p>
             </div>
 
             <div className="mt-4 max-w-3xl mx-auto text-left">
@@ -84,10 +84,10 @@ export default function LandingPage() {
                 <div className="space-y-3 text-neutral-300">
                   <p>The Readiness Kit helps you quickly audit whether your website, tracking and creative are set up to support high-performance paid ads.</p>
                   <ul className="list-inside list-none space-y-2">
-                    <li>Γ£à Landing page checklist (conversion drivers, load speed, CTA clarity)</li>
-                    <li>Γ£à Tracking & analytics guide (pixel, GA4, conversion events)</li>
-                    <li>Γ£à Creative brief template for quick A/B tests</li>
-                    <li>Γ£à Prioritised fix list so you can act in the right order</li>
+                    <li>[OK] Landing page checklist (conversion drivers, load speed, CTA clarity)</li>
+                    <li>[OK] Tracking &amp; analytics guide (pixel, GA4, conversion events)</li>
+                    <li>[OK] Creative brief template for quick A/B tests</li>
+                    <li>[OK] Prioritised fix list so you can act in the right order</li>
                   </ul>
                 </div>
               </Collapsible>
@@ -107,7 +107,7 @@ export default function LandingPage() {
               {
                 t: "Conversion Tracking First",
                 q: "Before launching campaigns we implement GA4, Meta Pixel, and Google tracking so every lead can be measured.",
-                s: "Tracking is not an afterthought ΓÇö it's the foundation of every high-performing funnel.",
+                s: "Tracking is not an afterthought - it's the foundation of every high-performing funnel.",
               },
               {
                 t: "Performance-Driven Strategy",
@@ -117,7 +117,7 @@ export default function LandingPage() {
               {
                 t: "Transparent Reporting",
                 q: "Clear dashboards and reporting show exactly where your marketing budget goes.",
-                s: "No surprises. You see the numbers, the spend, and the impact ΓÇö in real time.",
+                s: "No surprises. You see the numbers, the spend, and the impact - in real time.",
               },
               {
                 t: "Data + Marketing Expertise",
@@ -216,17 +216,17 @@ export default function LandingPage() {
                   <div className="pt-1">
                     <p className="text-orange-400 font-semibold">What's Included</p>
                     <ul className="mt-2 space-y-1 text-sm md:text-base">
-                      <li>Γ£à Campaign setup on 1 platform (Meta or Google)</li>
-                      <li>Γ£à 1ΓÇô2 ad campaigns configured and launched</li>
-                      <li>Γ£à Pixel + GA4 conversion tracking setup</li>
-                      <li>Γ£à 2 campaign optimization rounds</li>
-                      <li>Γ£à Mini performance report with insights</li>
-                      <li>Γ£à WhatsApp &amp; email support</li>
+                      <li>[OK] Campaign setup on 1 platform (Meta or Google)</li>
+                      <li>[OK] 1-2 ad campaigns configured and launched</li>
+                      <li>[OK] Pixel + GA4 conversion tracking setup</li>
+                      <li>[OK] 2 campaign optimization rounds</li>
+                      <li>[OK] Mini performance report with insights</li>
+                      <li>[OK] WhatsApp &amp; email support</li>
                     </ul>
                   </div>
                   <div className="pt-1">
                     <p className="text-orange-400 font-semibold">Timeline</p>
-                    <p className="text-neutral-300 text-sm md:text-base mt-1">2ΓÇô3 weeks</p>
+                    <p className="text-neutral-300 text-sm md:text-base mt-1">2-3 weeks</p>
                   </div>
                   <p className="text-xs text-neutral-500">Ad spend billed separately.</p>
                 </div>
@@ -243,7 +243,7 @@ export default function LandingPage() {
           <div className="grid gap-6">
             {/* Growth System */}
             <div className="relative rounded-3xl border border-orange-500/40 bg-neutral-900/50 p-6 md:p-8 shadow-[0_0_32px_0_rgba(249,115,22,0.15)]">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 px-3 py-1 rounded-full text-[10px] tracking-wide uppercase text-black font-bold">Γ¡É Most Popular</div>
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 px-3 py-1 rounded-full text-[10px] tracking-wide uppercase text-black font-bold">Most Popular</div>
               <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide text-center">GROWTH<br className='md:hidden'/> SYSTEM</p>
               <p className="mt-1 text-neutral-300 text-center text-base font-medium">Scale Your Lead Generation</p>
 
@@ -260,12 +260,12 @@ export default function LandingPage() {
                     <div className="pt-1">
                       <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>Γ£à Meta and/or Google Ads management</li>
-                        <li>Γ£à Multi-campaign structure for testing</li>
-                        <li>Γ£à Advanced conversion tracking</li>
-                        <li>Γ£à Weekly optimization &amp; performance tuning</li>
-                        <li>Γ£à Monthly performance report</li>
-                        <li>Γ£à Strategy adjustments based on data</li>
+                        <li>[OK] Meta and/or Google Ads management</li>
+                        <li>[OK] Multi-campaign structure for testing</li>
+                        <li>[OK] Advanced conversion tracking</li>
+                        <li>[OK] Weekly optimization &amp; performance tuning</li>
+                        <li>[OK] Monthly performance report</li>
+                        <li>[OK] Strategy adjustments based on data</li>
                       </ul>
                     </div>
                     <div className="pt-1">
@@ -303,12 +303,12 @@ export default function LandingPage() {
                     <div className="pt-1">
                       <p className="text-orange-400 font-semibold">What's Included</p>
                       <ul className="mt-2 space-y-1 text-sm md:text-base">
-                        <li>Γ£à Meta + Google Ads management</li>
-                        <li>Γ£à Full-funnel campaign strategy</li>
-                        <li>Γ£à Advanced analytics &amp; reporting</li>
-                        <li>Γ£à Weekly optimization cycles</li>
-                        <li>Γ£à Monthly strategy calls</li>
-                        <li>Γ£à Dedicated campaign management</li>
+                        <li>[OK] Meta + Google Ads management</li>
+                        <li>[OK] Full-funnel campaign strategy</li>
+                        <li>[OK] Advanced analytics &amp; reporting</li>
+                        <li>[OK] Weekly optimization cycles</li>
+                        <li>[OK] Monthly strategy calls</li>
+                        <li>[OK] Dedicated campaign management</li>
                       </ul>
                     </div>
                   </div>
@@ -330,8 +330,8 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left intro copy */}
             <div>
-              <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide uppercase leading-tight">AddΓÇæOn Options</p>
-              <p className="mt-2 text-neutral-400 text-sm md:text-base max-w-md">Enhance your package with conversionΓÇæfocused assets, better analytics, and clear strategy deliverables ΓÇö all aligned to your brand.</p>
+              <p className="text-orange-400 font-extrabold text-2xl md:text-3xl tracking-wide uppercase leading-tight">Add-On Options</p>
+              <p className="mt-2 text-neutral-400 text-sm md:text-base max-w-md">Enhance your package with conversion-focused assets, better analytics, and clear strategy deliverables - all aligned to your brand.</p>
             </div>
             {/* Right grid of cards */}
             <div className="grid sm:grid-cols-2 gap-4">
@@ -345,28 +345,28 @@ export default function LandingPage() {
                   </span>
                   <div className="flex-1">
                     <p className="text-white font-semibold">Landing page design & build</p>
-                    <p className="text-neutral-400 text-xs mt-1">HighΓÇæconverting page tailored to your offer and audience.</p>
+                    <p className="text-neutral-400 text-xs mt-1">High-converting page tailored to your offer and audience.</p>
                     
                     <Collapsible summary="See details">
                       <div className="mt-3 space-y-2 text-sm text-neutral-300">
                         <p className="text-orange-400 font-semibold">What you get</p>
                         <ul className="space-y-1 text-xs">
-                          <li>ΓÇó 1 premium landing page (desktop + mobile)</li>
-                          <li>ΓÇó Modern, fast build (Next.js)</li>
-                          <li>ΓÇó Conversion-focused layout & UX</li>
-                          <li>ΓÇó Persuasive copy sections (headline, benefits, social proof, FAQ)</li>
-                          <li>ΓÇó Basic SEO (titles, meta, OG tags)</li>
-                          <li>ΓÇó Tracking setup (GA4 + Meta Pixel + Google Ads tag)</li>
-                          <li>ΓÇó Integration with your form / WhatsApp / booking / email tool</li>
-                          <li>ΓÇó 1 feedback round + final QA on all devices</li>
+                          <li>[OK] 1 premium landing page (desktop + mobile)</li>
+                          <li>[OK] Modern, fast build (Next.js)</li>
+                          <li>[OK] Conversion-focused layout &amp; UX</li>
+                          <li>[OK] Persuasive copy sections (headline, benefits, social proof, FAQ)</li>
+                          <li>[OK] Basic SEO (titles, meta, OG tags)</li>
+                          <li>[OK] Tracking setup (GA4 + Meta Pixel + Google Ads tag)</li>
+                          <li>[OK] Integration with your form / WhatsApp / booking / email tool</li>
+                          <li>[OK] 1 feedback round + final QA on all devices</li>
                         </ul>
                         <p className="text-orange-400 font-semibold mt-3">Perfect for</p>
                         <p className="text-xs">Brands running Meta/Google ads that need a page built for leads & sales, not just "looking pretty."</p>
                         <p className="text-orange-400 font-semibold mt-3">Tech stack</p>
-                        <p className="text-xs">Built on Next.js ΓÇô fast loading, SEO-friendly, easy to scale.</p>
+                        <p className="text-xs">Built on Next.js - fast loading, SEO-friendly, easy to scale.</p>
                         <div className="mt-4">
                           <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            From AED 2,900 ΓÇö contact us ΓåÆ
+                            From AED 2,900 - contact us -&gt;
                           </a>
                         </div>
                       </div>
@@ -384,7 +384,7 @@ export default function LandingPage() {
                   </span>
                   <div>
                     <p className="text-white font-semibold">Social media</p>
-                    <p className="text-neutral-400 text-xs mt-1">ScrollΓÇæstopping static + video variants for testing.</p>
+                    <p className="text-neutral-400 text-xs mt-1">Scroll-stopping static + video variants for testing.</p>
                   </div>
                 </div>
               </a>
@@ -405,31 +405,31 @@ export default function LandingPage() {
                         <div>
                           <p className="text-orange-400 font-semibold">What You Get</p>
                           <ul className="space-y-1 text-xs mt-2">
-                            <li>Γ£ö One clean Looker Studio dashboard</li>
-                            <li>Γ£ö Connected to GA4, Meta Ads & Google Ads</li>
-                            <li>Γ£ö Your brand colors & layout</li>
-                            <li>Γ£ö Mobile-friendly, real-time view</li>
-                            <li>Γ£ö Clear KPIs: ROAS, CPA, Revenue, Leads, Traffic, Funnels</li>
+                            <li>[OK] One clean Looker Studio dashboard</li>
+                            <li>[OK] Connected to GA4, Meta Ads &amp; Google Ads</li>
+                            <li>[OK] Your brand colors &amp; layout</li>
+                            <li>[OK] Mobile-friendly, real-time view</li>
+                            <li>[OK] Clear KPIs: ROAS, CPA, Revenue, Leads, Traffic, Funnels</li>
                           </ul>
                         </div>
 
                         <div>
                           <p className="text-orange-400 font-semibold">Choose Your Dashboard</p>
-                          <p className="text-xs mb-2">Pick 1 or mix 2ΓÇô3 from my ready-made collection:</p>
+                          <p className="text-xs mb-2">Pick 1 or mix 2-3 from my ready-made collection:</p>
                           <ul className="space-y-1 text-xs">
-                            <li>ΓÇó CEO Performance Overview</li>
-                            <li>ΓÇó Ads Dashboard (Meta + Google)</li>
-                            <li>ΓÇó GA4 Website Analytics</li>
-                            <li>ΓÇó Ecommerce Funnel & Revenue</li>
-                            <li>ΓÇó Paid vs Organic Traffic</li>
-                            <li>ΓÇó Lead Generation Funnel</li>
-                            <li>ΓÇó Customer Cohort & Retention</li>
-                            <li>ΓÇó Creative Testing Dashboard</li>
-                            <li>ΓÇó Social Media Insights</li>
-                          <li>ΓÇó Monthly Marketing Scorecard</li>
+                            <li>[OK] CEO Performance Overview</li>
+                            <li>[OK] Ads Dashboard (Meta + Google)</li>
+                            <li>[OK] GA4 Website Analytics</li>
+                            <li>[OK] Ecommerce Funnel &amp; Revenue</li>
+                            <li>[OK] Paid vs Organic Traffic</li>
+                            <li>[OK] Lead Generation Funnel</li>
+                            <li>[OK] Customer Cohort &amp; Retention</li>
+                            <li>[OK] Creative Testing Dashboard</li>
+                            <li>[OK] Social Media Insights</li>
+                          <li>[OK] Monthly Marketing Scorecard</li>
                         </ul>
                         <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block mt-2 text-orange-400 hover:text-orange-300 text-xs underline">
-                          Preview catalog ΓåÆ
+                          Preview catalog -&gt;
                         </a>
                         </div>
 
@@ -437,15 +437,15 @@ export default function LandingPage() {
                           <p className="text-orange-400 font-semibold">Pricing</p>
                           <div className="space-y-2 text-xs mt-2">
                             <div>
-                              <p className="font-semibold text-white">Starter ΓÇö AED 900</p>
+                              <p className="font-semibold text-white">Starter - AED 900</p>
                               <p>1 dashboard + 1 data source + branding + 1 revision.</p>
                             </div>
                             <div>
-                              <p className="font-semibold text-white">Pro ΓÇö AED 2,500</p>
+                              <p className="font-semibold text-white">Pro - AED 2,500</p>
                               <p>3 dashboards + GA4/Pixel/Ads setup + branding + 2 revisions.</p>
                             </div>
                             <div>
-                              <p className="font-semibold text-white">Custom ΓÇö from AED 4,500</p>
+                              <p className="font-semibold text-white">Custom - from AED 4,500</p>
                               <p>Fully custom build + advanced events + ecommerce funnels.</p>
                             </div>
                           </div>
@@ -453,17 +453,17 @@ export default function LandingPage() {
 
                         <div>
                           <p className="text-orange-400 font-semibold">Why Work With Me</p>
-                          <p className="text-xs">Meta Certified ΓÇó Google Analytics & Ads Certified ΓÇó Master's in Marketing ΓÇó Specialist in performance & reporting.</p>
+                          <p className="text-xs">Meta Certified - Google Analytics &amp; Ads Certified - Master&apos;s in Marketing - Specialist in performance &amp; reporting.</p>
                         </div>
 
                         <div className="border-t border-neutral-700 pt-3">
                           <p className="text-white font-semibold mb-2">Want to see your business clearly?<br/>Get your dashboard today.</p>
                           <div className="flex flex-wrap gap-2">
                             <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            Order Your Dashboard ΓåÆ
+                            Order Your Dashboard -&gt;
                           </a>
                           <a href="/catalog.pdf" onClick={handleCatalogDownload} className="inline-block bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2 rounded-none font-bold uppercase text-xs tracking-wide">
-                            Preview catalog ΓåÆ
+                            Preview catalog -&gt;
                           </a>
                           </div>
                         </div>
@@ -482,7 +482,7 @@ export default function LandingPage() {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-white font-semibold">Integrated Marketing Plan & Creative Brief ΓÇö from AED 950</p>
+                    <p className="text-white font-semibold">Integrated Marketing Plan &amp; Creative Brief - from AED 950</p>
                     <p className="text-neutral-400 text-xs mt-1">Helps align your brand message and campaigns before launch.</p>
                   </div>
                 </div>
@@ -535,7 +535,7 @@ export default function LandingPage() {
         <BudgetCalculator />
       </section>
 
-      {/* Got your estimated budget? ΓÇö restored expanded block */}
+      {/* Got your estimated budget? - restored expanded block */}
       <section id="got-budget" className="mx-auto max-w-7xl px-6">
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8 text-center">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">Want a custom growth plan for your business?</h3>
@@ -566,7 +566,7 @@ export default function LandingPage() {
               </span>
               <div>
                 <p className="text-white font-semibold">Real Estate & Property</p>
-                <p className="text-neutral-400 text-xs mt-1">Leads for rentals, sales, and offΓÇæplan projects.</p>
+                <p className="text-neutral-400 text-xs mt-1">Leads for rentals, sales, and off-plan projects.</p>
               </div>
             </li>
             <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
@@ -588,7 +588,7 @@ export default function LandingPage() {
                 </svg>
               </span>
               <div>
-                <p className="text-white font-semibold">EΓÇæcom & Retail</p>
+                <p className="text-white font-semibold">E-commerce &amp; Retail</p>
                 <p className="text-neutral-400 text-xs mt-1">Product sales with full-funnel remarketing.</p>
               </div>
             </li>
@@ -627,7 +627,7 @@ export default function LandingPage() {
               </span>
               <div>
                 <p className="text-white font-semibold">Education & Training</p>
-                <p className="text-neutral-400 text-xs mt-1">Course enrollments and open day signΓÇæups.</p>
+                <p className="text-neutral-400 text-xs mt-1">Course enrollments and open day sign-ups.</p>
               </div>
             </li>
             <li className="flex items-start gap-3 pb-3 border-b border-neutral-800 last:border-b-0">
