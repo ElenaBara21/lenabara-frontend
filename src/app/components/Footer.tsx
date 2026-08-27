@@ -1,4 +1,21 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Footer() {
+  const [hostname, setHostname] = useState("www.lenabara.com");
+
+  useEffect(() => {
+    setHostname(typeof window !== "undefined" ? window.location.hostname : "www.lenabara.com");
+  }, []);
+
+  const isLenaShelepova = hostname.includes("lenashelepova.com");
+  const isBusinessSite = !isLenaShelepova;
+  const brandLabel = isBusinessSite ? "LENABARA" : "YELENA SHELEPOVA";
+  const introText = isBusinessSite
+    ? "A boutique performance marketing agency helping UAE businesses scale through paid media, analytics, and lead generation systems."
+    : "A boutique marketing analytics and growth portfolio focused on measurement, attribution, and performance marketing strategy.";
+
   return (
     <div id="global-footer-wrap" className="bg-neutral-950 pb-10">
       <footer id="global-footer" className="mx-auto max-w-7xl px-6 py-12">
@@ -7,10 +24,10 @@ export default function Footer() {
         {/* Five columns */}
         <div className="flex-1 min-w-[180px]">
           <div className="flex items-center gap-2 mb-2">
-            <div className="h-8 w-8 rounded-xl bg-orange-500 flex items-center justify-center font-bold text-black">LB</div>
-            <span className="font-extrabold text-white text-lg">LENABARA</span>
+            <div className="h-8 w-8 rounded-xl bg-orange-500 flex items-center justify-center font-bold text-black">{isLenaShelepova ? "YS" : "LB"}</div>
+            <span className="font-extrabold text-white text-lg">{brandLabel}</span>
           </div>
-          <div className="mb-2">A boutique marketing analytics and growth agency based in the UAE, specializing in measurement, analytics, and paid acquisition.</div>
+          <div className="mb-2">{introText}</div>
           <div className="mb-2">Dubai • Abu Dhabi • Sharjah • Ras Al Khaimah • Ajman</div>
           <div className="mb-2">Serving clients across the GCC and globally.</div>
           <div className="mb-2">Registered with RAKEZ (Ras Al Khaimah Economic Zone), UAE. Licensed under: Media / Digital Marketing Consultancy.</div>

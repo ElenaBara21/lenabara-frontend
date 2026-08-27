@@ -28,67 +28,29 @@ async function postJSON(url: string, data: unknown, init: RequestInit = {}) {
 async function sendTelegram(payload: LeadPayload) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) {
-    return {
-      ok: false,
-      skipped: true,
-      error: "Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID",
-    } as const;
-  }
+  if (!token || !chatId) return { ok: false, skipped: true } as const;
 
-  const utmLines =
-    payload.utm && typeof payload.utm === "object"
-      ? Object.entries(payload.utm)
-          .filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== "")
-          .map(([key, value]) => `- ${key}: ${String(value)}`)
-      : [];
+  const summaryParts = [
+    payload.plan ? `Plan: ${payload.plan}` : null,
+    typeof payload.spend === "number" ? `Spend: AED ${payload.spend}` : null,
+    payload.source ? `Source: ${payload.source}` : null,
+    payload.utm && (payload.utm as any).utm_source ? `UTM: ${(payload.utm as any).utm_source}` : null,
+  ].filter(Boolean);
 
   const text = [
-    "NEW LEAD",
-    "--------------------",
-    "",
-    "Contact",
-    `Name: ${payload.name || "-"}`,
-    `Email: ${payload.email || "-"}`,
-    `Phone: ${payload.phone || "-"}`,
-    "",
-    "Business",
-    `Package: ${payload.package || "-"}`,
-    `Company: ${payload.company || "-"}`,
-    `Website: ${payload.website || "-"}`,
-    "",
-    "Tracking",
-    `Source: ${payload.source || "-"}`,
-    `Plan: ${payload.plan || "-"}`,
-    `Spend: ${typeof payload.spend === "number" ? `AED ${payload.spend}` : "-"}`,
-    "UTM:",
-    ...(utmLines.length ? utmLines : ["- none"]),
-    "",
-    "Message",
-    payload.message?.trim() || "-",
-  ].join("\n");
+    `New Lead — Name: ${payload.name || "-"} | Email: ${payload.email || "-"}`,
+    `Company: ${payload.company || "-"} | Website: ${payload.website || "-"}`,
+    summaryParts.length ? summaryParts.join(" | ") : undefined,
+    payload.message ? `Message: ${payload.message}` : undefined,
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   const res = await postJSON(
     `https://api.telegram.org/bot${token}/sendMessage`,
     { chat_id: chatId, text }
   );
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    return {
-      ok: false,
-      error: `Telegram API ${res.status}: ${body || "Unknown error"}`,
-    } as const;
-  }
-
-  const json = await res.json().catch(() => null);
-  if (!json || json.ok !== true) {
-    return {
-      ok: false,
-      error: `Telegram API response invalid: ${JSON.stringify(json)}`,
-    } as const;
-  }
-
-  return { ok: true } as const;
+  return { ok: res.ok } as const;
 }
 
 function getNotionProp(name: string, fallback: string) {

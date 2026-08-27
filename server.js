@@ -14,3 +14,6 @@ app.prepare().then(() => {
     console.log('> Ready on http://localhost:' + port);
   });
 });
+function hello() {
+  console.log("Hello, World!");
+}

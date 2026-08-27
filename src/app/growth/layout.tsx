@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Meta & Google Ads Management Dubai UAE | LenaBara Media",
+  title: "Meta Ads & Google Ads Management Dubai UAE | LenaBara Media",
   description:
-    "Performance marketing agency in Dubai. We run Meta Ads, Google Ads and build lead generation systems for UAE businesses. Conversion tracking, GA4 setup, WhatsApp funnels. Book a free audit.",
+    "Performance marketing agency in Dubai. We run Meta Ads and Google Ads for UAE businesses, build lead generation systems, and optimise conversion tracking, GA4, and WhatsApp funnels. Book a free audit.",
   keywords: [
     "Meta Ads Dubai",
     "Google Ads UAE",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.lenabara.com/growth",
-    title: "Meta & Google Ads Management Dubai UAE | LenaBara Media",
+    title: "Meta Ads & Google Ads Management Dubai UAE | LenaBara Media",
     description:
-      "We run Meta Ads and Google Ads for UAE businesses. Conversion tracking, GA4, WhatsApp funnels. Real results — see case studies. Book a free 15-min audit.",
+      "Performance marketing agency in Dubai. We run Meta Ads and Google Ads for UAE businesses, build lead generation systems, and optimise conversion tracking, GA4, and WhatsApp funnels. Book a free audit.",
     siteName: "LenaBara Media",
     images: [
       {
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meta & Google Ads Management Dubai UAE | LenaBara Media",
+    title: "Meta Ads & Google Ads Management Dubai UAE | LenaBara Media",
     description:
-      "Performance marketing for UAE businesses. Meta Ads, Google Ads, conversion tracking. Book a free audit.",
+      "Performance marketing agency in Dubai. We run Meta Ads and Google Ads for UAE businesses, build lead generation systems, and optimise conversion tracking, GA4, and WhatsApp funnels. Book a free audit.",
     images: ["https://www.lenabara.com/hero/og-growth.jpg"],
   },
 };

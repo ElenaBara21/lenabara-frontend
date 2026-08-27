@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Lena Bara | Performance Marketing Specialist UAE",
+  title: "About Yelena Shelepova | Marketing Analytics & Growth",
   description:
-    "Lena Bara is a Meta Certified media buyer and Google Ads specialist based in Dubai. Background in data science and marketing analytics. Helping UAE businesses generate qualified leads.",
-  alternates: { canonical: "https://www.lenabara.com/about" },
+    "Yelena Shelepova is a marketing analyst and performance marketer in Dubai, focused on measurement architecture, unit economics, paid acquisition, and growth analytics.",
+  alternates: { canonical: "https://www.lenashelepova.com/about" },
   openGraph: {
-    title: "About Lena Bara | Performance Marketing Specialist UAE",
-    description: "Meta Certified media buyer and Google Ads specialist in Dubai. Data science background. Helping UAE businesses generate qualified leads.",
-    url: "https://www.lenabara.com/about",
+    title: "About Yelena Shelepova | Marketing Analytics & Growth",
+    description: "Marketing analyst and performance marketer in Dubai with a background in data science, finance, and growth analytics.",
+    url: "https://www.lenashelepova.com/about",
+    siteName: "Yelena Shelepova",
   },
 };
 

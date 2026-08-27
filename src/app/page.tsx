@@ -1,16 +1,51 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import Image from "next/image";
 
 const CV_HREF = "/resume.pdf";
 
-export const metadata: Metadata = {
-  title: "Marketing Analytics & Growth Portfolio | Lena Bara",
-  description:
-    "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems.",
-  alternates: {
-    canonical: "/",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const host = (await headers()).get("host") || "www.lenabara.com";
+  const isLenaShelepova = host.includes("lenashelepova.com");
+  const baseUrl = isLenaShelepova ? "https://www.lenashelepova.com" : "https://www.lenabara.com";
+  const brandName = isLenaShelepova ? "Yelena Shelepova" : "Lena Bara";
+  const businessPageTitle = "Meta Ads & Google Ads Management Dubai UAE | LenaBara Media";
+  const businessPageDescription =
+    "Performance marketing agency in Dubai. We run Meta Ads and Google Ads for UAE businesses, build lead generation systems, and optimise conversion tracking, GA4, and WhatsApp funnels. Book a free audit.";
+
+  return {
+    title: isLenaShelepova
+      ? `Marketing Analytics & Growth Portfolio | ${brandName}`
+      : businessPageTitle,
+    description: isLenaShelepova
+      ? "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems."
+      : businessPageDescription,
+    alternates: {
+      canonical: `${baseUrl}/`,
+    },
+    openGraph: {
+      url: `${baseUrl}/`,
+      title: isLenaShelepova
+        ? `Marketing Analytics & Growth Portfolio | ${brandName}`
+        : businessPageTitle,
+      description: isLenaShelepova
+        ? "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems."
+        : businessPageDescription,
+      siteName: brandName,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: isLenaShelepova
+        ? `Marketing Analytics & Growth Portfolio | ${brandName}`
+        : businessPageTitle,
+      description: isLenaShelepova
+        ? "Portfolio of Yelena Shelepova, a marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems."
+        : businessPageDescription,
+    },
+  };
+}
 
 const expertiseAreas = [
   "SQL",
@@ -108,7 +143,7 @@ const careerTimeline = [
   },
 ];
 
-export default function HomePage() {
+function PortfolioPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
       <section className="relative border-b border-neutral-800 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.14),transparent_40%),radial-gradient(circle_at_15%_30%,rgba(249,115,22,0.08),transparent_38%)]">
@@ -302,4 +337,15 @@ export default function HomePage() {
       </section>
     </main>
   );
+}
+
+export default async function HomePage() {
+  const host = (await headers()).get("host") || "www.lenabara.com";
+  const isLenaShelepova = host.includes("lenashelepova.com");
+
+  if (!isLenaShelepova) {
+    redirect("/growth");
+  }
+
+  return <PortfolioPage />;
 }

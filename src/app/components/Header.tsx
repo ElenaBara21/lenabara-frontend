@@ -1,4 +1,6 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from "next/navigation";
 
@@ -13,18 +15,31 @@ const growthNavLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const isPortfolioHome = pathname === "/";
-  const isGrowth = pathname === "/growth";
+  const [hostname, setHostname] = useState("www.lenabara.com");
   const hasCv = true;
+  const isLenaShelepova = hostname.includes("lenashelepova.com");
+  const isBusinessSite = !isLenaShelepova;
+  const isGrowth = isBusinessSite && (pathname === "/" || pathname === "/growth");
+  const isPortfolioHome = pathname === "/" && isLenaShelepova;
+  const brandName = isLenaShelepova ? "Yelena Shelepova" : "LenaBara Media";
+  const brandSubtitle = isLenaShelepova
+    ? "Marketing Analytics & Growth Portfolio"
+    : "Performance Marketing UAE";
+
+  useEffect(() => {
+    setHostname(typeof window !== "undefined" ? window.location.hostname : "www.lenabara.com");
+  }, []);
 
   return (
     <header id="global-header" className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <a href={isGrowth ? "/growth" : "/"} className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">LB</div>
+          <div className="h-9 w-9 rounded-xl bg-orange-500 flex items-center justify-center font-bold">{isLenaShelepova ? "YS" : "LB"}</div>
           <div className="leading-tight">
-            <p className="font-semibold tracking-wide">LenaBara Media</p>
-            <p className="text-xs text-neutral-400">{isGrowth ? "Performance Marketing UAE" : "Marketing Analytics & Growth Portfolio"}</p>
+            <p className="font-semibold tracking-wide">{brandName}</p>
+            <p className="text-xs text-neutral-400">
+              {brandSubtitle}
+            </p>
           </div>
         </a>
         {isGrowth ? (
