@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="YS monogram favicon">
+  <rect width="512" height="512" fill="#0F0F10"/>
+
+  <text
+    x="106"
+    y="330"
+    font-family="Georgia, Times New Roman, serif"
+    font-size="240"
+    font-weight="700"
+    fill="#F8F8F8"
+    letter-spacing="-8"
+  >
+    Y
+  </text>
+
+  <text
+    x="220"
+    y="330"
+    font-family="Georgia, Times New Roman, serif"
+    font-size="240"
+    font-weight="700"
+    fill="#F97316"
+    letter-spacing="-8"
+  >
+    S
+  </text>
+</svg>
