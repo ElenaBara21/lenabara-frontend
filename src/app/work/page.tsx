@@ -4,10 +4,10 @@ import Link from "next/link";
 import { cases } from "./data/cases";
 
 export const metadata: Metadata = {
-  title: "Case Studies | LenaBara",
+  title: "Work | Case Studies | LenaBara",
   description: "Case studies and strategy concepts in performance marketing and analytics.",
   openGraph: {
-    title: "Case Studies | LenaBara",
+    title: "Work | Case Studies | LenaBara",
     description: "Case studies and strategy concepts in performance marketing and analytics.",
     url: "https://lenabara.com/work",
     siteName: "LenaBara",
@@ -22,19 +22,15 @@ export const metadata: Metadata = {
 const realCases = cases.filter((item) => item.type === "real");
 const conceptCases = cases.filter((item) => item.type === "concept");
 
-type AutomationScreenshot = {
-  title: string;
-  alt: string;
-  src?: string;
-};
+const analyticsScreenshots = [
+  {
+    title: "GTM Tags list",
+    src: "/work/gtm-tags-live.png",
+    alt: "Google Tag Manager tags list showing configured tracking tags",
+  },
+];
 
-type AutomationItem = {
-  title: string;
-  description: string;
-  screenshots: AutomationScreenshot[];
-};
-
-const automationItems: AutomationItem[] = [
+const automationItems = [
   {
     title: "Tally -> Make -> HubSpot",
     description:
@@ -42,13 +38,11 @@ const automationItems: AutomationItem[] = [
     screenshots: [
       {
         title: "Make scenario (Tally -> HubSpot)",
-        src: "/work/tally-make-hubspot-scenario.svg",
-        alt: "Tally to Make to HubSpot automation scenario with a Tally trigger and HubSpot action",
+        alt: "Placeholder screenshot for the Make scenario connecting Tally form submissions to HubSpot",
       },
       {
         title: "HubSpot contacts",
-        src: "/work/tally-hubspot-contacts.svg",
-        alt: "HubSpot contacts table showing records created by the Tally to HubSpot workflow",
+        alt: "Placeholder screenshot for HubSpot contact records created by the Tally to HubSpot workflow",
       },
     ],
   },
@@ -66,11 +60,6 @@ const automationItems: AutomationItem[] = [
         title: "Make scenario (Webhooks -> Sheets)",
         src: "/work/make-marquiz-sheets-live.png",
         alt: "Make scenario connecting Marquiz webhook data to Google Sheets",
-      },
-      {
-        title: "Google Sheets lead log",
-        src: "/work/marquiz-sheet-live.svg",
-        alt: "Google Sheets table logging Marquiz leads with name, email, phone, budget and goal columns",
       },
     ],
   },
@@ -127,11 +116,11 @@ export default function WorkPage() {
 
         <section className="mt-12" aria-labelledby="real-cases-heading">
           <h2 id="real-cases-heading" className="text-2xl font-extrabold text-white md:text-3xl">
-            Real Case Studies
+            Real Cases
           </h2>
           {realCases.length === 0 ? (
             <p className="mt-4 rounded-xl border border-dashed border-neutral-700 bg-neutral-900 px-4 py-3 text-sm text-neutral-400">
-              No real case studies published yet.
+              No real cases published yet.
             </p>
           ) : (
             <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -187,20 +176,28 @@ export default function WorkPage() {
             title="Analytics & Tracking"
             intro="End-to-end tracking built from scratch on this live site (lenabara.com)."
           />
+          <p className="mt-4 max-w-4xl text-neutral-300">
+            Google Tag Manager configured from scratch - 14 tags across GA4, Meta Pixel, Google Ads and Microsoft Clarity. All key conversions tracked through GTM without editing site code: form submissions, WhatsApp clicks, phone calls, scroll depth. This makes it possible to see traffic sources, calculate cost per action (CPL/CPA) by channel, and build retargeting audiences.
+          </p>
+          <p className="mt-4 text-sm uppercase tracking-[0.14em] text-neutral-400">
+            GTM · GA4 · Meta Pixel · Google Ads · Microsoft Clarity · Next.js
+          </p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <article className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-5">
-              <h3 className="text-lg font-semibold text-white">GTM Overview</h3>
-              <div className="mt-3 overflow-hidden rounded-xl border border-neutral-800">
-                <Image
-                  src="/work/gtm-overview-live.png"
-                  alt="Google Tag Manager workspace overview for lenabara.com"
-                  width={1600}
-                  height={900}
-                  loading="lazy"
-                  className="h-auto w-full"
-                />
-              </div>
-            </article>
+            {analyticsScreenshots.map((shot) => (
+              <article key={shot.title} className="rounded-2xl border border-neutral-800 bg-neutral-900/40 p-5">
+                <h3 className="text-lg font-semibold text-white">{shot.title}</h3>
+                <div className="mt-3 overflow-hidden rounded-xl border border-neutral-800">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1600}
+                    height={900}
+                    loading="lazy"
+                    className="h-auto w-full"
+                  />
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
