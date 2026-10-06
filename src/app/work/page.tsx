@@ -38,10 +38,12 @@ const automationItems = [
     screenshots: [
       {
         title: "Make scenario (Tally -> HubSpot)",
+        src: "/work/todo-screenshot-placeholder.svg",
         alt: "Placeholder screenshot for the Make scenario connecting Tally form submissions to HubSpot",
       },
       {
         title: "HubSpot contacts",
+        src: "/work/todo-screenshot-placeholder.svg",
         alt: "Placeholder screenshot for HubSpot contact records created by the Tally to HubSpot workflow",
       },
     ],
