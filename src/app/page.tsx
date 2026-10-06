@@ -143,9 +143,54 @@ const careerTimeline = [
   },
 ];
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.lenashelepova.com/#person",
+      name: "Yelena Shelepova",
+      url: "https://www.lenashelepova.com/",
+      image: "https://www.lenashelepova.com/hero/lena.png",
+      jobTitle: "Marketing Analyst & Performance Marketer",
+      description:
+        "Marketing analyst and performance marketer focused on measurement architecture, unit economics, and paid acquisition systems.",
+      sameAs: ["https://www.linkedin.com/in/lenabara/"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.lenashelepova.com/#website",
+      url: "https://www.lenashelepova.com/",
+      name: "Yelena Shelepova",
+      inLanguage: "en",
+      publisher: {
+        "@id": "https://www.lenashelepova.com/#person",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://www.lenashelepova.com/#profile",
+      url: "https://www.lenashelepova.com/",
+      name: "Marketing Analytics & Growth Portfolio | Yelena Shelepova",
+      inLanguage: "en",
+      isPartOf: {
+        "@id": "https://www.lenashelepova.com/#website",
+      },
+      mainEntity: {
+        "@id": "https://www.lenashelepova.com/#person",
+      },
+    },
+  ],
+};
+
 function PortfolioPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <main className="min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-100">
       <section className="relative border-b border-neutral-800 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.14),transparent_40%),radial-gradient(circle_at_15%_30%,rgba(249,115,22,0.08),transparent_38%)]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-20">
           <div>
@@ -336,6 +381,7 @@ function PortfolioPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 
