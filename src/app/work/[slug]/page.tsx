@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${study.title} | Case Studies | LenaBara`,
       description: study.metaDescription,
-      url: `https://lenabara.com/work/${study.slug}`,
+      url: `https://www.lenabara.com/work/${study.slug}`,
       siteName: "LenaBara",
       type: "article",
     },

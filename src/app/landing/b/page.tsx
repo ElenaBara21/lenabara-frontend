@@ -75,7 +75,7 @@ export default function LandingVariantBPage() {
                 variant="b"
                 phone={WHATSAPP_PHONE}
                 baseMessage={WHATSAPP_MESSAGE}
-                src="/hero/landing-hero-video.mov"
+                src="/hero/landing-hero-video.mp4"
                 ctaLabel="Chat on WhatsApp"
               />
             </div>

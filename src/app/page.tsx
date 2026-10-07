@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import Image from "next/image";
 
 const CV_HREF = "/resume.pdf";
@@ -390,7 +390,7 @@ export default async function HomePage() {
   const isLenaShelepova = host.includes("lenashelepova.com");
 
   if (!isLenaShelepova) {
-    redirect("/growth");
+    permanentRedirect("/growth");
   }
 
   return <PortfolioPage />;

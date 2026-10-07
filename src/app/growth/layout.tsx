@@ -51,6 +51,45 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.lenabara.com/#organization",
+      name: "LenaBara Media",
+      url: "https://www.lenabara.com/",
+      logo: "https://www.lenabara.com/hero/lb-editorial-logo.svg",
+      image: "https://www.lenabara.com/hero/og-growth.jpg",
+      description:
+        "Performance marketing agency specialising in Meta Ads, Google Ads, and lead generation for UAE businesses.",
+      telephone: "+971563256848",
+      sameAs: ["https://www.linkedin.com/in/lenabara/"],
+      areaServed: [
+        { "@type": "City", name: "Dubai" },
+        { "@type": "City", name: "Abu Dhabi" },
+        { "@type": "Country", name: "United Arab Emirates" },
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          telephone: "+971563256848",
+          areaServed: "AE",
+          availableLanguage: ["English"],
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.lenabara.com/#website",
+      url: "https://www.lenabara.com/",
+      name: "LenaBara Media",
+      inLanguage: "en-AE",
+      publisher: { "@id": "https://www.lenabara.com/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://www.lenabara.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
       "@type": "ProfessionalService",
       "@id": "https://www.lenabara.com/growth#business",
       name: "LenaBara Media",

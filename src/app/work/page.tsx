@@ -6,10 +6,11 @@ import { cases } from "./data/cases";
 export const metadata: Metadata = {
   title: "Work | Case Studies | LenaBara",
   description: "Case studies and strategy concepts in performance marketing and analytics.",
+  alternates: { canonical: "https://www.lenabara.com/work" },
   openGraph: {
     title: "Work | Case Studies | LenaBara",
     description: "Case studies and strategy concepts in performance marketing and analytics.",
-    url: "https://lenabara.com/work",
+    url: "https://www.lenabara.com/work",
     siteName: "LenaBara",
     type: "website",
   },

@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
+import { headers } from "next/headers";
 import { getAllPosts } from "@/lib/blog";
 
-const BASE_URL = "https://www.lenabara.com";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const host = (await headers()).get("host") || "www.lenabara.com";
+  const isLenaShelepova = host.includes("lenashelepova.com");
+  const BASE_URL = isLenaShelepova ? "https://www.lenashelepova.com" : "https://www.lenabara.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
     { url: `${BASE_URL}/growth`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/landing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/work`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },

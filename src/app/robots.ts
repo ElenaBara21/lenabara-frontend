@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
+import { headers } from "next/headers";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const host = (await headers()).get("host") || "www.lenabara.com";
+  const isLenaShelepova = host.includes("lenashelepova.com");
+  const baseUrl = isLenaShelepova ? "https://www.lenashelepova.com" : "https://www.lenabara.com";
+
   return {
     rules: [
       {
@@ -9,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/thank-you", "/start"],
       },
     ],
-    sitemap: "https://www.lenabara.com/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
