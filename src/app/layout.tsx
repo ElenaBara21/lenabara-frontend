@@ -192,7 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         {children}
           <FloatingContactButtons />
-        <Footer />
+        <Footer isLenaShelepova={isLenaShelepova} />
         {/* Lightweight analytics for elements with data-track */}
         <script
           dangerouslySetInnerHTML={{
