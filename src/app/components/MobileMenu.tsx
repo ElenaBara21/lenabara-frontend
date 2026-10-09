@@ -12,6 +12,7 @@ const growthNavLinks = [
   { label: "Services", href: "#packages" },
   { label: "Case Studies", href: "#case-study-preview" },
   { label: "How It Works", href: "#how-we-do-it" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
