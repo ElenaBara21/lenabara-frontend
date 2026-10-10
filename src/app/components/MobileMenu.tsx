@@ -4,7 +4,6 @@ import { createPortal } from "react-dom";
 
 type MobileMenuProps = {
   isPortfolioHome?: boolean;
-  hasCv?: boolean;
   isGrowth?: boolean;
 };
 
@@ -19,7 +18,6 @@ const growthNavLinks = [
 
 export default function MobileMenu({
   isPortfolioHome = false,
-  hasCv = false,
   isGrowth = false,
 }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
@@ -86,11 +84,6 @@ export default function MobileMenu({
                     <p className="text-xl font-semibold tracking-wide text-white">Yelena Shelepova</p>
                     <p className="text-xs text-neutral-400">Marketing Analytics &amp; Growth Portfolio</p>
                   </div>
-                  {hasCv ? (
-                    <a href="/resume.pdf" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-white" onClick={() => setOpen(false)}>Download CV</a>
-                  ) : (
-                    <span aria-disabled="true" className="text-2xl font-extrabold uppercase tracking-[0.08em] text-neutral-500">Download CV (coming soon)</span>
-                  )}
                 </>
               )}
             </nav>

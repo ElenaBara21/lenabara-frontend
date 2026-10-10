@@ -16,7 +16,6 @@ const growthNavLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [hostname, setHostname] = useState("www.lenabara.com");
-  const hasCv = true;
   const isLenaShelepova = hostname.includes("lenashelepova.com");
   const isBusinessSite = !isLenaShelepova;
   const isGrowth = isBusinessSite && (pathname === "/" || pathname === "/growth");
@@ -50,7 +49,7 @@ export default function Header() {
               ))}
               <a href="#contact" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 text-sm font-extrabold uppercase tracking-[0.1em] transition">Book a Call</a>
             </nav>
-            <MobileMenu isGrowth hasCv={false} />
+            <MobileMenu isGrowth />
           </>
         ) : (
           <>
@@ -60,13 +59,8 @@ export default function Header() {
               <a href="/work" className="text-sm text-neutral-200 hover:text-white transition">Work</a>
               <a href="/contact" className="text-sm text-neutral-200 hover:text-white transition">Contact</a>
               <a href="/blog" className="text-sm text-neutral-200 hover:text-white transition">Blog</a>
-              {hasCv ? (
-                <a href="/resume.pdf" className="text-sm text-neutral-200 hover:text-white transition">Download CV</a>
-              ) : (
-                <span aria-disabled="true" className="text-sm text-neutral-500">Download CV (coming soon)</span>
-              )}
             </nav>
-            <MobileMenu isPortfolioHome={isPortfolioHome} hasCv={hasCv} />
+            <MobileMenu isPortfolioHome={isPortfolioHome} />
           </>
         )}
       </div>
