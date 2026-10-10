@@ -8,10 +8,15 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  modifiedDate?: string;
   excerpt: string;
   content: string;
   image?: string;
+  imageAlt?: string;
   author?: string;
+  seoTitle?: string;
+  canonicalUrl?: string;
+  schemaDescription?: string;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -33,10 +38,15 @@ export function getAllPosts(): BlogPost[] {
         slug,
         title: data.title || 'Untitled',
         date: data.date || new Date().toISOString(),
+        modifiedDate: data.modifiedDate,
         excerpt: data.excerpt || '',
         content,
         image: data.image,
+        imageAlt: data.imageAlt,
         author: data.author,
+        seoTitle: data.seoTitle,
+        canonicalUrl: data.canonicalUrl,
+        schemaDescription: data.schemaDescription,
       } as BlogPost;
     });
 
@@ -69,10 +79,15 @@ export function getPostBySlug(slug: string): BlogPost | null {
       slug,
       title: data.title || 'Untitled',
       date: data.date || new Date().toISOString(),
+      modifiedDate: data.modifiedDate,
       excerpt: data.excerpt || '',
       content,
       image: data.image,
+      imageAlt: data.imageAlt,
       author: data.author,
+      seoTitle: data.seoTitle,
+      canonicalUrl: data.canonicalUrl,
+      schemaDescription: data.schemaDescription,
     };
   } catch (error) {
     return null;

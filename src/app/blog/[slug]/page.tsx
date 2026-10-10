@@ -1,6 +1,10 @@
 import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug } from '@/lib/blog';
 import ReactMarkdown from 'react-markdown';
+import type { Metadata } from 'next';
+
+const SITE_URL = 'https://lenabara.com';
+const ARTICLE_SLUG = 'meta-ads-cost-uae';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -9,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   
@@ -19,9 +23,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const title = post.seoTitle || `${post.title} | LenaBara Blog`;
+  const description = post.excerpt;
+  const canonicalUrl = post.canonicalUrl || `${SITE_URL}/blog/${post.slug}`;
+  const imageUrl = post.image ? `${SITE_URL}${post.image}` : undefined;
+
   return {
-    title: `${post.title} | Lena Bara Blog`,
+    title,
     description: post.excerpt,
+    robots: { index: true, follow: true },
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: 'article',
+      siteName: 'LenaBara',
+      publishedTime: post.date,
+      modifiedTime: post.modifiedDate || post.date,
+      authors: [`${SITE_URL}/about`],
+      ...(imageUrl ? { images: [{ url: imageUrl, alt: post.imageAlt || post.title }] } : {}),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      ...(imageUrl ? { images: [imageUrl] } : {}),
+    },
   };
 }
 
@@ -32,6 +60,51 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   if (!post) {
     notFound();
   }
+
+  const articleImage = post.image ? `${SITE_URL}${post.image}` : undefined;
+  const articleSchema = slug === ARTICLE_SLUG
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'BlogPosting',
+            '@id': `${SITE_URL}/blog/${slug}#article`,
+            headline: post.title,
+            description: post.schemaDescription || post.excerpt,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': post.canonicalUrl || `${SITE_URL}/blog/${slug}`,
+            },
+            url: post.canonicalUrl || `${SITE_URL}/blog/${slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'Elena Shelepova',
+              url: `${SITE_URL}/about`,
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'LenaBara',
+              url: SITE_URL,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/hero/lb-editorial-logo.svg`,
+              },
+            },
+            datePublished: post.date,
+            dateModified: post.modifiedDate || post.date,
+            ...(articleImage ? { image: [articleImage] } : {}),
+          },
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/growth` },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+              { '@type': 'ListItem', position: 3, name: post.title, item: post.canonicalUrl || `${SITE_URL}/blog/${slug}` },
+            ],
+          },
+        ],
+      }
+    : null;
 
   return (
     <div className="min-h-screen bg-neutral-950">
@@ -50,7 +123,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           {post.image && (
             <img 
               src={post.image} 
-              alt={post.title}
+              alt={post.imageAlt || post.title}
+              fetchPriority="high"
               className="w-full aspect-video object-cover rounded-lg"
             />
           )}
@@ -74,6 +148,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </ReactMarkdown>
         </div>
       </article>
+      {articleSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c'),
+          }}
+        />
+      )}
     </div>
   );
 }
